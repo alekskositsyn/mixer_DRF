@@ -1,0 +1,30 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block container %}
+    <div class="product-deal">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 leftside"><img src="/media/{{ product.image }}" alt="{{ product.name }}"></div>
+            <div class="col-lg-4 rightside">
+                <div class="nameProduct">
+                    <h2>{{ product.name }}</h2>
+                </div>
+                <div class="price">
+                    <div class="numprice">{{ product.price }}<i class="currancy fas fa-ruble-sign"></i></div>
+                    <div class="currancy"></div>
+                </div>
+                <div class="button_order_deal clearfix"><a href="{% url 'basket:add_product' product.pk %}"
+                                                           class="button_red_deal">Купить</a></div>
+                <div class="desc-product-deal">
+                    <p>{{ product.description }}</p>
+                    <p><strong>Состав:</strong>сахар, крахмал кукурузный, Е-904, пищевые красители.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hot_sale">
+        <h3>Отличное предложение</h3>
+        {% include 'mainapp/includes/inc__hot_sale.html' %}
+    </div>
+{% endblock %}
+
+
