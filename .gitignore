@@ -28,3 +28,27 @@ mixer/mainapp/__pycache__/admin.cpython-36.pyc
 mixer/mainapp/__pycache__/models.cpython-36.pyc
 mixer/mainapp/__pycache__/urls.cpython-36.pyc
 mixer/mainapp/__pycache__/views.cpython-36.pyc
+
+.DS_Store
+node_modules
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
