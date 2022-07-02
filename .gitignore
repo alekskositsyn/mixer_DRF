@@ -5,7 +5,7 @@ django2.2/
 .idea/inspectionProfiles
 .idea
 .vscode
-/venv
+env_mixer/
 mixer/adminapp/__pycache__/__init__.cpython-36.pyc
 mixer/adminapp/__pycache__/admin.cpython-36.pyc
 mixer/adminapp/__pycache__/forms.cpython-36.pyc

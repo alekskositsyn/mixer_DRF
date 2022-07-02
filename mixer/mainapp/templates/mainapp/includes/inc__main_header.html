@@ -1,7 +1,7 @@
 {% load static %}
 <header class="header ">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'main:home' %}">
+        <a class="navbar-brand" href="{% url 'mainapp:index' %}">
             <img src="{% static 'img/logo.png' %}" class="logo d-inline-block align-top" alt="logo" loading="lazy"><span
                 class="navbar-brand-name mb-0 h2">Mixer</span></a>
         <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
@@ -14,21 +14,21 @@
                 {#                {% for item in main_header_menu %}#}
                 {#                    <li class="{% if request.resolver_match.url_name == item.href %} active {% endif %} nav-item">#}
                 {#                        <a class=" nav-link "#}
-                {#                           href="{% url 'main:'|add:item.href %}">{{ item.name }}<span применение шаблонного фильтра add#}
+                {#                           href="{% url 'mainapp:'|add:item.href %}">{{ item.name }}<span применение шаблонного фильтра add#}
                 {#                                class="sr-only">(current)</span></a>#}
                 {#                    </li>#}
                 {#                {% endfor %}#}
 
 
                 <li class="nav-item active">
-                    <a class=" nav-link " href="{% url 'main:category_products' 0 %}">Продукты<span
+                    <a class=" nav-link " href="{% url 'mainapp:category_products' 0 %}">Продукты<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Доставка <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'main:contacts' %}">Контакты</a>
+                    <a class="nav-link" href="{% url 'mainapp:contacts' %}">Контакты</a>
                 </li>
             </ul>
             <div class="user-icon">
@@ -41,16 +41,16 @@
                                 <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{% url 'auth:update' %}">
+                                <a class="dropdown-item" href="#">
                                     профиль
                                 </a>
-                                <a class="dropdown-item" href="{% url 'orders:index' %}">
+                                <a class="dropdown-item" href="#">
                                     заказы
                                 </a>
                             </div>
                         </div>
                     {% endif %}
-                    {% if user.is_superuser %}
+                    {% comment %} {% if user.is_superuser %}
                         <a class="admin btn btn-outline-secondary" href="{% url 'my_admin:users' %}" class="">
                             админка
                         </a>
@@ -63,7 +63,7 @@
                         <a class="login_status btn btn-outline-secondary" href="{% url 'auth:login' %}">
                             вход
                         </a>
-                    {% endif %}
+                    {% endif %} {% endcomment %}
 
                 </div>
                 <!-- <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>    -->
@@ -71,11 +71,11 @@
             <div class="heart">
 
                 <span class="badge badge-pill badge-danger">
-                    {% if basket %}
+                    {% comment %} {% if basket %}
                         {{ basket.0.total_quantity }}
                     {% else %}
                         {{ '0' }}
-                    {% endif %}
+                    {% endif %} {% endcomment %}
                 </span>
 
                 <a class="btn" href="#"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a>
@@ -83,14 +83,14 @@
             <div class="basket">
 
                 <span class="badge badge-pill badge-danger">
-                    {% if basket %}
+                    {% comment %} {% if basket %}
                         {{ basket.0.total_quantity }}
                     {% else %}
                         {{ '0' }}
-                    {% endif %}
+                    {% endif %} {% endcomment %}
                 </span>
 
-                <a class="btn" href="{% url 'basket:index' %}"><i class="fa-shopping-basket fa " aria-hidden="true"></i></a>
+                <a class="btn" href="#"><i class="fa-shopping-basket fa " aria-hidden="true"></i></a>
             </div>
 
         </div>
