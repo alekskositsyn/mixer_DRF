@@ -259,6 +259,7 @@
   display: block;
 }
 
+
 .product .linkBuyProduct:hover {
   text-decoration: none;
 }
@@ -318,7 +319,7 @@
   left: 20px;
   right: 20px;
   -webkit-box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
-          box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
   border-radius: 35px;
   background-color: #f44336;
   width: 50%;
@@ -340,7 +341,7 @@
 
 .product-deal .rightside .button_red_deal:active {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .product-deal .rightside .button_red_deal:hover {
@@ -439,12 +440,12 @@
   background-color: #f44336;
   border: none;
   -webkit-box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
-          box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
 }
 
 .contact-us .btn:active {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .contact-us .btn:hover {
