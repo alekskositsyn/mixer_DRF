@@ -65,7 +65,7 @@
         <div class="basket">
           <span class="badge badge-pill badge-danger">
           </span>
-          <a class="btn" href="#"><i class="fad fa-shopping-basket " aria-hidden="true"></i></a>
+          <a class="btn" href="#"><font-awesome-icon icon="fa-solid fa-basket-shopping fa-6x" /></a>
         </div>
 
       </div>

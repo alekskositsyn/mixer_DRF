@@ -61,17 +61,17 @@
   opacity: 0;
 }
 
-.header .fa-shopping-basket {
+.header .fa-basket-shopping {
   margin-right: 10px;
   margin-left: 5px;
   font-size: 2em;
 }
 
-.header .fa-shopping-basket:hover {
+.header .fa-basket-shopping:hover {
   color: #f44336;
 }
 
-.header .fa-shopping-basket:active {
+.header .fa-basket-shopping:active {
   opacity: 0;
 }
 
@@ -230,6 +230,386 @@
   margin: 0;
   padding: 0;
 }
+
+/*--/breadcrumb--*/
+ol.breadcrumb {
+  background: none;
+  margin: 0;
+  padding: 1em 2em;
+  background: #f7f7f7;
+}
+
+li.breadcrumb-item {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+.breadcrumb-item.active {
+  color: #888;
+}
+
+li.breadcrumb-item a {
+  color: #ff4c4c;
+}
+
+/*-- /New-Arrivals --*/
+.product-shoe-info {
+  padding: 0 0 15px 0;
+  border: 1px solid #e4e4e4;
+}
+
+.item-info-product h4 a {
+  color: #080808;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+span.money {
+  font-size: 1em;
+  font-weight: 800;
+  color: #ff4c4c;
+  letter-spacing: 2px;
+}
+
+.product_price {
+  margin: 1em 0 0 0;
+  padding: 1em 0 0 0;
+  border-top: 1px solid #ddd;
+}
+
+ul.stars li {
+  display: inline-block;
+}
+
+ul.stars li a span {
+  font-size: 0.7em;
+  color: #6a6c6d;
+  margin: 0 0.2em;
+}
+
+ul.stars li a span:hover {
+  opacity: 0.8;
+}
+
+span.product-new-top {
+  background: #414b52;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 0.3em 1.2em;
+  color: #fff;
+}
+
+/*-- //New-Arrivals --*/
+
+section#brands {
+  background: #1e272e;
+}
+
+.brand-items a span {
+  color: #757a7d;
+  font-size: 2.5em;
+}
+
+/*--about-grids--*/
+.service-content {
+  margin-left: 1em;
+}
+
+.icon span {
+  width: 60px;
+  height: 60px;
+  color: #007bff;
+  line-height: 60px;
+  text-align: center;
+  font-size: 22px;
+  transition: all 1s;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+.service-content h4 {
+  font-size: 1.15em;
+  line-height: 1.75em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 2px;
+  margin-bottom: 0.5em;
+}
+
+/*-- /testimonials --*/
+
+.testimonials {
+  background: #f2f2f2;
+}
+
+.test-info {
+  padding: 2em 0;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.test-info h3 {
+  font-size: 1em;
+  color: #1e272e;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.test-img img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  padding: 4px;
+  background: hsla(21, 60%, 94%, 0.33);
+  width: 15%;
+}
+
+.w3layouts-footer.test-soc ul li {
+  display: inline-block;
+}
+
+.w3layouts-footer.test-soc ul li a span {
+  color: #fff;
+  margin: 0 0.3em;
+}
+
+.test-info p span {
+  font-size: 1.8em;
+  color: #505c65;
+}
+
+ul.list-unstyled.w3layouts-icons.clients li {
+  text-align: center;
+  display: inline-block;
+}
+
+ul.list-unstyled.w3layouts-icons.clients li span {
+  font-size: 0.8em;
+  color: #ff4c4c;
+  margin: 0 0.2em;
+}
+
+ul.list-unstyled.w3layouts-icons.clients li span:hover {
+  opacity: 0.8;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+
+}
+
+/*-- //testimonials --*/
+.men-thumb-item {
+  position: relative;
+}
+
+.item-info-product h4 {
+  margin-top: 0.5em;
+}
+
+.shop-now {
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
+}
+
+.shop-now a {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+}
+
+h4.group.card-title {
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  color: #464f56;
+}
+
+/*--/breadcrumb--*/
+ol.breadcrumb {
+  background: none;
+  margin: 0;
+  padding: 1em 2em;
+  background: #f7f7f7;
+}
+
+li.breadcrumb-item {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+.breadcrumb-item.active {
+  color: #888;
+}
+
+li.breadcrumb-item a {
+  color: #ff4c4c;
+}
+
+/*--//breadcrumbr--*/
+/*--/shop--*/
+/*-- special deals --*/
+
+.img-deal1 {
+  padding: 0;
+}
+
+.img-deal1 h3 {
+  color: #495057;
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+
+.img-deal1 a {
+  font-size: 14px;
+  color: #6d6c6c;
+}
+
+.img-deals img {
+  border: 1px solid #ddd;
+}
+
+ul.w3layouts-box-list li {
+  list-style: none;
+  display: block;
+  margin-bottom: 0.9em;
+  color: #8c9398;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+}
+
+.grid-img-right {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  position: relative;
+  height: 15em;
+  padding: 5.5em 2em 0 0;
+}
+
+.grid-img-right span.money {
+  color: #fff;
+  display: block;
+}
+
+.grid-img-right a {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  padding: 0;
+
+}
+
+.desc1-left {
+  border: 1px solid #ddd;
+}
+
+.desc1-right h3 {
+  text-shadow: 0 1px 0 #ffffff;
+  color: #1e272e;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.desc1-right h5 {
+  font-size: 1.3em;
+  color: #62676b;
+  line-height: 1.5em;
+  -webkit-text-stroke: 0.2px;
+  font-weight: 400;
+}
+
+.share h4 {
+  font-size: 0.9em;
+  color: #555555;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 #ffffff;
+  font-weight: 400;
+}
+
+.desc1-right h5 span {
+  text-decoration: line-through;
+}
+
+.desc1-right h5 a {
+  margin-left: 5px;
+  color: #555555;
+  text-transform: capitalize;
+  font-size: 14px;
+  -webkit-text-stroke: 0px;
+  letter-spacing: 0px;
+}
+
+.available span a {
+  margin: 4% 0;
+  display: block;
+  color: #555555;
+  font-size: 0.8725em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 #ffffff;
+  text-decoration: underline;
+}
+
+h3.shop-sing {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  margin: 1.5em 0 2em 0;
+  color: #323a40;
+}
+
+p.italic-blue {
+  font-style: italic;
+  color: #89bff3;
+  font-weight: 500;
+}
+
+/*--//shop--*/
+/*-- customer --*/
+
+.customer-rev ul li span {
+  color: #f58b8d;
+  font-size: 0.8em
+}
+
+h3.sear-head {
+  color: #1e272e;
+  margin-bottom: 20px;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.customer-rev ul li {
+  list-style: none;
+}
+
+.customer-rev ul li a span {
+  color: #a4a6a9;
+  font-weight: normal;
+  margin-right: 4px;
+}
+
+
+/*-- //customer --*/
 
 .products-categories {
   float: left;
