@@ -65,11 +65,26 @@
 </template>
 
 <script>
-
 export default {
     name: 'HomeView',
+    data() {
+        return {
+            listProducts: []
+        }
+    },
     components: {
-    }
+    },
+    created() {
+        this.loadListProducts()
+    },
+    methods: {
+        async loadListProducts() {
+            this.listProducts = await fetch(
+                `${this.$store.getters.getServerUrl}/product`
+            ).then(response => response.json())
+            console.log(this.listProducts)
+        }
+    },
 }
 </script>
 <style scoped>
