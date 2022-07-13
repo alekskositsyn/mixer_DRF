@@ -72,7 +72,7 @@ class Rating(models.Model):
     )
 
     def __str__(self):
-        return f"{self.star} - {self.movie}"
+        return f"{self.star} - {self.product}"
 
     class Meta:
         verbose_name = "Рейтинг"
@@ -91,7 +91,7 @@ class Review(models.Model):
         Product, verbose_name="Продукт", on_delete=models.CASCADE, related_name="reviews")
 
     def __str__(self):
-        return f"{self.name} - {self.movie}"
+        return f"{self.name} - {self.product}"
 
     class Meta:
         verbose_name = "Отзыв"

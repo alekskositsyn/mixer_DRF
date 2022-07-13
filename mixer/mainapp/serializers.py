@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, ProductCategory, Review
+from .models import Product, ProductCategory, Rating, Review
 
 
 class ProductCategoryListSerializer(serializers.ModelSerializer):
@@ -52,3 +52,26 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         exclude = ('is_active',)
+
+class ProductListSerializer(serializers.ModelSerializer):
+    """Список продуктов"""
+    rating_user = serializers.BooleanField()
+    middle_rating = serializers.IntegerField()
+
+    class Meta:
+        model = Product
+        exclude = ('is_active',)
+
+class CreateRatingSerializer(serializers.ModelSerializer):
+    """Добавление рейтинга пользователем"""
+    class Meta:
+        model = Rating
+        fields = ("star", "product")
+ 
+    def create(self, validated_data):
+        rating, _ = Rating.objects.update_or_create(
+            ip=validated_data.get('ip', None),
+            product=validated_data.get('product', None),
+            defaults={'star': validated_data.get("star")}
+        )
+        return rating

@@ -3,14 +3,15 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
-
+from django.db import models
 from mainapp.models import ProductCategory, Product
 from django.core.cache import cache
+from .service import get_client_ip
 from mixer.settings import LOW_CACHE
-
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from mainapp.serializers import ProductCategoryListSerializer, ProductSerializer,ReviewCreateSerializer
+from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, ReviewCreateSerializer, CreateRatingSerializer
 
 
 def get_links_menu():
@@ -206,28 +207,41 @@ def product_detail_async(request, pk):
 # DRF
 
 
-class CategoryListView(APIView):
+class CategoryListView(ListAPIView):
     """Вывод списка категорий"""
-
-    def get(self, request):
-        category = ProductCategory.objects.filter(is_active=True)
-        serializer = ProductCategoryListSerializer(category, many=True)
-        return Response(serializer.data)
+    serializer_class = ProductCategoryListSerializer
+    queryset = ProductCategory.objects.filter(is_active=True)
 
 
-class ProductView(APIView):
+class ProductListView(ListAPIView):
+    """Вывод списка продуктов"""
+    serializer_class = ProductListSerializer
+
+    def get_queryset(self):
+        products = Product.objects.filter(is_active=True).annotate(
+            rating_user=models.Count('ratings', filter=models.Q(
+                ratings__ip=get_client_ip(self.request)))
+        ).annotate(
+            middle_rating=models.Sum(
+                models.F('ratings__star')) / models.Count(models.F('ratings'))
+        )
+        return products
+
+
+class ProductView(RetrieveAPIView):
     """Вывод продукта"""
-
-    def get(self, request, pk):
-        product = Product.objects.select_related().get(id=pk, is_active=True)
-        serializer = ProductSerializer(product)
-        return Response(serializer.data)
+    queryset = Product.objects.filter(is_active=True)
+    serializer_class = ProductSerializer
 
 
-class ReviewCreateView(APIView):
+class ReviewCreateView(CreateAPIView):
     """Добавление отзыва"""
-    def post(self, request):
-        review = ReviewCreateSerializer(data=request.data)
-        if review.is_valid():
-            review.save()
-        return Response(status=201)
+    serializer_class = ReviewCreateSerializer
+
+
+class AddStarRatingView(CreateAPIView):
+    """Добавление рейтинга к фильму"""
+    serializer_class = CreateRatingSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(ip=get_client_ip(self.request))
