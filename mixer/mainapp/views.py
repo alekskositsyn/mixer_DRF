@@ -6,8 +6,11 @@ from django.template.loader import render_to_string
 
 from mainapp.models import ProductCategory, Product
 from django.core.cache import cache
-
 from mixer.settings import LOW_CACHE
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from mainapp.serializers import ProductCategoryListSerializer, ProductSerializer,ReviewCreateSerializer
 
 
 def get_links_menu():
@@ -85,7 +88,8 @@ def get_products_in_product_category(pk):
 # local
 
 def get_hot_product():
-    hot_product_pk = random.choice(Product.objects.values_list('pk', flat=True))
+    hot_product_pk = random.choice(
+        Product.objects.values_list('pk', flat=True))
     hot_product = get_product(hot_product_pk)
     return hot_product
 
@@ -198,3 +202,32 @@ def product_detail_async(request, pk):
             return JsonResponse({
                 'error': str(e)
             })
+
+# DRF
+
+
+class CategoryListView(APIView):
+    """Вывод списка категорий"""
+
+    def get(self, request):
+        category = ProductCategory.objects.filter(is_active=True)
+        serializer = ProductCategoryListSerializer(category, many=True)
+        return Response(serializer.data)
+
+
+class ProductView(APIView):
+    """Вывод продукта"""
+
+    def get(self, request, pk):
+        product = Product.objects.select_related().get(id=pk, is_active=True)
+        serializer = ProductSerializer(product)
+        return Response(serializer.data)
+
+
+class ReviewCreateView(APIView):
+    """Добавление отзыва"""
+    def post(self, request):
+        review = ReviewCreateSerializer(data=request.data)
+        if review.is_valid():
+            review.save()
+        return Response(status=201)

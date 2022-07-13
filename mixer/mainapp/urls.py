@@ -7,6 +7,9 @@ app_name = 'mainapp'
 
 urlpatterns = [
     path('', mainapp.index, name='index'),
+    path('api/v1/category/', mainapp.CategoryListView.as_view()),
+    path('api/v1/product/<int:pk>/', mainapp.ProductView.as_view()),
+    path('api/v1/review/', mainapp.ReviewCreateView.as_view()),
     path('catalog/', mainapp.catalog, name='catalog'),
     re_path(r'^category/(?P<pk>\d+)/products/$',
             mainapp.category_products, name='category_products'),

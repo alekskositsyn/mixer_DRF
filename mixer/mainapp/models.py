@@ -27,6 +27,7 @@ class Product(models.Model):
         verbose_name='количество товара', default=0)
     is_active = models.BooleanField(
         verbose_name='активна', default=True, db_index=True)
+    url = models.SlugField(max_length=130, unique=True)
 
     def __str__(self):
         return f'{self.name} ({self.category.name})'
@@ -34,3 +35,24 @@ class Product(models.Model):
     @staticmethod
     def get_active_items():
         return Product.objects.select_related().filter(category__is_active=True, is_active=True)
+
+
+
+
+class Review(models.Model):
+    """Отзывы"""
+    email = models.EmailField()
+    name = models.CharField("Имя", max_length=100)
+    text = models.TextField("Сообщение", max_length=5000)
+    parent = models.ForeignKey(
+        'self', verbose_name="Родитель", on_delete=models.SET_NULL, blank=True, null=True, related_name="children"
+    )
+    product = models.ForeignKey(
+        Product, verbose_name="Продукт", on_delete=models.CASCADE, related_name="reviews")
+
+    def __str__(self):
+        return f"{self.name} - {self.movie}"
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
