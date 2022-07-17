@@ -10,7 +10,7 @@
                                 <input type="search" placeholder="Введите название..." name="search"
                                     class="form-control" required="">
                                 <button class="btn1 btn">
-                                    <font-awesome-icon icon="fa-light fa-magnifying-glass"></font-awesome-icon>
+                                    <!-- <font-awesome-icon icon="fa-light fa-magnifying-glass"></font-awesome-icon> -->
                                 </button>
                             </form>
                         </div>
@@ -26,10 +26,10 @@
                     </div>
                     <div class="left-ads-display col-lg-9">
                         <div class="row">
-                            <div class="col-md-4 product-men">
+                            <div class="col-md-4 product-men rounded-3 border shadow-lg">
                                 <div class="product-shoe-info editContent text-center mt-lg-4">
                                     <div class="men-thumb-item">
-                                        <img src="bundles/images/s1.jpg" class="img-fluid" alt="">
+                                        <img src="#" class="img-fluid" alt="">
                                     </div>
                                     <div class="item-info-product">
                                         <h4 class="">
@@ -40,7 +40,7 @@
                                                 <span class="money editContent">«The Game Begins»</span>
                                             </div>
                                         </div>
-                                        <ul class="stars">
+                                        <!-- <ul class="stars">
                                             <li><a href="#">
                                                     <font-awesome-icon icon="fa-solid fa-star-sharp">
                                                     </font-awesome-icon>
@@ -52,7 +52,7 @@
                                                         aria-hidden="true"></span></a></li>
                                             <li><a href="#"><span class="fa fa-star-o" aria-hidden="true"></span></a>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </div>
                                 </div>
                             </div>
@@ -65,27 +65,29 @@
 </template>
 
 <script>
-export default {
-    name: 'HomeView',
-    data() {
-        return {
-            listProducts: []
+import store from '@/store'
+    export default {
+        name: 'HomeView',
+        data() {
+            return {
+                listProducts: [],
+                listStar: [1, 2, 3, 4, 5]
+            }
+        },
+        components: {},
+        created() {
+            this.loadListProducts()
+        },
+        methods: {
+            async loadListProducts() {
+                this.listProducts = await fetch(
+                    `${store.getters.getServerUrl}/products`
+                ).then(response => response.json())
+                console.log(this.listProducts)
+                
+            }
         }
-    },
-    components: {
-    },
-    created() {
-        this.loadListProducts()
-    },
-    methods: {
-        async loadListProducts() {
-            this.listProducts = await fetch(
-                `${this.$store.getters.getServerUrl}/product`
-            ).then(response => response.json())
-            console.log(this.listProducts)
-        }
-    },
-}
+    }
 </script>
 <style scoped>
 .editContent {

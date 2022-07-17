@@ -14,6 +14,50 @@ from rest_framework.views import APIView
 from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, ReviewCreateSerializer, CreateRatingSerializer
 
 
+# DRF
+
+
+class CategoryListView(ListAPIView):
+    """Вывод списка категорий"""
+    serializer_class = ProductCategoryListSerializer
+    queryset = ProductCategory.objects.filter(is_active=True)
+
+
+class ProductListView(ListAPIView):
+    """Вывод списка продуктов"""
+    serializer_class = ProductListSerializer
+
+    def get_queryset(self):
+        products = Product.objects.filter(is_active=True).annotate(
+            rating_user=models.Count('ratings', filter=models.Q(
+                ratings__ip=get_client_ip(self.request)))
+        ).annotate(
+            middle_rating=models.Sum(
+                models.F('ratings__star')) / models.Count(models.F('ratings'))
+        )
+        return products
+
+
+class ProductView(RetrieveAPIView):
+    """Вывод продукта"""
+    queryset = Product.objects.filter(is_active=True)
+    serializer_class = ProductSerializer
+
+
+class ReviewCreateView(CreateAPIView):
+    """Добавление отзыва"""
+    serializer_class = ReviewCreateSerializer
+
+
+class AddStarRatingView(CreateAPIView):
+    """Добавление рейтинга к фильму"""
+    serializer_class = CreateRatingSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(ip=get_client_ip(self.request))
+
+
+
 def get_links_menu():
     if LOW_CACHE:
         key = 'links_menu'
@@ -203,45 +247,3 @@ def product_detail_async(request, pk):
             return JsonResponse({
                 'error': str(e)
             })
-
-# DRF
-
-
-class CategoryListView(ListAPIView):
-    """Вывод списка категорий"""
-    serializer_class = ProductCategoryListSerializer
-    queryset = ProductCategory.objects.filter(is_active=True)
-
-
-class ProductListView(ListAPIView):
-    """Вывод списка продуктов"""
-    serializer_class = ProductListSerializer
-
-    def get_queryset(self):
-        products = Product.objects.filter(is_active=True).annotate(
-            rating_user=models.Count('ratings', filter=models.Q(
-                ratings__ip=get_client_ip(self.request)))
-        ).annotate(
-            middle_rating=models.Sum(
-                models.F('ratings__star')) / models.Count(models.F('ratings'))
-        )
-        return products
-
-
-class ProductView(RetrieveAPIView):
-    """Вывод продукта"""
-    queryset = Product.objects.filter(is_active=True)
-    serializer_class = ProductSerializer
-
-
-class ReviewCreateView(CreateAPIView):
-    """Добавление отзыва"""
-    serializer_class = ReviewCreateSerializer
-
-
-class AddStarRatingView(CreateAPIView):
-    """Добавление рейтинга к фильму"""
-    serializer_class = CreateRatingSerializer
-
-    def perform_create(self, serializer):
-        serializer.save(ip=get_client_ip(self.request))
