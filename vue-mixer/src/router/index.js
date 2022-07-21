@@ -14,7 +14,8 @@ const routes = [
   {
     path: '/:id',
     name: 'ProductView',
-    component: ProductView
+    component: ProductView,
+    props: true
   },
   {
     path: '/about',
@@ -27,6 +28,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

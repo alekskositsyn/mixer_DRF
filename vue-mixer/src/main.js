@@ -5,13 +5,14 @@ import store from './store'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faVk } from '@fortawesome/free-brands-svg-icons'
-import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { faStarHalf } from '@fortawesome/free-solid-svg-icons'
+import { faStar as faRegularStar } from '@fortawesome/free-regular-svg-icons'
+import { faRubleSign } from '@fortawesome/free-solid-svg-icons'
+import { faStar as faSolidStar} from '@fortawesome/free-solid-svg-icons'
 
 
-library.add(faBasketShopping, faMagnifyingGlass, faVk, faStar, faStarHalf)
+library.add(faShoppingBasket, faMagnifyingGlass, faVk, faSolidStar, faRegularStar, faRubleSign)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

@@ -6,6 +6,7 @@
     </div>
 </template>
 <script>
+import "bootstrap/dist/js/bootstrap.js"
 import Nav from "./components/Nav.vue";
 import Footer from "./components/Footer.vue";
 export default {
@@ -13,7 +14,7 @@ export default {
 }
 </script>
 <style lang="css">
-@import "./assets/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.css";
 @import "./assets/css/fontawesome.css";
 @import "./assets/css/style.css";
 </style>
