@@ -20,6 +20,7 @@
                     <div class="button_order_deal clearfix"><a href="#" class="button_red_deal">Купить</a></div>
                 </div>
             </div>
+            <Review :reviews="product.reviews" :product="product.id" @reLoad="loadProduct"/>
         </div>
         <div class="hot_sale">
             <h3>Отличное предложение</h3>
@@ -45,10 +46,11 @@
 
 <script>
 import store from '@/store'
-
+import Review from '../components/Review'
 export default {
     name: 'ProductView',
     props: ['id'],
+    components: {Review},
     data() {
         return {
             product: {}
@@ -63,8 +65,6 @@ export default {
                 `${store.getters.getServerUrl}/products/${this.id}`
             ).then(response => response.json())
             console.log(this.product)
-            console.log(this.id)
-
         }
     }
 }

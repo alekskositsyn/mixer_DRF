@@ -30,8 +30,8 @@
             <li><a class="dropdown-item" href="#">Выход</a></li>
           </ul>
         </div>
-        <a href="#">
-          <font-awesome-icon icon="far fa-shopping-basket" />
+        <a href="#" class="basket">
+          <font-awesome-icon icon="fa-solid fa-basket-shopping" class="fa-basket-shopping"></font-awesome-icon>
         </a>
       </div>
     </header>
@@ -44,11 +44,8 @@ export default {
 }
 </script>
 
-<style>
-.logo {
-  height: 32px;
-  width: 40px;
-}
+<style scoped>
+
 
 .user_avatar {
   width: 32px;
@@ -87,5 +84,26 @@ export default {
 
 .dropdown-toggle {
   outline: 0;
+}
+
+.basket{
+  color: #000000b5;
+  margin-left: 3rem;
+}
+
+
+.fa-basket-shopping {
+  margin-right: 10px;
+  margin-left: 5px;
+  font-size: 3em;
+  
+}
+
+.fa-basket-shopping:hover {
+  color: #f44336;
+}
+
+.fa-basket-shopping:active {
+  opacity: 0;
 }
 </style>
