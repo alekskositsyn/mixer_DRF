@@ -4,14 +4,14 @@ from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
 from django.db import models
-from mainapp.models import ProductCategory, Product
+from mainapp.models import ProductCategory, Product, Review
 from django.core.cache import cache
 from .service import get_client_ip
 from mixer.settings import LOW_CACHE
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, ReviewCreateSerializer, CreateRatingSerializer
+from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, ProductsReviewsSerializer, ReviewCreateSerializer, CreateRatingSerializer, ReviewSerializer
 
 
 # DRF
@@ -42,6 +42,22 @@ class ProductView(RetrieveAPIView):
     """Вывод продукта"""
     queryset = Product.objects.filter(is_active=True)
     serializer_class = ProductSerializer
+
+class ReviewListView(ListAPIView):
+    """Вывод отзывов"""
+    serializer_class = ReviewSerializer
+
+
+class ProductsReviewsView(ListAPIView):
+    """Вывод отзывов продукта"""
+    serializer_class = ProductsReviewsSerializer
+
+    def get_queryset(self):
+        product_id = self.kwargs.get('pk')
+        queryset = Review.objects.filter(product=product_id)
+        return queryset
+
+
 
 
 class ReviewCreateView(CreateAPIView):

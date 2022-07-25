@@ -41,7 +41,17 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         list_serializer_class = FilterReviewListSerializer
         model = Review
-        fields = ('id','name', 'text', 'children')
+        fields = ('id', 'name', 'product', 'text', 'children')
+
+
+class ProductsReviewsSerializer(serializers.ModelSerializer):
+    """Вывод отзывов"""
+    children = RecursiveSerializer(many=True)
+
+    class Meta:
+        list_serializer_class = FilterReviewListSerializer
+        model = Review
+        fields = ('id', 'name', 'product', 'text', 'children')
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -53,6 +63,7 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         exclude = ('is_active',)
 
+
 class ProductListSerializer(serializers.ModelSerializer):
     """Список продуктов"""
     rating_user = serializers.BooleanField()
@@ -62,12 +73,13 @@ class ProductListSerializer(serializers.ModelSerializer):
         model = Product
         exclude = ('is_active',)
 
+
 class CreateRatingSerializer(serializers.ModelSerializer):
     """Добавление рейтинга пользователем"""
     class Meta:
         model = Rating
         fields = ("star", "product")
- 
+
     def create(self, validated_data):
         rating, _ = Rating.objects.update_or_create(
             ip=validated_data.get('ip', None),

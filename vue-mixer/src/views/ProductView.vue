@@ -20,7 +20,7 @@
                     <div class="button_order_deal clearfix"><a href="#" class="button_red_deal">Купить</a></div>
                 </div>
             </div>
-            <Review :reviews="product.reviews" :product="product.id" @reLoad="loadProduct"/>
+            <Review :reviews="product_reviews" :product="product.id" @reLoad="loadReviews" />
         </div>
         <div class="hot_sale">
             <h3>Отличное предложение</h3>
@@ -29,7 +29,7 @@
                     <div class="col-lg-3 col-md-6 ">
                         <div class="product border border-dark rounded-lg m-1 p-1">
                             <a href="{% url 'mainapp:product' product.pk %}" class="linkBuyProduct"><img
-                                    :src=" product.image " alt="">
+                                    :src="product.image" alt="">
                                 <div class="nameOfProduct">{{ product.name }}
                                 </div>
                             </a>
@@ -50,21 +50,30 @@ import Review from '../components/Review'
 export default {
     name: 'ProductView',
     props: ['id'],
-    components: {Review},
+    components: { Review },
     data() {
         return {
-            product: {}
+            product: {},
+            product_reviews: {}
         }
     },
     created() {
-        this.loadProduct()
+        this.loadProduct(),
+        this.loadReviews()
     },
     methods: {
         async loadProduct() {
             this.product = await fetch(
                 `${store.getters.getServerUrl}/products/${this.id}`
             ).then(response => response.json())
-            console.log(this.product)
+            // console.log(this.product.reviews)
+        },
+        async loadReviews() {
+            this.product_reviews = await fetch(
+                `${store.getters.getServerUrl}/product/reviews/${this.id}`
+            ).then(response => response.json())
+            console.log(this.product_reviews)
+
         }
     }
 }

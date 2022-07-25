@@ -1,7 +1,6 @@
 <template>
     <div class="row">
         <div class="single-form-left">
-            <!-- contact form grid -->
             <div class="contact-single">
                 <h3 class="editContent">
                     <span class="sub-tittle editContent">0</span>Оставить отзыв
