@@ -6,8 +6,12 @@ from django.urls import path, include, re_path
 
 urlpatterns = [
     path('', include('mainapp.urls', namespace='mainapp')),
-    path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
+    path('auth/', include('djoser.urls.jwt')),
+
 ]
 
 if settings.DEBUG:

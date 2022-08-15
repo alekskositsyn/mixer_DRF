@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
     'corsheaders',
     'mainapp',
 ]
@@ -144,3 +146,35 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
     "http://127.0.0.1:8000"
 ]
+
+REST_FRAMEWORK = {
+    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ),
+}
+
+# smtp
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'akositsyn88@gmail.com'
+EMAIL_HOST_PASSWORD = 'yutlxxuhamklpmpt'
+EMAIL_PORT = 587
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = '465'
+# EMAIL_HOST_USER = 'akositsyn88@gmail.com'
+# EMAIL_HOST_PASSWORD = 'WalterKK200'
+# DEFAULT_FROM_EMAIL = 'Mixer Shop'
+# EMAIL_USE_SSL = True
+# EMAIL_USE_TLS = True
+
+
+DJOSER = {
+    'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
+    'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': '#/activate/{uid}/{token}',
+    'SEND_ACTIVATION_EMAIL': True,
+    'SERIALIZERS': {},
+}

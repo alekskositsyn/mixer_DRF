@@ -37,7 +37,7 @@
                 <h5 class="mt-0 editContent">{{ review.name }}</h5>
                 <p class="mt-2 editContent" v-html="review.text"></p>
                 <a href="#formReview" @click="addParent(review.id)">Ответить</a>
-                <div class="media mt-5 editContent" v-for="child in review.children">
+                <div class="media mt-5 editContent ms-5" v-for="child in review.children">
                     <a class="pr-3" href="#">
                         <img src="../assets/images/te1.jpg" class="img-fluid " alt="image">
                     </a>

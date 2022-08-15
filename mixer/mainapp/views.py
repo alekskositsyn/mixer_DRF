@@ -8,9 +8,8 @@ from mainapp.models import ProductCategory, Product, Review
 from django.core.cache import cache
 from .service import get_client_ip
 from mixer.settings import LOW_CACHE
+from rest_framework import permissions
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
-from rest_framework.response import Response
-from rest_framework.views import APIView
 from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, ProductsReviewsSerializer, ReviewCreateSerializer, CreateRatingSerializer, ReviewSerializer
 
 
@@ -26,6 +25,7 @@ class CategoryListView(ListAPIView):
 class ProductListView(ListAPIView):
     """Вывод списка продуктов"""
     serializer_class = ProductListSerializer
+    permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
         products = Product.objects.filter(is_active=True).annotate(
