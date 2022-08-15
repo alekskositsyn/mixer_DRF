@@ -32,7 +32,7 @@ class Product(models.Model):
         verbose_name='количество товара', default=0)
     is_active = models.BooleanField(
         verbose_name='активна', default=True, db_index=True)
-    url = models.SlugField(max_length=130, unique=True)
+    url = models.SlugField(max_length=130, unique=False)
 
     def __str__(self):
         return f'{self.name} ({self.category.name})'

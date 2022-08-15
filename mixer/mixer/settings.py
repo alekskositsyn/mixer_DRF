@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'mainapp',
+    'authapp',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +139,10 @@ LOW_CACHE = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+JSON_PATH = 'mainapp/json'
+
+AUTH_USER_MODEL = 'authapp.ShopUser'
 
 
 CORS_ORIGIN_WHITELIST = [
