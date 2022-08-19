@@ -4,6 +4,7 @@
 ```
 npm install
 ```
+sudo service postgresql start
 
 ### Compiles and hot-reloads for development
 ```
