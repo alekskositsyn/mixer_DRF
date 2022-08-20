@@ -87,7 +87,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'mixer',
+        'NAME':'mixer_db',
         'USER':'aleks',
         'PASSWORD':'ural918942',
         'HOST':'localhost',
