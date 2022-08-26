@@ -67,6 +67,7 @@ def pre_save_receiver(sender, instance, *args, **kwargs):
     """Функция получения и сохранения уникального slug"""
 
     if instance.slug:
+        print(instance.slug)
         instance.slug = instance.slug
     else:
         slug = defaultfilters.slugify(unidecode(instance.name))

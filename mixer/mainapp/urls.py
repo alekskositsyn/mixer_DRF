@@ -13,5 +13,4 @@ urlpatterns = [
     path('review/', mainapp.ReviewCreateView.as_view()),
     path('product/reviews/<int:pk>/', mainapp.ProductsReviewsView.as_view()),
     path('rating/', mainapp.AddStarRatingView.as_view()),
-    path('catalog/', mainapp.catalog, name='catalog'),
 ]

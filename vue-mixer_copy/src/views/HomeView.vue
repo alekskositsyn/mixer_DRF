@@ -7,9 +7,9 @@
                         <div class="left-side my-4">
                             <h3 class="sear-head editContent">Категории</h3>
                             <ul class="w3layouts-box-list">
-                                <li class="editContent">
+                                <li v-for="category in listCategory" :key="category.id" class="editContent">
                                     <input type="checkbox" class="checked">
-                                    <span class="span editContent">Красители</span>
+                                    <span class="span editContent">{{ category.name }}</span>
                                 </li>
                             </ul>
                         </div>
@@ -54,19 +54,28 @@ export default {
     name: 'HomeView',
     data() {
         return {
+            listCategory:[],
             listProducts: [],
             listStar: [1, 2, 3, 4, 5]
         }
     },
     components: {},
     created() {
-        this.loadListProducts()
+        this.loadListProducts(),
+        this.loadListCategory()
     },
     methods: {
         async loadListProducts() {
             this.listProducts = await fetch(
                 `${store.getters.getServerUrl}/products`
             ).then(response => response.json())
+            console.log(this.listProducts)
+        },
+        async loadListCategory() {
+            this.listCategory = await fetch(
+                `${store.getters.getServerUrl}/category`
+            ).then(response => response.json())
+            console.log(this.listProducts)
         },
         goTo(id) {
             this.$router.push({ name: 'ProductView', params: { id: id } })

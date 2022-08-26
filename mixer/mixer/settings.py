@@ -87,11 +87,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'mixer_db',
-        'USER':'aleks',
-        'PASSWORD':'ural918942',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'NAME': 'mixer_db',
+        'USER': 'aleks',
+        'PASSWORD': 'ural918942',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -151,6 +151,7 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
     "http://127.0.0.1:8000"
 ]
+# CORS_ALLOWED_ORIGINS = ["http://localhost:8080", "http://127.0.0.1:8000"]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -159,11 +160,14 @@ REST_FRAMEWORK = {
         # 'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
         # 'rest_framework_social_oauth2.authentication.SocialAuthentication',
     ),
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permission.IsAuthenticated',
+    # ),
     # 'DEFAULT_FILTER_BACKENDS': (
     #     'django_filters.rest_framework.DjangoFilterBackend',
     # ),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 1
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # 'PAGE_SIZE': 8
 }
 
 EMAIL_USE_TLS = True
@@ -171,8 +175,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'akositsyn88@gmail.com'
 EMAIL_HOST_PASSWORD = 'yutlxxuhamklpmpt'
 EMAIL_PORT = 587
-
-
 
 
 DJOSER = {
