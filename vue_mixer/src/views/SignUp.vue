@@ -28,11 +28,11 @@ export default {
             const formData = {
                 username: this.username,
                 password: this.password,
-                emal: this.email
+                email: this.email
             }
 
             axios
-                .post('/api/v1/users/', formData)
+                .post('/api/v1/auth/users/', formData)
                 .then(response => {
                     this.$router.push('/log-in')
                     console.log(response)
