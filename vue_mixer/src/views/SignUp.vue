@@ -2,9 +2,9 @@
     <div class="singup">
         <h1>Регистрация</h1>
         <form @submit.prevent="submitForm">
-            <input type="username" name="username" v-model="username">
-            <input type="password" name="password" v-model="password">
-            <input type="email" name="email" v-model="email">
+            <input type="username" name="username" v-model="username" placeholder="username">
+            <input type="password" name="password" v-model="password" placeholder="password">
+            <input type="email" name="email" v-model="email" placeholder="name@example.com">
             <button type="submit">Зарегистрироваться</button>
         </form>
     </div>
@@ -37,9 +37,9 @@ export default {
                     this.$router.push('/log-in')
                     console.log(response)
                 })
-                // .catch(error => {
-                //     console.log(error)
-                // })
+                .catch(error => {
+                    console.log(error)
+                })
         }
     }
 }
