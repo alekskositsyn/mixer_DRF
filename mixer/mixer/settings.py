@@ -176,11 +176,15 @@ EMAIL_HOST_USER = 'akositsyn88@gmail.com'
 EMAIL_HOST_PASSWORD = 'yutlxxuhamklpmpt'
 EMAIL_PORT = 587
 
+DOMAIN_FRONT = "http://127.0.0.1:8080"
 
 DJOSER = {
     'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
     'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': '#/activate/{uid}/{token}',
+    'EMAIL': {
+            'activation': 'authapp.email.ActivationEmail'
+    },
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {},
 }
