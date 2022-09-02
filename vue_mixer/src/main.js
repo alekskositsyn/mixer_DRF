@@ -20,7 +20,7 @@ library.add(faShoppingBasket, faMagnifyingGlass, faVk, faSolidStar, faRegularSta
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 
-axios.defaults.baseURL = "http://127.0.0.1:8000"
+axios.defaults.baseURL = "http://127.0.0.1:8000/api/v1"
 
 Vue.config.productionTip = false
 

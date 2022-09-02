@@ -33,7 +33,7 @@ export default {
       }
 
       axios
-        .post('api/v1/auth/jwt/create', formData)
+        .post('/auth/jwt/create', formData)
         .then(
           response => {
             console.log(response)

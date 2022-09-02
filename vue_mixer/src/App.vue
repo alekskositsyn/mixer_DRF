@@ -41,7 +41,7 @@ export default {
       }
 
       axios
-        .post('/api/v1/auth/jwt/refresh/', accessData)
+        .post('/auth/jwt/refresh/', accessData)
         .then(response => {
           const access = response.data.access
 

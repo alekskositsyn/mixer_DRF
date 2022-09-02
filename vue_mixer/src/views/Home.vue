@@ -49,7 +49,6 @@
 </template>
 
 <script>
-import store from '@/store'
 import axios from 'axios'
 
 export default {
@@ -69,7 +68,7 @@ export default {
     methods: {
         loadListProducts() {
             axios
-                .get('api/v1/products/')
+                .get('/products/')
                 .then(response => {
                     this.listProducts = response.data
                 })
@@ -77,24 +76,12 @@ export default {
         },
         loadListCategory() {
             axios
-                .get('api/v1/category/')
+                .get('/category/')
                 .then(response => {
                     this.listCategory = response.data
                 })
                 .catch(error => console.log(error))
         },
-        // async loadListProducts() {
-        //     this.listProducts = await fetch(
-        //         `${store.getters.getServerUrl}/products`
-        //     ).then(response => response.json())
-        //     console.log(this.listProducts)
-        // },
-        // async loadListCategory() {
-        //     this.listCategory = await fetch(
-        //         `${store.getters.getServerUrl}/category`
-        //     ).then(response => response.json())
-        //     console.log(this.listProducts)
-        // },
         goTo(id) {
             this.$router.push({ name: 'ProductView', params: { id: id } })
         }

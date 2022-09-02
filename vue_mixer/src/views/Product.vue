@@ -46,6 +46,7 @@
 
 <script>
 import store from '@/store'
+import axios from 'axios'
 import Review from '../components/Review'
 export default {
     name: 'Product',
@@ -59,21 +60,26 @@ export default {
     },
     created() {
         this.loadProduct(),
-        this.loadReviews()
+            this.loadReviews()
     },
     methods: {
         async loadProduct() {
-            this.product = await fetch(
-                `${store.getters.getServerUrl}/products/${this.id}`
-            ).then(response => response.json())
-            // console.log(this.product.reviews)
+            axios
+                .get(`/products/${this.id}`)
+                .then(response => {
+                    console.log(response)
+                    this.product = response.data
+                })
+                .catch(error => console.log(error))
         },
         async loadReviews() {
-            this.product_reviews = await fetch(
-                `${store.getters.getServerUrl}/product/reviews/${this.id}`
-            ).then(response => response.json())
-            console.log(this.product_reviews)
-
+            axios
+                .get(`/product/reviews/${this.id}`)
+                .then(response => {
+                    console.log(response)
+                    this.product_reviews = response.data
+                })
+                .catch(error => console.log(error))
         }
     }
 }
