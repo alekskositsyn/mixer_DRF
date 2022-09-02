@@ -17,7 +17,7 @@ class ActivationEmail(email.ActivationEmail):
         context["uid"] = utils.encode_uid(user.pk)
         context["token"] = default_token_generator.make_token(user)
         context["url"] = settings.ACTIVATION_URL.format(**context)
-        context["domain_front"] = DOMAIN_FRONT
+        # context["domain_front"] = DOMAIN_FRONT
 
         return context
 

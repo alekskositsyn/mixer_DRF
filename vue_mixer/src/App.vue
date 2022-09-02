@@ -1,48 +1,59 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/sign-up">Sign Up</router-link> |
-      <router-link to="/log-in">Log In</router-link>
-    </nav>
+    <Nav />
     <router-view />
+    <Footer />
+    <!-- <router-link to="/sign-up">Sign Up</router-link> |
+      <router-link to="/log-in">Log In</router-link> -->
   </div>
 </template>
 <script>
 import axios from "axios";
+import Nav from "./components/Nav.vue";
+import Footer from "./components/Footer.vue";
+
 
 export default {
   name: 'App',
+  components: { Nav, Footer },
+
   beforeCreate() {
     this.$store.commit('initializeStore')
-    const token = this.$store.state.token
 
-    if (token) {
-      axios.defaults.headers.common['Authorization'] = "Token" + token
+    const access = this.$store.state.access
+
+    if (access) {
+      axios.defaults.headers.common['Authorization'] = "JWT" + token
     } else {
       axios.defaults.headers.common['Authorization'] = ""
+    }
+  },
+  mounted() {
+    // Получение токена через 5 секунд
+    // setInterval(() => {
+    //   this.getAccess()
+    // }, 5000) 
+  },
+  methods: {
+    getAccess(e) {
+      const accessData = {
+        refresh: this.$store.state.refresh
+      }
+
+      axios
+        .post('/api/v1/auth/jwt/refresh/', accessData)
+        .then(response => {
+          const access = response.data.access
+
+          localStorage.setItem('access', access)
+          this.$store.commit('setAccess', access)
+        })
+        .catch(error =>
+          console.log(error)
+        )
     }
   }
 }
 </script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

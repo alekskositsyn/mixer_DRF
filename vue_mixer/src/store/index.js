@@ -1,33 +1,36 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    token: "",
-    isAuthenticated: false,
+    access: "",
+    refresh: "",
+    isAuthenticated: false
   },
   getters: {},
   mutations: {
     initializeStore(state) {
-      if (localStorage.getItem('token')) {
-        state.token = localStorage.getItem('token')
+      if (localStorage.getItem('access')) {
+        state.access = localStorage.getItem('access')
+        state.refresh = localStorage.getItem('refresh')
         state.isAuthenticated = true
       } else {
-        state.token = ""
-        state.isAuthenticated = false
+        state.access = ''
+        state.refresh = ''
       }
     },
-    setToken(state, token) {
-      state.token = token
+    setAccess(state, access) {
+      state.access = access
       state.isAuthenticated = true
     },
-    removeToken(state, token) {
-      state.token = ""
-      state.isAuthenticated = false
+    setRefresh(state,refresh) {
+      state.refresh = refresh
     }
   },
   actions: {},
-  modules: {}
+  modules: {
+  }
 })

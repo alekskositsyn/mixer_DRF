@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 
+
 urlpatterns = [
     path('api/v1/', include('mainapp.urls', namespace='mainapp')),
     path('api-auth/', include('rest_framework.urls')),
