@@ -178,9 +178,9 @@ EMAIL_PORT = 587
 DOMAIN_FRONT = "127.0.0.1:8080"
 
 DJOSER = {
-    'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
+    'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/?mixer=___{uid}___{token}___',
     'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': '#/activate/{uid}/{token}',
+    'ACTIVATION_URL': '#/activate/?mixer=___{uid}___{token}___',
     'EMAIL': {
         'activation': 'authapp.email.ActivationEmail'
     },

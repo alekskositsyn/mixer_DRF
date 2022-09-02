@@ -1,17 +1,16 @@
 <template>
     <div class="singup">
-        <!-- <main class="form-signin  m-auto"> -->
+        <main class="form-signin  m-auto">
             <form @submit.prevent="submitForm">
-                <img class="mb-4" src="../assets/logo.png" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 fw-normal">Пожалуйста, зарегистрируйтесь</h1>
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingUsername" placeholder="username" v-model.trim="username">
+                    <input type="username" class="form-control" id="floatingUsername" placeholder="username" v-model.trim="username">
                     <label for="floatingUsername">Login</label>
                 </div>
-                <!-- <div class="form-floating">
+                <div class="form-floating">
                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" v-model.trim="email">
                     <label for="floatingInput">Email address</label>
-                </div> -->
+                </div>
                 <div class="form-floating">
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password" v-model.trim="password">
                     <label for="floatingPassword">Password</label>
@@ -26,7 +25,7 @@
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
                 <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </form>
-        <!-- </main> -->
+        </main>
     </div>
 </template>
 
@@ -39,7 +38,7 @@ export default {
         return {
             username: '',
             password: '',
-            // email: ''
+            email: ''
         }
     },
     methods: {
@@ -47,7 +46,7 @@ export default {
             const formData = {
                 username: this.username,
                 password: this.password,
-                // email: this.email
+                email: this.email
             }
 
             axios

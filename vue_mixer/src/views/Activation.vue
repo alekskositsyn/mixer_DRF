@@ -5,9 +5,16 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
-  name: 'Activation'
+  name: 'Activation',
+  async created() {
+    let uid = this.$route.query
+    // let token = this.$route.query.murr_code.split("___")[2];
+    console.log(uid)
+    // console.log(token)
+
+  }
 }
 </script>

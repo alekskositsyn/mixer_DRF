@@ -5,16 +5,18 @@ import Product from '../views/Product'
 import SignUp from '../views/SignUp'
 import LogIn from '../views/LogIn'
 import Activation from '../views/Activation'
+import store from '@/store/index'
 Vue.use(VueRouter)
 
 const routes = [
+  
   {
-    path: '',
+    path: '/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/:id',
+    path: '/products/:id',
     name: 'ProductView',
     component: Product,
     props: true
@@ -32,11 +34,29 @@ const routes = [
   {
     path: '/activate',
     name: 'Activation',
-    component: Activation
+    meta: {},
+    component: () => import ('../views/Activation')
   },
 ]
 
+// router.beforeEach((to, from, next) => {
+//   const isTokenExpectedAndExist =
+//     (to.matched.some((r) => r.meta.accessTokenExpected) &&
+//       store.state.access) ||
+//     !to.matched.some((r) => r.meta.accessTokenExpected);
+//   if (isTokenExpectedAndExist) {
+//     return next();
+//   }
+//   store.dispatch("popUpMessage", {
+//     message: "Требуется авторизация 😳",
+//     type: "warning",
+//   });
+//   router.push("/");
+//   store.dispatch("changeShowLoginForm_actions");
+// });
+
 const router = new VueRouter({
+  mode: "history",
   routes
 })
 

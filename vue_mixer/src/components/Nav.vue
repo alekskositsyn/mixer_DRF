@@ -22,8 +22,8 @@
             <img src="https://github.com/mdo.png" alt="mdo" class="user_avatar rounded-circle">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <router-link v-if="$store.state.isAuthenticated" class="dropdown-item" to='/log-in'> Заказы </router-link>
-            <router-link v-if="$store.state.isAuthenticated" class="dropdown-item" to='/log-in'> Профиль </router-link>
+            <router-link class="dropdown-item" to='/log-in'> Вход </router-link>
+            <router-link class="dropdown-item" to='/sign-up'> Регистрация </router-link>
             <li><a class="dropdown-item" href="#">Профиль</a></li>
             <li>
               <hr class="dropdown-divider">
