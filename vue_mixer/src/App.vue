@@ -40,17 +40,17 @@ export default {
         refresh: this.$store.state.refresh
       }
 
-      axios
-        .post('/auth/jwt/refresh/', accessData)
-        .then(response => {
-          const access = response.data.access
+      // axios
+      //   .post('/auth/jwt/refresh/', accessData)
+      //   .then(response => {
+      //     const access = response.data.access
 
-          localStorage.setItem('access', access)
-          this.$store.commit('setAccess', access)
-        })
-        .catch(error =>
-          console.log(error)
-        )
+      //     localStorage.setItem('access', access)
+      //     this.$store.commit('setAccess', access)
+      //   })
+      //   .catch(error =>
+      //     console.log(error)
+      //   )
     }
   }
 }
