@@ -1,8 +1,8 @@
 <template>
-    <div class="login">
+    <div class="login text-center">
 
         <h1 v-if="activationStatus">Поздравляю вы активировали аккаунт!</h1>
-        <h1 v-if="!activationStatus">Устаревший токен для данного пользователя.</h1>
+        <h1 v-if="errorMessage">{{ errorMessage }}</h1>
         <router-link class="btn btn-primary" to='/log-in'> Вход на сайт. </router-link>
 
     </div>
@@ -16,7 +16,8 @@ export default {
     name: 'Activation',
     data() {
         return {
-            activationStatus: false
+            activationStatus: false,
+            errorMessage: ''
 
         }
     },
@@ -32,12 +33,15 @@ export default {
         axios
             .post('auth/users/activation/', activationData)
             .then(response => {
-                if (response.status === '204') {
+                if (response.status == 204) {
                     this.activationStatus = true
                 }
                 console.log(response.status)
             })
-            .catch(error => { console.log(error) })
+            .catch(error => {
+                console.log(error)
+                this.errorMessage = error.response.data.detail
+            })
     }
 }
 </script>

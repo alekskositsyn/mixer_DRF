@@ -28,12 +28,12 @@ export default {
       axios.defaults.headers.common['Authorization'] = ""
     }
   },
-  mounted() {
-    // Получение токена через 5 секунд
-    // setInterval(() => {
-    //   this.getAccess()
-    // }, 5000) 
-  },
+  // mounted() {
+  //   // Получение токена через 5 секунд
+  //   // setInterval(() => {
+  //   //   this.getAccess()
+  //   // }, 5000) 
+  // },
   methods: {
     getAccess(e) {
       const accessData = {

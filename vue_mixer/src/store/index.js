@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     access: "",
     refresh: "",
+    shopUserName: "",
     isAuthenticated: false
   },
   getters: {},
@@ -26,11 +27,19 @@ export default new Vuex.Store({
       state.access = access
       state.isAuthenticated = true
     },
-    setRefresh(state,refresh) {
+    setRefresh(state, refresh) {
       state.refresh = refresh
+    },
+    setShopUser(state, username) {
+      state.shopUserName = username
+    },
+    logout(state) {
+      state.access = '',
+      state.refresh = '',
+      state.shopUserName = '',
+      state.isAuthenticated = ''
     }
   },
   actions: {},
-  modules: {
-  }
+  modules: {}
 })

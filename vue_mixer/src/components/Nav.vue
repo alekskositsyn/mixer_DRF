@@ -22,13 +22,13 @@
             <img src="https://github.com/mdo.png" alt="mdo" class="user_avatar rounded-circle">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <router-link class="dropdown-item" to='/log-in'> Вход </router-link>
-            <router-link class="dropdown-item" to='/sign-up'> Регистрация </router-link>
+            <router-link v-if="!$store.state.isAuthenticated" class="dropdown-item" to='/log-in'> Вход </router-link>
+            <router-link v-if="!$store.state.isAuthenticated" class="dropdown-item" to='/sign-up'> Регистрация </router-link>
             <li><a class="dropdown-item" href="#">Профиль</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Выход</a></li>
+            <li><a class="dropdown-item" @click="logout" href="#">Выход</a></li>
           </ul>
         </div>
         <a href="#" class="basket">
@@ -40,9 +40,18 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
+
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  methods: {
+    logout() {
+      this.$store.commit('logout')
+    }
+  }
 }
+
 </script>
 
 <style scoped>
