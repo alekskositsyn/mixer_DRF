@@ -64,6 +64,10 @@ export default {
                 this.password = "";
                 this.$router.push('/');
             };
+            if (result.error) {
+                console.log(result)
+                this.errorMessage = result.errorMessage
+            }
         }
         // submitForm(e) {
         //     axios.defaults.headers.common['Authorization'] = ''
