@@ -31,7 +31,7 @@
                                         <li v-for="star in listStar" :key="star">
                                             <a href="#" class="">
                                                 <span>
-                                                    <font-awesome-icon icon=""
+                                                    <font-awesome-icon
                                                         :icon="star <= product.middle_rating ? 'fa-solid fa-star' : 'fa-regular fa-star'">
                                                     </font-awesome-icon>
                                                 </span>
@@ -63,7 +63,7 @@ export default {
     components: {},
     created() {
         this.loadListProducts(),
-        this.loadListCategory()
+            this.loadListCategory()
     },
     methods: {
         loadListProducts() {

@@ -27,7 +27,7 @@ class CategoryListView(ListAPIView):
 class ProductListView(ListAPIView):
     """Вывод списка продуктов"""
     serializer_class = ProductListSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         products = Product.objects.filter(is_active=True).annotate(

@@ -44,6 +44,7 @@ export default new Vuex.Store({
             state.access = '',
                 state.refresh = '',
                 state.shopUserId = '',
+                state.shopUserName = '',
                 state.isAuthenticated = ''
         }
     },
