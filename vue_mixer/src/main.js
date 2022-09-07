@@ -18,7 +18,9 @@ import { faStar as faSolidStar} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faShoppingBasket, faMagnifyingGlass, faVk, faSolidStar, faRegularStar, faRubleSign)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.use(ElementUI);
+
 
 
 axios.defaults.baseURL = "http://127.0.0.1:8000/api/v1"

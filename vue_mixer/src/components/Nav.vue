@@ -47,7 +47,7 @@ export default {
   name: 'Nav',
   methods: {
     logout() {
-      this.$store.commit('logout')
+      this.$store.commit('logout_mutation')
     }
   }
 }

@@ -202,7 +202,6 @@ SIMPLE_JWT = {
     # 'AUDIENCE': None,
     # 'ISSUER': None,
 
-    # 'AUTH_HEADER_TYPES': ('JWT',),
     'USER_ID_FIELD': 'id',
     'USER_ID_CLAIM': 'user_id',
 
