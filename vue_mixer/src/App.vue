@@ -23,7 +23,7 @@ export default {
     const access = this.$store.state.access
 
     if (access) {
-      axios.defaults.headers.common['Authorization'] = "JWT" + token
+      axios.defaults.headers.common['Authorization'] = "JWT" + access
     } else {
       axios.defaults.headers.common['Authorization'] = ""
     }

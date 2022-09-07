@@ -69,16 +69,9 @@ export default new Vuex.Store({
                     localStorage.setItem("refresh", data.refresh)
                 }
             } catch (e) {
-                // console.log(e)
-                // console.log(e.response.data)
-                // errorMessage = e.response.data.detail
                 return {
                     error: true,
                     errorMessage: e.response.data.detail,
-                    // isAuthenticated: !(
-                    //   e.response.data.non_field_errors[0] ===
-                    //   "Unable to log in with provided credentials."
-                    // ),
                 };
             }
             return {
