@@ -69,8 +69,10 @@ export default new Vuex.Store({
 
                     localStorage.setItem("access", data.access)
                     localStorage.setItem("refresh", data.refresh)
+                    sessionStorage.setItem("username", payload.username)
                 }
             } catch (e) {
+                console.log(e)
                 return {
                     error: true,
                     errorMessage: e.response.data.detail,

@@ -27,7 +27,7 @@
                                             icon="fa-solid fa-ruble-sign"></font-awesome-icon>
                                     </div>
                                     <a class="btn btn-danger" href="#">В корзину</a>
-                                    <ul class="stars">
+                                    <ul class="stars stars-ul">
                                         <li v-for="star in listStar" :key="star">
                                             <a href="#" class="">
                                                 <span>
@@ -89,6 +89,9 @@ export default {
 }
 </script>
 <style scoped>
+.stars-ul {
+    padding-left: 0%;
+}
 .w3layouts-box-list {
     padding-left: 2rem;
 }

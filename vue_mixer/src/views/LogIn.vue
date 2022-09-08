@@ -5,18 +5,18 @@
                 <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
                 <h1 v-if="errorMessage">{{ errorMessage }}</h1>
 
-                <div class="form-floating">
+                <div class="form-floating mt-2">
                     <input type="username" class="form-control" name="username" v-model="username"
                         placeholder="username">
                     <label for="floatingUsername">Логин</label>
                 </div>
-                <div class="form-floating">
+                <div class="form-floating mt-2">
                     <input type="password" class="form-control" name="password" v-model="password"
                         placeholder="password">
                     <label for="floatingUsername">Пароль</label>
                 </div>
                 <!-- <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button> -->
-                <el-button native-type="submit" :loading="loading">
+                <el-button class="w-100 mt-2" native-type="submit" :loading="loading">
                     Войти
                 </el-button>
 

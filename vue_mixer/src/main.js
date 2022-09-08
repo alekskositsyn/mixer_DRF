@@ -10,13 +10,15 @@ import ElementUI from 'element-ui'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faVk } from '@fortawesome/free-brands-svg-icons'
+import {faSmile} from '@fortawesome/free-solid-svg-icons'
+import {faGrinBeam} from '@fortawesome/free-solid-svg-icons'
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faStar as faRegularStar } from '@fortawesome/free-regular-svg-icons'
 import { faRubleSign } from '@fortawesome/free-solid-svg-icons'
 import { faStar as faSolidStar} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faShoppingBasket, faMagnifyingGlass, faVk, faSolidStar, faRegularStar, faRubleSign)
+library.add(faShoppingBasket, faMagnifyingGlass, faVk, faSolidStar, faRegularStar, faRubleSign, faSmile, faGrinBeam)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(ElementUI);
