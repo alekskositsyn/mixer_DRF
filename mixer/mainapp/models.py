@@ -1,12 +1,21 @@
-from tabnanny import verbose
 from django.db import models
+from django.db.models.signals import pre_save
+from django.utils.text import slugify
+from django.template import defaultfilters
+from unidecode import unidecode
+
+import string
+import random
 
 
 class ProductCategory(models.Model):
+    """Модель категорий продуктов"""
     name = models.CharField('имя категории', max_length=64)
     description = models.TextField('описание категории', blank=True)
     is_active = models.BooleanField(
         verbose_name='активна', default=True, db_index=True)
+    slug = models.SlugField(
+        verbose_name='URL', max_length=130, unique=True, db_index=True)
 
     def __str__(self):
         return f'{self.name}'
@@ -17,6 +26,7 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
+    """Модель продуктов"""
     category = models.ForeignKey(ProductCategory,
                                  on_delete=models.CASCADE,
                                  verbose_name='категория продукта')
@@ -32,7 +42,8 @@ class Product(models.Model):
         verbose_name='количество товара', default=0)
     is_active = models.BooleanField(
         verbose_name='активна', default=True, db_index=True)
-    url = models.SlugField(max_length=130, unique=True)
+    slug = models.SlugField(
+        verbose_name='URL', max_length=130, unique=True, db_index=True)
 
     def __str__(self):
         return f'{self.name} ({self.category.name})'
@@ -44,6 +55,33 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
+
+
+def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
+    """Функция, генерирующая набор случайных строковых символов"""
+
+    return ''.join(random.choice(chars) for _ in range(size))
+
+
+def pre_save_receiver(sender, instance, *args, **kwargs):
+    """Функция получения и сохранения уникального slug"""
+
+    if instance.slug:
+        print(instance.slug)
+        instance.slug = instance.slug
+    else:
+        slug = defaultfilters.slugify(unidecode(instance.name))
+        slugs = sender.objects.filter()
+        for slug_old in slugs.values("slug"):
+            if slug in slug_old["slug"]:
+                instance.slug = "%s-%s" % (slug,
+                                           random_string_generator(size=4))
+                break
+            else:
+                instance.slug = slug
+
+
+# pre_save.connect(pre_save_receiver, sender=None)
 
 
 class RatingStar(models.Model):

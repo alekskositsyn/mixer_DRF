@@ -1,13 +1,14 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
+
 
 
 urlpatterns = [
-    path('', include('mainapp.urls', namespace='mainapp')),
-    path('admin/', admin.site.urls),
+    path('api/v1/', include('mainapp.urls', namespace='mainapp')),
     path('api-auth/', include('rest_framework.urls')),
+    path('api/v1/', include('authapp.urls', namespace='authapp')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
     path('auth/', include('djoser.urls.jwt')),
