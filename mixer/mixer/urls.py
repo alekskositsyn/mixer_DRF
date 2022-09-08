@@ -9,7 +9,7 @@ urlpatterns = [
     path('api/v1/', include('mainapp.urls', namespace='mainapp')),
     path('api-auth/', include('rest_framework.urls')),
     path('api/v1/', include('authapp.urls', namespace='authapp')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), # add path
 ]
 
 if settings.DEBUG:
