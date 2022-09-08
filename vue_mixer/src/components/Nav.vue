@@ -29,7 +29,8 @@
             </router-link>
             <li v-if="$store.state.isAuthenticated"><a class="dropdown-item" href="#">Профиль</a></li>
             <!-- <li><a class="dropdown-item" @click="logout" href="#">Выход</a></li> -->
-            <router-link v-if="$store.state.isAuthenticated" @click="logout" class="dropdown-item" to='/'>Выход
+            <router-link v-if="$store.state.isAuthenticated"  class="dropdown-item" to='/'> 
+              <span @click="logout">Выход</span> 
             </router-link>
           </ul>
         </div>

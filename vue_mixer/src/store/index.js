@@ -45,7 +45,7 @@ export default new Vuex.Store({
                 state.refresh = '',
                 state.shopUserId = '',
                 state.shopUserName = '',
-                state.isAuthenticated = '',
+                state.isAuthenticated = false,
                 localStorage.clear()
         }
     },
@@ -69,7 +69,7 @@ export default new Vuex.Store({
 
                     localStorage.setItem("access", data.access)
                     localStorage.setItem("refresh", data.refresh)
-                    sessionStorage.setItem("username", payload.username)
+                    // sessionStorage.setItem("username", payload.username)
                 }
             } catch (e) {
                 console.log(e)
