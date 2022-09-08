@@ -246,10 +246,6 @@ li.breadcrumb-item a {
 }
 
 /*-- /New-Arrivals --*/
-.product-shoe-info {
-  padding: 0 0 15px 0;
-  border: 1px solid #e4e4e4;
-}
 
 .item-info-product h4 a {
   color: #080808;
@@ -623,13 +619,18 @@ h3.sear-head {
   text-align: center;
   height: 270px;
 }
-
+.productCard {
+  margin-top: 15px;
+}
 .product .nameOfProduct {
   color: black;
 }
 
 .product .linkBuyProduct {
   display: block;
+  text-decoration: none;
+  height: 65%;
+
 }
 
 
@@ -638,7 +639,8 @@ h3.sear-head {
 }
 
 .product img {
-  width: 70%;
+  width: 100px;
+  height: 100px;
   margin: 5px;
 }
 

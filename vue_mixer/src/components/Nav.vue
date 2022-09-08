@@ -19,16 +19,19 @@
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" class="user_avatar rounded-circle">
+            <font-awesome-icon v-if="!$store.state.isAuthenticated" class="user_avatar" icon="fas fa-smile" />
+            <font-awesome-icon v-if="$store.state.isAuthenticated" class="user_avatar" icon="fas fa-grin-beam" />
+            <!-- <img src="https://github.com/mdo.png" alt="mdo" class="user_avatar rounded-circle"> -->
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
             <router-link v-if="!$store.state.isAuthenticated" class="dropdown-item" to='/log-in'> Вход </router-link>
-            <router-link v-if="!$store.state.isAuthenticated" class="dropdown-item" to='/sign-up'> Регистрация </router-link>
-            <li><a class="dropdown-item" href="#">Профиль</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" @click="logout" href="#">Выход</a></li>
+            <router-link v-if="!$store.state.isAuthenticated" class="dropdown-item" to='/sign-up'> Регистрация
+            </router-link>
+            <li v-if="$store.state.isAuthenticated"><a class="dropdown-item" href="#">Профиль</a></li>
+            <!-- <li><a class="dropdown-item" @click="logout" href="#">Выход</a></li> -->
+            <router-link v-if="$store.state.isAuthenticated"  class="dropdown-item" to='/'> 
+              <span @click="logout">Выход</span> 
+            </router-link>
           </ul>
         </div>
         <a href="#" class="basket">
@@ -48,6 +51,7 @@ export default {
   methods: {
     logout() {
       this.$store.commit('logout_mutation')
+      // this.$router.push('/');
     }
   }
 }
@@ -55,8 +59,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .user_avatar {
   width: 32px;
   height: 32px;
@@ -96,7 +98,7 @@ export default {
   outline: 0;
 }
 
-.basket{
+.basket {
   color: #000000b5;
   margin-left: 3rem;
 }
@@ -105,8 +107,8 @@ export default {
 .fa-basket-shopping {
   margin-right: 10px;
   margin-left: 5px;
-  font-size: 3em;
-  
+  font-size: xx-large
+
 }
 
 .fa-basket-shopping:hover {
@@ -115,5 +117,9 @@ export default {
 
 .fa-basket-shopping:active {
   opacity: 0;
+}
+
+.el-icon-user-solid {
+  font-size: 3em;
 }
 </style>
