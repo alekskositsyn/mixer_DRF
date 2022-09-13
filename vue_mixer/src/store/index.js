@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import jwt_decode from "jwt-decode";
 import showPopUpMessage from './showPopUpMessage'
 import axios from 'axios'
+import basket from "@/store/modules/basket";
+import products from "@/store/modules/products";
 
 
 Vue.use(Vuex)
@@ -41,12 +43,12 @@ export default new Vuex.Store({
             state.shopUserName = username
         },
         logout_mutation(state) {
-            state.access = '',
-                state.refresh = '',
-                state.shopUserId = '',
-                state.shopUserName = '',
-                state.isAuthenticated = false,
-                localStorage.clear()
+            state.access = ''
+            state.refresh = ''
+            state.shopUserId = ''
+            state.shopUserName = ''
+            state.isAuthenticated = false
+            localStorage.clear()
         }
     },
     actions: {
@@ -85,6 +87,7 @@ export default new Vuex.Store({
         },
     },
     modules: {
-        showPopUpMessage
+        showPopUpMessage,
+        products,
     }
 })

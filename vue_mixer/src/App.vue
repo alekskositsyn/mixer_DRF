@@ -3,8 +3,6 @@
     <Nav />
     <router-view />
     <Footer />
-    <!-- <router-link to="/sign-up">Sign Up</router-link> |
-      <router-link to="/log-in">Log In</router-link> -->
   </div>
 </template>
 <script>
