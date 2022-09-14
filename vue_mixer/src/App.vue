@@ -16,15 +16,15 @@ export default {
   components: { Nav, Footer },
 
   beforeCreate() {
-    this.$store.commit('initializeStore')
+    this.$store.commit('auth/initializeStore')
 
-    const access = this.$store.state.access
+    // const access = this.$store.state.access
 
-    if (access) {
-      axios.defaults.headers.common['Authorization'] = "Bearer " + access
-    } else {
-      axios.defaults.headers.common['Authorization'] = ""
-    }
+    // if (access) {
+    //   axios.defaults.headers.common['Authorization'] = "Bearer " + access
+    // } else {
+    //   axios.defaults.headers.common['Authorization'] = ""
+    // }
   },
   // mounted() {
   //   // Получение токена через 5 секунд

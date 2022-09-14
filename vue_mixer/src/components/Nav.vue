@@ -19,17 +19,15 @@
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <font-awesome-icon v-if="!$store.state.isAuthenticated" class="user_avatar" icon="fas fa-smile" />
-            <font-awesome-icon v-if="$store.state.isAuthenticated" class="user_avatar" icon="fas fa-grin-beam" />
-            <!-- <img src="https://github.com/mdo.png" alt="mdo" class="user_avatar rounded-circle"> -->
+            <font-awesome-icon v-if="!isAuthenticated" class="user_avatar" icon="fas fa-smile" />
+            <font-awesome-icon v-if="isAuthenticated" class="user_avatar" icon="fas fa-grin-beam" />
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <router-link v-if="!$store.state.isAuthenticated" class="dropdown-item" to='/log-in'> Вход </router-link>
-            <router-link v-if="!$store.state.isAuthenticated" class="dropdown-item" to='/sign-up'> Регистрация
+            <router-link v-if="!isAuthenticated" class="dropdown-item" to='/log-in'> Вход </router-link>
+            <router-link v-if="!isAuthenticated" class="dropdown-item" to='/sign-up'> Регистрация
             </router-link>
-            <li v-if="$store.state.isAuthenticated"><a class="dropdown-item" href="#">Профиль</a></li>
-            <!-- <li><a class="dropdown-item" @click="logout" href="#">Выход</a></li> -->
-            <router-link v-if="$store.state.isAuthenticated"  class="dropdown-item" to='/'>
+            <li v-if="isAuthenticated"><a class="dropdown-item" href="#">Профиль</a></li>
+            <router-link v-if="isAuthenticated"  class="dropdown-item" to='/'>
               <span @click="logout">Выход</span> 
             </router-link>
           </ul>
@@ -43,15 +41,17 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapState } from "vuex";
 
 
 export default {
   name: 'Nav',
+  computed: mapState({
+    isAuthenticated: state => state.auth.isAuthenticated,
+  }),
   methods: {
     logout() {
-      this.$store.commit('logout_mutation')
-      // this.$router.push('/');
+      this.$store.commit('auth/logout_mutation')
     }
   }
 }

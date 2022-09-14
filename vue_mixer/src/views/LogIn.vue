@@ -15,7 +15,6 @@
                         placeholder="password">
                     <label for="floatingUsername">Пароль</label>
                 </div>
-                <!-- <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button> -->
                 <el-button class="w-100 mt-2" native-type="submit" :loading="loading">
                     Войти
                 </el-button>
@@ -27,7 +26,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { mapActions } from 'vuex'
 
 
@@ -43,7 +41,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            createToken: "createToken",
+            createToken: "auth/createToken",
         }),
         async submitForm(e) {
             this.loading = true;
@@ -62,8 +60,8 @@ export default {
                 await this.$store.dispatch("popUpMessage", dataForPopUpMessage);
                 this.username = "";
                 this.password = "";
-                this.$router.push('/');
-            };
+                await this.$router.push('/');
+            }
             if (result.error) {
                 console.log(result)
                 this.errorMessage = result.errorMessage

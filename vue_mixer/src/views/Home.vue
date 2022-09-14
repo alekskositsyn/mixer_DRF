@@ -7,7 +7,7 @@
             <div class="left-side my-4">
               <h3 class="sear-head editContent">Категории</h3>
               <ul class="w3layouts-box-list">
-                <li v-for="category in listCategory" :key="category.id" class="editContent">
+                <li v-for="category in categories" :key="category.id" class="editContent">
                   <input type="checkbox" class="checked">
                   <span class="span editContent">{{ category.name }}</span>
                 </li>
@@ -51,7 +51,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import {mapState, mapActions} from 'vuex'
 
 
@@ -60,37 +59,19 @@ export default {
   data() {
     return {
       popUP: false,
-      // listCategory: [],
-      // listProducts: [],
       listStar: [1, 2, 3, 4, 5]
     }
   },
   computed: mapState({
     products: state => state.products.listProducts,
+    categories: state => state.products.listCategory
   }),
   components: {},
   created() {
     this.$store.dispatch('products/getAllProducts')
-    // this.loadListProducts(),
-    //     this.loadListCategory()
+    this.$store.dispatch('products/getAllCategory')
   },
   methods: {
-    // loadListProducts() {
-    //     axios
-    //         .get('/products/')
-    //         .then(response => {
-    //             this.listProducts = response.data
-    //         })
-    //         .catch(error => console.log(error))
-    // },
-    // loadListCategory() {
-    //     axios
-    //         .get('/category/')
-    //         .then(response => {
-    //             this.listCategory = response.data
-    //         })
-    //         .catch(error => console.log(error))
-    // },
     goTo(id) {
       this.$router.push({name: 'ProductView', params: {id: id}})
     }
@@ -99,7 +80,7 @@ export default {
 </script>
 <style scoped>
 .stars-ul {
-  padding-left: 0%;
+  padding-left: 0;
 }
 
 .w3layouts-box-list {

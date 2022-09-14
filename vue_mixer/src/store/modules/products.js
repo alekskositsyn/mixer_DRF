@@ -25,7 +25,7 @@ const actions = {
         axios
             .get('/category/')
             .then(response => {
-                commit('setListCategory', response.data)
+                commit('setCategory', response.data)
             })
             .catch(error => console.log(error))
     }
