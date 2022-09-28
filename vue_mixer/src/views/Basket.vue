@@ -15,7 +15,7 @@
                   <font-awesome-icon
                       icon="fa-solid fa-ruble-sign"></font-awesome-icon>
                 </div>
-                <a class="btn btn-danger" href="#">В корзину</a>
+                <a class="btn btn-danger" href="#" @click="addProductToCart(product)">В корзину</a>
                 <ul class="stars stars-ul">
                   <li v-for="star in listStar" :key="star">
                     <a href="#" class="">
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import {mapGetters, mapState} from 'vuex'
+import {mapActions, mapGetters, mapState} from 'vuex'
 
 export default {
   name: "Basket",
@@ -62,6 +62,9 @@ export default {
     })
   },
   methods: {
+    ...mapActions('basket', [
+      'addProductToCart'
+    ]),
     checkout(products) {
       this.$store.dispatch('cart/checkout', products)
     }

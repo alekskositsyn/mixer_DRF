@@ -4,6 +4,7 @@
 // shape: [{ id, quantity }]
 const state = () => ({
   items: [],
+  countItems: 0,
   checkoutStatus: null
 })
 
@@ -16,7 +17,8 @@ const getters = {
         id: product.id,
         name: product.name,
         price: product.price,
-        quantity: quantity
+        quantity: quantity,
+        image: product.image
       }
     })
   },
@@ -35,21 +37,21 @@ const actions = {
     commit('setCheckoutStatus', null)
     // empty cart
     commit('setCartItems', { items: [] })
-    shop.buyProducts(
-      products,
-      () => commit('setCheckoutStatus', 'successful'),
-      () => {
-        commit('setCheckoutStatus', 'failed')
-        // rollback to the cart saved before sending the request
-        commit('setCartItems', { items: savedCartItems })
-      }
-    )
+    // shop.buyProducts(
+    //   products,
+    //   () => commit('setCheckoutStatus', 'successful'),
+    //   () => {
+    //     commit('setCheckoutStatus', 'failed')
+    //     // rollback to the cart saved before sending the request
+    //     commit('setCartItems', { items: savedCartItems })
+    //   }
+    // )
   },
 
   addProductToCart ({ state, commit }, product) {
     commit('setCheckoutStatus', null)
     if (product.quantity > 0) {
-      console.log(product)
+      commit('incrementCountItem')
       const cartItem = state.items.find(item => item.id === product.id)
       if (!cartItem) {
         commit('pushProductToCart', { id: product.id })
@@ -72,6 +74,10 @@ const mutations = {
   incrementItemQuantity (state, { id }) {
     const cartItem = state.items.find(item => item.id === id)
     cartItem.quantity++
+  },
+
+  incrementCountItem (state) {
+    state.countItems++
   },
 
   setCartItems (state, { items }) {

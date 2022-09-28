@@ -53,7 +53,7 @@ export default {
   computed: mapState({
     isAuthenticated: state => state.auth.isAuthenticated,
     username: state => state.auth.shopUserName,
-    basketLength: state => state.basket.items.length,
+    basketLength: state => state.basket.countItems,
   }),
   methods: {
     logout() {
