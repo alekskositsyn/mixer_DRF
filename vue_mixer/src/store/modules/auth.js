@@ -42,6 +42,7 @@ const mutations = {
     ,
     setShopUserName_mutation(state, username) {
         state.shopUserName = username
+        localStorage.username = username
     }
     ,
     logout_mutation(state) {

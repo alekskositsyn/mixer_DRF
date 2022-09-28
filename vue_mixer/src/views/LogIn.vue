@@ -7,12 +7,12 @@
 
                 <div class="form-floating mt-2">
                     <input type="username" class="form-control" name="username" v-model="username"
-                        placeholder="username">
-                    <label for="floatingUsername">Логин</label>
+                        placeholder="Имя пользователя">
+                    <label for="floatingUsername">Имя пользователя</label>
                 </div>
                 <div class="form-floating mt-2">
                     <input type="password" class="form-control" name="password" v-model="password"
-                        placeholder="password">
+                        placeholder="Пароль">
                     <label for="floatingUsername">Пароль</label>
                 </div>
                 <el-button class="w-100 mt-2" native-type="submit" :loading="loading">

@@ -35,7 +35,7 @@
         </div>
 
         <router-link href="#" class="basket" to='/basket'>
-          <el-badge :value="basketLength" class="item" >
+          <el-badge :value="basketLength" class="item">
             <font-awesome-icon icon="fa-solid fa-basket-shopping" class="fa-basket-shopping"></font-awesome-icon>
           </el-badge>
         </router-link>
@@ -68,6 +68,10 @@ export default {
 .user_avatar {
   width: 32px;
   height: 32px;
+}
+
+.username {
+  margin-right: 12px;
 }
 
 .b-example-divider {

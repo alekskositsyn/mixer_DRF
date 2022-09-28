@@ -6,7 +6,6 @@
   </div>
 </template>
 <script>
-import axios from "axios";
 import Nav from "./components/Nav.vue";
 import Footer from "./components/Footer.vue";
 
@@ -26,12 +25,15 @@ export default {
     //   axios.defaults.headers.common['Authorization'] = ""
     // }
   },
-  // mounted() {
-  //   // Получение токена через 5 секунд
-  //   // setInterval(() => {
-  //   //   this.getAccess()
-  //   // }, 5000) 
-  // },
+  mounted() {
+    if (localStorage.username) {
+      this.$store.commit('auth/setShopUserName_mutation', localStorage.username)
+    }
+    // Получение токена через 5 секунд
+    // setInterval(() => {
+    //   this.getAccess()
+    // }, 5000)
+  },
   methods: {
     // getAccess(e) {
     //   const accessData = {
