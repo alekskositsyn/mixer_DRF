@@ -1,7 +1,7 @@
-// initial state
 import jwt_decode from "jwt-decode";
 import axios from 'axios'
 
+// initial state
 
 const state = () => ({
     access: "",
@@ -10,7 +10,9 @@ const state = () => ({
     shopUserName: "",
     isAuthenticated: false
 })
+
 // getters
+
 const getters = {}
 
 const mutations = {

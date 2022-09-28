@@ -11,12 +11,12 @@ const state = () => ({
 const getters = {
   cartProducts: (state, getters, rootState) => {
     return state.items.map(({ id, quantity }) => {
-      const product = rootState.products.all.find(product => product.id === id)
+      const product = rootState.products.listProducts.find(product => product.id === id)
       return {
         id: product.id,
-        title: product.title,
+        name: product.name,
         price: product.price,
-        quantity
+        quantity: quantity
       }
     })
   },
@@ -48,15 +48,14 @@ const actions = {
 
   addProductToCart ({ state, commit }, product) {
     commit('setCheckoutStatus', null)
-    if (product.inventory > 0) {
+    if (product.quantity > 0) {
+      console.log(product)
       const cartItem = state.items.find(item => item.id === product.id)
       if (!cartItem) {
         commit('pushProductToCart', { id: product.id })
       } else {
         commit('incrementItemQuantity', cartItem)
       }
-      // remove 1 item from stock
-      commit('products/decrementProductInventory', { id: product.id }, { root: true })
     }
   }
 }

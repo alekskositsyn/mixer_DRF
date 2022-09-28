@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import jwt_decode from "jwt-decode";
 import showPopUpMessage from './showPopUpMessage'
-import axios from 'axios'
-import basket from "@/store/modules/basket";
 import products from "@/store/modules/products";
 import auth from "@/store/modules/auth"
+import basket from "@/store/modules/basket"
 
 
 Vue.use(Vuex)
@@ -18,6 +16,7 @@ export default new Vuex.Store({
     modules: {
         showPopUpMessage,
         products,
-        auth
+        auth,
+        basket
     }
 })

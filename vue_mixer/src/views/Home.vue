@@ -27,7 +27,7 @@
                       <font-awesome-icon
                           icon="fa-solid fa-ruble-sign"></font-awesome-icon>
                     </div>
-                    <a class="btn btn-danger" href="#">В корзину</a>
+                    <a class="btn btn-danger" href="#" @click="addProductToCart(product)">В корзину</a>
                     <ul class="stars stars-ul">
                       <li v-for="star in listStar" :key="star">
                         <a href="#" class="">
@@ -72,6 +72,9 @@ export default {
     this.$store.dispatch('products/getAllCategory')
   },
   methods: {
+    ...mapActions('basket', [
+      'addProductToCart'
+    ]),
     goTo(id) {
       this.$router.push({name: 'ProductView', params: {id: id}})
     }

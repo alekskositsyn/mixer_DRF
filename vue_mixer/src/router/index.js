@@ -4,39 +4,46 @@ import Home from '../views/Home'
 import Product from '../views/Product'
 import SignUp from '../views/SignUp'
 import LogIn from '../views/LogIn'
+import Basket from '../views/Basket'
 import Activation from '../views/Activation'
 import store from '@/store/index'
+
 Vue.use(VueRouter)
 
 const routes = [
-  
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/products/:id',
-    name: 'ProductView',
-    component: Product,
-    props: true
-  },
-  {
-    path: '/sign-up',
-    name: 'SignUp',
-    component: SignUp
-  },
-  {
-    path: '/log-in',
-    name: 'LogIn',
-    component: LogIn
-  },
-  {
-    path: '/activate',
-    name: 'Activation',
-    meta: {},
-    component: () => import ('../views/Activation')
-  },
+
+    {
+        path: '/',
+        name: 'Home',
+        component: Home
+    },
+    {
+        path: '/products/:id',
+        name: 'ProductView',
+        component: Product,
+        props: true
+    },
+    {
+        path: '/sign-up',
+        name: 'SignUp',
+        component: SignUp
+    },
+    {
+        path: '/log-in',
+        name: 'LogIn',
+        component: LogIn
+    },
+    {
+        path: '/basket',
+        name: 'Basket',
+        component: Basket
+    },
+    {
+        path: '/activate',
+        name: 'Activation',
+        meta: {},
+        component: () => import ('../views/Activation')
+    },
 ]
 
 // router.beforeEach((to, from, next) => {
@@ -56,8 +63,8 @@ const routes = [
 // });
 
 const router = new VueRouter({
-  mode: "history",
-  routes
+    mode: "history",
+    routes
 })
 
 export default router

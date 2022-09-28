@@ -15,39 +15,45 @@
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
           <input type="search" class="form-control" placeholder="Поиск товара..." aria-label="Search">
         </form>
-
+        <div v-if="username" class="username">{{ username }}</div>
+        <div v-else class="username"></div>
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <font-awesome-icon v-if="!isAuthenticated" class="user_avatar" icon="fas fa-smile" />
-            <font-awesome-icon v-if="isAuthenticated" class="user_avatar" icon="fas fa-grin-beam" />
+             data-bs-toggle="dropdown" aria-expanded="false">
+            <font-awesome-icon v-if="!isAuthenticated" class="user_avatar" icon="fas fa-smile"/>
+            <font-awesome-icon v-if="isAuthenticated" class="user_avatar" icon="fas fa-grin-beam"/>
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <router-link v-if="!isAuthenticated" class="dropdown-item" to='/log-in'> Вход </router-link>
+            <router-link v-if="!isAuthenticated" class="dropdown-item" to='/log-in'> Вход</router-link>
             <router-link v-if="!isAuthenticated" class="dropdown-item" to='/sign-up'> Регистрация
             </router-link>
             <li v-if="isAuthenticated"><a class="dropdown-item" href="#">Профиль</a></li>
-            <router-link v-if="isAuthenticated"  class="dropdown-item" to='/'>
-              <span @click="logout">Выход</span> 
+            <router-link v-if="isAuthenticated" class="dropdown-item" to='/'>
+              <span @click="logout">Выход</span>
             </router-link>
           </ul>
         </div>
-        <a href="#" class="basket">
-          <font-awesome-icon icon="fa-solid fa-basket-shopping" class="fa-basket-shopping"></font-awesome-icon>
-        </a>
+
+        <router-link href="#" class="basket" to='/basket'>
+          <el-badge :value="basketLength" class="item" >
+            <font-awesome-icon icon="fa-solid fa-basket-shopping" class="fa-basket-shopping"></font-awesome-icon>
+          </el-badge>
+        </router-link>
       </div>
     </header>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import {mapState} from "vuex";
 
 
 export default {
   name: 'Nav',
   computed: mapState({
     isAuthenticated: state => state.auth.isAuthenticated,
+    username: state => state.auth.shopUserName,
+    basketLength: state => state.basket.items.length,
   }),
   methods: {
     logout() {
