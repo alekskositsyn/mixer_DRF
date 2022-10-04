@@ -16,8 +16,6 @@ const actions = {
             .get('/products/')
             .then(response => {
                 commit('setProducts', response.data)
-                console.log(response.data);
-
             })
             .catch(error => console.log(error))
     },
@@ -38,6 +36,17 @@ const mutations = {
     },
     setCategory(state, category) {
         state.listCategory = category
+    },
+
+    incrementProductInventory(state, {id, quantity}) {
+        const product = state.listProducts.find(product => product.id === id)
+        console.log(quantity)
+        if (quantity === 0) {
+            product.inventory++
+        } else {
+            product.inventory = product.inventory + quantity
+
+        }
     },
 
     decrementProductInventory(state, {id}) {

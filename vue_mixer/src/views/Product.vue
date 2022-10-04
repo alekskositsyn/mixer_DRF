@@ -17,7 +17,7 @@
                     <div class="desc-product-deal"><strong> Описание: </strong>
                         <p>{{ product.description }}</p>
                     </div>
-                    <div class="button_order_deal clearfix"><a href="#" class="button_red_deal">Купить</a></div>
+                    <div  class="button_order_deal clearfix"><a href="#" class="button_red_deal">Купить</a></div>
                 </div>
             </div>
             <Review :reviews="product_reviews" :product="product.id" @reLoad="loadReviews" />

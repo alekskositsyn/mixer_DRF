@@ -18,18 +18,18 @@ const getters = {
                 id: product.id,
                 name: product.name,
                 price: product.price,
-                quantity: product.quantity,
+                inventory: product.inventory,
                 quantityBasket: quantityBasket,
                 image: product.image
             }
         })
     },
 
-  cartTotalPrice: (state, getters) => {
-    return getters.cartProducts.reduce((total, product) => {
-      return total + product.price * product.quantity
-    }, 0)
-  }
+    cartTotalPrice: (state, getters) => {
+        return getters.cartProducts.reduce((total, product) => {
+            return total + product.price * product.quantityBasket
+        }, 0)
+    }
 }
 
 // actions
@@ -52,7 +52,7 @@ const actions = {
 
     addProductToCart({state, commit}, product) {
         commit('setCheckoutStatus', null)
-        if (product.quantity > 0) {
+        if (product.inventory > 0) {
             // commit('incrementCountItem')
             const cartItem = state.items.find(item => item.id === product.id)
             if (!cartItem) {
@@ -60,6 +60,7 @@ const actions = {
             } else {
                 commit('incrementItemQuantity', cartItem)
             }
+            commit('products/decrementProductInventory', {id: product.id}, {root: true})
         }
     },
 
@@ -70,12 +71,15 @@ const actions = {
             console.log(cartItem.quantityBasket)
             commit('decrementItemQuantity', cartItem)
         }
+        commit('products/incrementProductInventory', {id: product.id, quantity: 0}, {root: true})
     },
 
     delProductFromCart({state, commit}, product) {
         commit('setCheckoutStatus', null)
         const cartItem = state.items.find(item => item.id === product.id)
         commit('deleteItem', cartItem)
+        commit('products/incrementProductInventory', {id: product.id, quantity: product.quantityBasket}, {root: true})
+
     }
 }
 

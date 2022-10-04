@@ -21,7 +21,7 @@
             </td>
             <td>{{ product.name }}</td>
             <td>
-              <el-button @click="addProduct(product)" class="icon-plus" size="mini" round
+              <el-button :disabled="!product.inventory" @click="addProduct(product)" class="icon-plus" size="mini" round
                          icon="el-icon-plus"></el-button>
               {{ product.quantityBasket }}
               <el-button @click="decreaseProduct(product)" size="mini" round icon="el-icon-minus"></el-button>

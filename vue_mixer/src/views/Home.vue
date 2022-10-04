@@ -27,7 +27,7 @@
                       <font-awesome-icon
                           icon="fa-solid fa-ruble-sign"></font-awesome-icon>
                     </div>
-                    <a class="btn btn-danger" href="#" @click="addProductToCart(product)">В корзину</a>
+                    <el-button :disabled="!product.inventory" @click="addProductToCart(product)" type="danger">В корзину</el-button>
                     <ul class="stars stars-ul">
                       <li v-for="star in listStar" :key="star">
                         <a href="#" class="">

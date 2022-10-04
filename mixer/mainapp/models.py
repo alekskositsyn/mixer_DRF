@@ -38,8 +38,8 @@ class Product(models.Model):
         verbose_name='описание продукта', blank=True)
     price = models.DecimalField(
         verbose_name='цена продукта', max_digits=8, decimal_places=0, default=0)
-    quantity = models.PositiveIntegerField(
-        verbose_name='количество товара', default=0)
+    inventory = models.PositiveIntegerField(
+        verbose_name='количество товара на складе', default=0)
     is_active = models.BooleanField(
         verbose_name='активна', default=True, db_index=True)
     slug = models.SlugField(
@@ -63,22 +63,22 @@ def random_string_generator(size=10, chars=string.ascii_lowercase + string.digit
     return ''.join(random.choice(chars) for _ in range(size))
 
 
-def pre_save_receiver(sender, instance, *args, **kwargs):
-    """Функция получения и сохранения уникального slug"""
-
-    if instance.slug:
-        print(instance.slug)
-        instance.slug = instance.slug
-    else:
-        slug = defaultfilters.slugify(unidecode(instance.name))
-        slugs = sender.objects.filter()
-        for slug_old in slugs.values("slug"):
-            if slug in slug_old["slug"]:
-                instance.slug = "%s-%s" % (slug,
-                                           random_string_generator(size=4))
-                break
-            else:
-                instance.slug = slug
+# def pre_save_receiver(sender, instance, *args, **kwargs):
+#     """Функция получения и сохранения уникального slug"""
+#
+#     if instance.slug:
+#         print(instance.slug)
+#         instance.slug = instance.slug
+#     else:
+#         slug = defaultfilters.slugify(unidecode(instance.name))
+#         slugs = sender.objects.filter()
+#         for slug_old in slugs.values("slug"):
+#             if slug in slug_old["slug"]:
+#                 instance.slug = "%s-%s" % (slug,
+#                                            random_string_generator(size=4))
+#                 break
+#             else:
+#                 instance.slug = slug
 
 
 # pre_save.connect(pre_save_receiver, sender=None)
