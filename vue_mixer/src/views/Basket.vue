@@ -1,7 +1,7 @@
 <template>
   <div class="cart container">
     <h2>Ваша корзина</h2>
-    <div class="row">Корзина пуста</div>
+    <div v-show="products.length === 0" class="row">Корзина пуста</div>
     <div v-show="products.length > 0" class="left-side">
       <div class="cart-product">
         <table class="table">
@@ -16,7 +16,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-show="product.quantityBasket >= 0" v-for="product in products" :key="product.id">
+          <tr v-show="product.quantityBasket !== null" v-for="product in products" :key="product.id">
             <td><img :src="product.image" class="img-basket" alt="">
             </td>
             <td>{{ product.name }}</td>
@@ -24,11 +24,11 @@
               <el-button @click="addProduct(product)" class="icon-plus" size="mini" round
                          icon="el-icon-plus"></el-button>
               {{ product.quantityBasket }}
-              <el-button @click="delProduct(product)" size="mini" round icon="el-icon-minus"></el-button>
+              <el-button @click="decreaseProduct(product)" size="mini" round icon="el-icon-minus"></el-button>
             </td>
             <td>{{ product.price }}</td>
             <td>
-              <el-button type="danger" icon="el-icon-delete" circle></el-button>
+              <el-button @click='deleteProduct(product)' type="danger" icon="el-icon-delete" circle></el-button>
             </td>
           </tr>
           </tbody>
@@ -61,7 +61,8 @@ export default {
   methods: {
     ...mapActions('basket', {
       addProduct: 'addProductToCart',
-      delProduct: 'delProductFromCart'
+      decreaseProduct: 'decreaseProductFromCart',
+      deleteProduct: 'delProductFromCart'
     }),
     checkout(products) {
       this.$store.dispatch('cart/checkout', products)

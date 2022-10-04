@@ -25,21 +25,11 @@ const getters = {
         })
     },
 
-    cartProductsPrice: (state, getters) => {
-        const sumPrice = getters.cartProducts.reduce((acc, product) => {
-            return +product.price * product.quantityBasket
-        }, 0)
-        console.log(sumPrice)
-        // let quantityp = productOne.quantityBasket
-        // console.log(quantityp)
-        return sumPrice
-    },
-
-    cartTotalPrice: (state, getters) => {
-        return getters.cartProducts.reduce((total, product) => {
-            return total + product.price * product.quantityBasket
-        }, 0)
-    }
+  cartTotalPrice: (state, getters) => {
+    return getters.cartProducts.reduce((total, product) => {
+      return total + product.price * product.quantity
+    }, 0)
+  }
 }
 
 // actions
@@ -73,13 +63,19 @@ const actions = {
         }
     },
 
-    delProductFromCart({state, commit}, product) {
+    decreaseProductFromCart({state, commit}, product) {
         commit('setCheckoutStatus', null)
         const cartItem = state.items.find(item => item.id === product.id)
         if (cartItem.quantityBasket > 0) {
             console.log(cartItem.quantityBasket)
             commit('decrementItemQuantity', cartItem)
         }
+    },
+
+    delProductFromCart({state, commit}, product) {
+        commit('setCheckoutStatus', null)
+        const cartItem = state.items.find(item => item.id === product.id)
+        commit('deleteItem', cartItem)
     }
 }
 
@@ -106,6 +102,11 @@ const mutations = {
         state.countItems--
     },
 
+    deleteItem(state, {id}) {
+        const cartItem = state.items.find(item => item.id === id)
+        state.countItems = state.countItems - cartItem.quantityBasket
+        cartItem.quantityBasket = null
+    },
     // incrementCountItem(state) {
     //     state.countItems++
     // },
