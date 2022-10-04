@@ -27,7 +27,9 @@
                       <font-awesome-icon
                           icon="fa-solid fa-ruble-sign"></font-awesome-icon>
                     </div>
-                    <el-button :disabled="!product.inventory" @click="addProductToCart(product)" type="danger">В корзину</el-button>
+                    <el-button :disabled="!product.inventory" @click="addProduct(product)" type="danger">В
+                      корзину
+                    </el-button>
                     <ul class="stars stars-ul">
                       <li v-for="star in listStar" :key="star">
                         <a href="#" class="">
@@ -56,6 +58,7 @@ import {mapState, mapActions} from 'vuex'
 
 export default {
   name: 'Home',
+
   data() {
     return {
       popUP: false,
@@ -72,11 +75,12 @@ export default {
     this.$store.dispatch('products/getAllCategory')
   },
   methods: {
-    ...mapActions('basket', [
-      'addProductToCart'
-    ]),
+    ...mapActions({
+      addProduct: 'basket/addProductToCart',
+    }),
+
     goTo(id) {
-      this.$router.push({name: 'ProductView', params: {id: id}})
+      this.$router.push({path: `/products/${id}`})
     }
   }
 }

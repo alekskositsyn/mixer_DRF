@@ -55,7 +55,6 @@ export default {
     ...mapGetters('basket', {
       products: 'cartProducts',
       total: 'cartTotalPrice',
-      productsPrice: 'cartProductsPrice'
     })
   },
   methods: {

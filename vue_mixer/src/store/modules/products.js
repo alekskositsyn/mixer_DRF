@@ -4,6 +4,7 @@ import axios from "axios";
 const state = () => ({
     listCategory: [],
     listProducts: [],
+    product: {}
 })
 
 // getters
@@ -19,6 +20,7 @@ const actions = {
             })
             .catch(error => console.log(error))
     },
+
     getAllCategory({commit}) {
         axios
             .get('/category/')
@@ -34,6 +36,7 @@ const mutations = {
     setProducts(state, products) {
         state.listProducts = products
     },
+
     setCategory(state, category) {
         state.listCategory = category
     },
@@ -45,7 +48,6 @@ const mutations = {
             product.inventory++
         } else {
             product.inventory = product.inventory + quantity
-
         }
     },
 
