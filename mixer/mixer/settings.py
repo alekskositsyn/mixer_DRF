@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'mainapp',
     'authapp',
+    'ordersapp',
 ]
 
 MIDDLEWARE = [
