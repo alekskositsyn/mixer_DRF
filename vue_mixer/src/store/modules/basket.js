@@ -1,8 +1,7 @@
-// import { calculateAmount, calculateTotal, copyFunc } from "@/function"
-
-
 // initial state
-// shape: [{ id, quantity }]
+import store from '@/store/index.js';
+import axios from "axios";
+
 const state = () => ({
     items: [],
     countItems: 0,
@@ -11,9 +10,13 @@ const state = () => ({
 
 // getters
 const getters = {
-    cartProducts: (state, getters, rootState) => {
+    cartProducts: (state, getters, rootState, dispatch) => {
         return state.items.map(({id, quantityBasket}) => {
             const product = rootState.products.listProducts.find(product => product.id === id)
+            if (!product) {
+                console.log('Product not found')
+                dispatch('getOneProduct', {id: product.id}, {root: true})
+            }
             return {
                 id: product.id,
                 name: product.name,
@@ -23,6 +26,12 @@ const getters = {
                 image: product.image
             }
         })
+    },
+
+    getCountBasketItems: (state, getters) => {
+        return state.items.reduce((count, item) => {
+            return count + item.quantityBasket
+        },0)
     },
 
     cartTotalPrice: (state, getters) => {
@@ -49,11 +58,20 @@ const actions = {
         //   }
         // )
     },
+    getOneProduct({commit}, {id}) {
+        // console.log('get product id: ', id)
+        axios
+            .get(`/products/${id}`)
+            .then(response => {
+                commit('setOneProduct', response.data)
+            })
+            .catch(error => console.log(error))
+
+    },
 
     addProductToCart({state, commit}, product) {
         commit('setCheckoutStatus', null)
         if (product.inventory > 0) {
-            // commit('incrementCountItem')
             const cartItem = state.items.find(item => item.id === product.id)
             if (!cartItem) {
                 commit('pushProductToCart', {id: product.id})
@@ -61,6 +79,8 @@ const actions = {
                 commit('incrementItemQuantity', cartItem)
             }
             commit('products/decrementProductInventory', {id: product.id}, {root: true})
+            commit('savedCartItems')
+
         }
     },
 
@@ -111,12 +131,6 @@ const mutations = {
         state.countItems = state.countItems - cartItem.quantityBasket
         cartItem.quantityBasket = null
     },
-    // incrementCountItem(state) {
-    //     state.countItems++
-    // },
-    // incrementCountItem(state) {
-    //     state.countItems++
-    // },
 
     setCartItems(state, {items}) {
         state.items = items
@@ -124,7 +138,23 @@ const mutations = {
 
     setCheckoutStatus(state, status) {
         state.checkoutStatus = status
+    },
+    savedCartItems(state) {
+        console.log('saved', state.items)
+        const parsed = JSON.stringify(state.items)
+        localStorage.setItem('basket', parsed)
+    },
+    getCartItems(state) {
+        try {
+            const parsed = JSON.parse(localStorage.getItem('basket'))
+            state.items = parsed
+
+        } catch (e) {
+            localStorage.removeItem('basket')
+        }
+
     }
+
 }
 
 export default {

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Nav />
-    <router-view />
-    <Footer />
+    <Nav/>
+    <router-view/>
+    <Footer/>
   </div>
 </template>
 <script>
@@ -12,10 +12,11 @@ import Footer from "./components/Footer.vue";
 
 export default {
   name: 'App',
-  components: { Nav, Footer },
+  components: {Nav, Footer},
 
   beforeCreate() {
     this.$store.commit('auth/initializeStore')
+
 
     // const access = this.$store.state.access
 
@@ -28,6 +29,9 @@ export default {
   mounted() {
     if (localStorage.username) {
       this.$store.commit('auth/setShopUserName_mutation', localStorage.username)
+    }
+    if (localStorage.getItem("basket")) {
+      this.$store.commit('basket/getCartItems')
     }
     // Получение токена через 5 секунд
     // setInterval(() => {

@@ -37,6 +37,10 @@ const mutations = {
         state.listProducts = products
     },
 
+    setOneProduct(state, product) {
+        state.listProducts.push(product)
+    },
+
     setCategory(state, category) {
         state.listCategory = category
     },

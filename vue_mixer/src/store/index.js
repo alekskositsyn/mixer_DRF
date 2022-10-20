@@ -8,7 +8,7 @@ import basket from "@/store/modules/basket"
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
     state: {},
     getters: {},
     mutations: {},
@@ -20,3 +20,5 @@ export default new Vuex.Store({
         basket
     }
 })
+
+export default store

@@ -45,16 +45,21 @@
 </template>
 
 <script>
-import {mapState} from "vuex";
+import {mapState, mapGetters} from "vuex";
 
 
 export default {
   name: 'Nav',
-  computed: mapState({
-    isAuthenticated: state => state.auth.isAuthenticated,
-    username: state => state.auth.shopUserName,
-    basketLength: state => state.basket.countItems,
-  }),
+  computed: {
+    ...mapState({
+      isAuthenticated: state => state.auth.isAuthenticated,
+      username: state => state.auth.shopUserName,
+      // basketLength: state => state.basket.countItems,
+    }),
+    ...mapGetters({
+                 basketLength: 'basket/getCountBasketItems'
+               })
+  },
   methods: {
     logout() {
       this.$store.commit('auth/logout_mutation')
