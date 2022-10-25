@@ -1,7 +1,17 @@
 from django.shortcuts import render
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 
-from .serializers import OrderCreateSerializer
+from .models import Order
+from .serializers import OrderCreateSerializer, OrderListSerializer
+
+
+class OrderListView(ListAPIView):
+    """Вывод заказов пользователя"""
+    serializer_class = OrderListSerializer
+
+    def get_queryset(self):
+        orders = Order.objects.all()
+        return orders
 
 
 class OrderCreateView(CreateAPIView):

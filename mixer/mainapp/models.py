@@ -1,11 +1,7 @@
 from django.db import models
 from django.db.models.signals import pre_save
-from django.utils.text import slugify
-from django.template import defaultfilters
-from unidecode import unidecode
 
-import string
-import random
+from .service import pre_save_receiver
 
 
 class ProductCategory(models.Model):
@@ -55,30 +51,6 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
-
-
-def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
-    """Функция, генерирующая набор случайных строковых символов"""
-
-    return ''.join(random.choice(chars) for _ in range(size))
-
-
-# def pre_save_receiver(sender, instance, *args, **kwargs):
-#     """Функция получения и сохранения уникального slug"""
-#
-#     if instance.slug:
-#         print(instance.slug)
-#         instance.slug = instance.slug
-#     else:
-#         slug = defaultfilters.slugify(unidecode(instance.name))
-#         slugs = sender.objects.filter()
-#         for slug_old in slugs.values("slug"):
-#             if slug in slug_old["slug"]:
-#                 instance.slug = "%s-%s" % (slug,
-#                                            random_string_generator(size=4))
-#                 break
-#             else:
-#                 instance.slug = slug
 
 
 # pre_save.connect(pre_save_receiver, sender=None)
