@@ -6,7 +6,6 @@ import mainapp.views as mainapp
 app_name = 'mainapp'
 
 urlpatterns = [
-    path('', mainapp.index, name='index'),
     path('category/', mainapp.CategoryListView.as_view()),
     path('products/<int:pk>/', mainapp.ProductView.as_view()),
     path('products/', mainapp.ProductListView.as_view()),

@@ -7,7 +7,7 @@ class ProductCategoryListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProductCategory
-        fields = ('id','name')
+        fields = ('id', 'name')
 
 
 class FilterReviewListSerializer(serializers.ListSerializer):
@@ -55,7 +55,7 @@ class ProductsReviewsSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    """Список категорий продуктов"""
+    """Вывод продукта"""
     category = serializers.SlugRelatedField(slug_field='name', read_only=True)
     reviews = ReviewSerializer(many=True)
 
@@ -76,6 +76,7 @@ class ProductListSerializer(serializers.ModelSerializer):
 
 class CreateRatingSerializer(serializers.ModelSerializer):
     """Добавление рейтинга пользователем"""
+
     class Meta:
         model = Rating
         fields = ("star", "product")
