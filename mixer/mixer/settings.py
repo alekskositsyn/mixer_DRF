@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u6**e#nb_##)#=uko!1xl9xa56@7=_1uskypnf#nd)z9*4#6r='
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG')))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+# ALLOWED_HOSTS = ['localhost']
 
 CORS_ORIGIN_ALLOW_ALL=True
 # CORS_ALLOWED_ORIGINS = [
@@ -92,13 +93,22 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'mixer_db',
+    #     'USER': 'aleks',
+    #     'PASSWORD': 'ural918942',
+    #     'HOST': 'db',
+    #     'PORT': '5432',
+    # }
+
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mixer_db',
-        'USER': 'aleks',
-        'PASSWORD': 'ural918942',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': os.environ.get("SQL_ENGINE","django.db.backends.sqlite3"),
+        'NAME': os.environ.get("SQL_NAME", os.path.join(BASE_DIR, 'db.sqlite3')),
+        'USER': os.environ.get("SQL_USER", "user"),
+        'PASSWORD': os.environ.get("SQL_PASS", "password"),
+        'HOST': os.environ.get("SQL_HOST", "localhost"),
+        'PORT': os.environ.get("SQL_PORT", "5432"),
     }
 }
 

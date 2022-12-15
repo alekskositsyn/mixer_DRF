@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=aleks
+      - POSTGRES_PASSWORD=ural918942
+      - POSTGRES_DB=mixer_db
+#      POSTGRES_PASSWORD: ural918942
+#      POSTGRES_USER: aleks
+#      POSTGRES_DB: mixer_db
+
+
+  django:
+    container_name: mixer
+    build:
+      context: ./
+      dockerfile: Dockerfile
+
+    command: bash -c "python /usr/src/mixer/manage.py migrate --noinput &&
+             python /usr/src/mixer/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/usr/src/mixer
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - ./.env.dev
+volumes:
+  pg_data:

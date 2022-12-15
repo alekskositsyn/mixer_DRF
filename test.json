@@ -1,0 +1,10 @@
+{
+  "orderitems": [
+    {
+      "order": 1,
+      "product": 1,
+      "quantity": 2
+    }
+  ],
+  "user": 1
+}

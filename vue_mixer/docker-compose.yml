@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  vue:
+    container_name: vue_mixer
+    build:
+      context: ./
+      dockerfile: Dockerfile
+
+    volumes:
+      - './:/vue_app'
+      - '/vue_app/node_modules'
+    ports:
+      - '8080:8080'

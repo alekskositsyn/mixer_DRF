@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.signals import pre_save
 
-from .service import pre_save_receiver
+# from .service import pre_save_receiver
 
 
 class ProductCategory(models.Model):
