@@ -35,7 +35,6 @@ node_modules
 
 
 # local env files
-/mixer/.env.dev
 .env.local
 .env.*.local
 

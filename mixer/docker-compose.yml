@@ -29,6 +29,6 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env.dev
+      - ./.env.local
 volumes:
   pg_data:
