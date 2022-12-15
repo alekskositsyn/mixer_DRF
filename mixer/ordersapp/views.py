@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework.generics import CreateAPIView, ListAPIView
 
 from .models import Order
@@ -10,7 +9,8 @@ class OrderListView(ListAPIView):
     serializer_class = OrderListSerializer
 
     def get_queryset(self):
-        orders = Order.objects.all()
+        user_id = self.kwargs.get('id')
+        orders = Order.objects.filter(user=user_id)
         return orders
 
 
