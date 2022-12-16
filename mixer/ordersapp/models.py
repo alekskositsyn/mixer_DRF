@@ -1,5 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 
 from mainapp.models import Product
 
@@ -51,10 +53,8 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(verbose_name='количество',
                                            default=0)
 
-    @property
-    def product_cost(self):
-        return self.product.price * self.quantity
 
-    @staticmethod
-    def get_item(pk):
-        return OrderItem.objects.get(pk=pk)
+@receiver(pre_save, sender=OrderItem)
+def product_inventory_update_save(instance, **kwargs):
+    instance.product.inventory -= instance.quantity
+    instance.product.save()
