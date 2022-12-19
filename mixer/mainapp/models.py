@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.signals import pre_save
 
+
 # from .service import pre_save_receiver
 
 
@@ -51,9 +52,6 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
-
-
-# pre_save.connect(pre_save_receiver, sender=None)
 
 
 class RatingStar(models.Model):

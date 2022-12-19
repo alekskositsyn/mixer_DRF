@@ -3,8 +3,7 @@
         <main class="m-auto">
             <form @submit.prevent="submitForm">
                 <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
-                <h1 v-if="errorMessage">{{ errorMessage }}</h1>
-
+                <h4 v-if="errorMessage">{{ errorMessage }}</h4>
                 <div class="form-floating mt-2">
                     <input type="username" class="form-control" name="username" v-model="username"
                         placeholder="Имя пользователя">
@@ -18,7 +17,6 @@
                 <el-button class="w-100 mt-2" native-type="submit" :loading="loading">
                     Войти
                 </el-button>
-
             </form>
         </main>
 

@@ -41,25 +41,23 @@
     <div class="right-side col-md-3">
       <h2 class="">Сумма:</h2>
       <h4 class="total">{{ total }}</h4>
-      <el-button @click="checkout" type="success" round>Success</el-button>
+      <el-button @click="createOrder" type="success" round>Оформить закзаз</el-button>
     </div>
   </div>
 </template>
 
 <script>
-import {mapActions, mapGetters, mapState} from 'vuex'
+import {mapActions, mapGetters, mapState, mapMutations} from 'vuex'
 
 export default {
   name: "Basket",
-  mounted() {
-
-  },
   computed: {
     ...mapState({
-      checkoutStatus: state => state.basket.checkoutStatus
+      // checkoutStatus: state => state.basket.checkoutStatus,
+      products: state => state.basket.items
     }),
     ...mapGetters('basket', {
-      products: 'cartProducts',
+      // products: 'cartProducts',
       total: 'cartTotalPrice',
     })
   },
@@ -67,11 +65,9 @@ export default {
     ...mapActions('basket', {
       addProduct: 'addProductToCart',
       decreaseProduct: 'decreaseProductFromCart',
-      deleteProduct: 'delProductFromCart'
+      deleteProduct: 'delProductFromCart',
+      createOrder: 'createOrder'
     }),
-    checkout(products) {
-      this.$store.dispatch('basket/checkout', products)
-    },
   }
 }
 </script>
