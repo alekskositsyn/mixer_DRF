@@ -112,24 +112,20 @@ const actions = {
 
     async createOrder({state, commit}) {
         console.log('Push order')
-        const basketItems = {
-            orderitems: [{
-                product: 3,
-                quantity: 1
-            }],
-            user: 25
-        }
+        const basketItems = {"orderitems":[{"product":1,"quantity":1}],"user":25}
+
         const dataToSend = JSON.stringify(basketItems)
         axios
-            .post('orders/create/', dataToSend)
+            .post('/orders/create/', dataToSend)
             .then(response => {
-                this.$router.push('/log-in')
+                // response = JSON.parse(response)
                 console.log(response)
             })
             .catch(error => {
-            console.log(error)})
+                console.log(error)
+            })
 
-        console.log(dataToSend)
+        console.log(typeof (dataToSend))
 
     }
 }
