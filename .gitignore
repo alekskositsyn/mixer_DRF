@@ -35,8 +35,9 @@ node_modules
 
 
 # local env files
-.env.local
+mixer/mixer/.env
 .env.*.local
+.env
 
 # Log files
 npm-debug.log*
@@ -52,3 +53,4 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+/mixer/mixer/.env

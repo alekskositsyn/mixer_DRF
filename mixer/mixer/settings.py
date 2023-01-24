@@ -12,22 +12,25 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from datetime import timedelta
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.environ.get('DEBUG')))
+DEBUG = bool(int(env('DEBUG')))
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(" ")
 
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:8080",
 #     "http://127.0.0.1:8080",
@@ -83,9 +86,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mixer.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 DATABASES = {
     # 'default': {
@@ -94,15 +98,14 @@ DATABASES = {
     # }
 
     'default': {
-        'ENGINE': os.environ.get("SQL_ENGINE","django.db.backends.sqlite3"),
-        'NAME': os.environ.get("SQL_NAME", os.path.join(BASE_DIR, 'db.sqlite3')),
-        'USER': os.environ.get("SQL_USER", "user"),
-        'PASSWORD': os.environ.get("SQL_PASS", "password"),
-        'HOST': os.environ.get("SQL_HOST", "localhost"),
-        'PORT': os.environ.get("SQL_PORT", "5432"),
+        'ENGINE': env("SQL_ENGINE"),
+        'NAME': env("SQL_NAME"),
+        'USER': env("SQL_USER"),
+        'PASSWORD': env("SQL_PASS"),
+        'HOST': env("SQL_HOST"),
+        'PORT': env("SQL_PORT"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -122,7 +125,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -135,7 +137,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -187,7 +188,6 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {},
 }
-
 
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),

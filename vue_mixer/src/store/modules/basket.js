@@ -109,7 +109,7 @@ const actions = {
         commit('products/incrementProductInventory', {id: product.id, quantity: product.quantityBasket}, {root: true})
 
     },
-
+// TODO сделать геттер для отправка заказа на сервер
     async createOrder({state, commit}) {
         console.log('Push order')
         const basketItems = {"orderitems":[{"product":1,"quantity":1}],"user":25}

@@ -29,6 +29,6 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env.local
+      - mixer/.env
 volumes:
   pg_data:
