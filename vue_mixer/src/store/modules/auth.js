@@ -60,7 +60,7 @@ const actions = {
             const {
                 data
             } = await axios.post("/auth/token/", payload);
-            // console.log(data)
+            console.log(data)
 
             if (data.access) {
                 const jwtDecoded = jwt_decode(data.access);

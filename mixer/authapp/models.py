@@ -4,7 +4,7 @@ from django.core.validators import RegexValidator
 
 
 class ShopUser(AbstractUser):
-    age = models.PositiveIntegerField(verbose_name='возраст', null=True,blank=True)
+    age = models.PositiveIntegerField(verbose_name='возраст', null=True, blank=True)
     avatar = models.ImageField(upload_to='users_avatar', blank=True)
     phoneNumberRegex = RegexValidator(regex=r"^\+?1?\d{11}$")
     phoneNumber = models.CharField(
