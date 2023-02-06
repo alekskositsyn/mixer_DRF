@@ -41,7 +41,7 @@
     <div class="right-side col-md-3">
       <h2 class="">Сумма:</h2>
       <h4 class="total">{{ total }}</h4>
-      <el-button @click="createOrder" type="success" round>Оформить закзаз</el-button>
+      <el-button @click="checkout(user_id, products)" type="success" round>Оформить закзаз</el-button>
     </div>
   </div>
 </template>
@@ -54,6 +54,7 @@ export default {
   computed: {
     ...mapState({
       // checkoutStatus: state => state.basket.checkoutStatus,
+      user_id: state => state.auth.shopUserId,
       products: state => state.basket.items
     }),
     ...mapGetters('basket', {
@@ -66,7 +67,7 @@ export default {
       addProduct: 'addProductToCart',
       decreaseProduct: 'decreaseProductFromCart',
       deleteProduct: 'delProductFromCart',
-      createOrder: 'createOrder'
+      checkout: 'checkout'
     }),
   }
 }

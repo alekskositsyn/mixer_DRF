@@ -1,6 +1,7 @@
 // initial state
 import store from '@/store/index.js';
 import axios from "axios";
+import id from "element-ui/src/locale/lang/id";
 
 const state = () => ({
     items: [],
@@ -16,7 +17,7 @@ const getters = {
             if (!product) {
                 console.log(product)
                 // dispatch('getOneProduct', {id: product.id}, {root: true})
-                // console.log('Look in data base')
+                // console.log('Look in data_base')
             }
             return {
                 id: product.id,
@@ -48,31 +49,61 @@ const getters = {
 
 // actions
 const actions = {
-    // checkout({commit, state}, products) {
-    //     const savedCartItems = [...state.items]
-    //     commit('setCheckoutStatus', null)
-    //     // empty cart
-    //     commit('setCartItems', {items: []})
-    //     // shop.buyProducts(
-    //     //   products,
-    //     //   () => commit('setCheckoutStatus', 'successful'),
-    //     //   () => {
-    //     //     commit('setCheckoutStatus', 'failed')
-    //     //     // rollback to the cart saved before sending the request
-    //     //     commit('setCartItems', { items: savedCartItems })
-    //     //   }
-    //     // )
-    // },
-    getOneProduct({commit}, {id}) {
-        // console.log('get product id: ', id)
-        axios
-            .get(`/products/${id}`)
-            .then(response => {
-                commit('setOneCartItem', response.data)
-            })
-            .catch(error => console.log(error))
+    async checkout({commit, state}, user_id) {
+        const savedCartItems = state.items.map(({id, quantityBasket}) => {
+            return {
+                product: id,
+                quantity: quantityBasket
+            }
+        })
+        console.log(savedCartItems)
+        console.log(user_id)
+        if (savedCartItems && user_id) {
+            const basketItems = {
+                "user": user_id,
+                "orderitems": savedCartItems,
 
+            }
+            const dataToSend = JSON.stringify(basketItems)
+            console.log(dataToSend)
+
+            axios
+                .post('/orders/create/', dataToSend)
+                .then(response => {
+                    // response = JSON.parse(response)
+                    console.log(response)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+            // dispatch('getOneProduct', {id: product.id}, {root: true})
+            console.log('Look in data_base')
+        }
+
+
+        // commit('setCheckoutStatus', null)
+        // empty cart
+        // commit('setCartItems', {items: []})
+        // shop.buyProducts(
+        //   products,
+        //   () => commit('setCheckoutStatus', 'successful'),
+        //   () => {
+        //     commit('setCheckoutStatus', 'failed')
+        //     // rollback to the cart saved before sending the request
+        //     commit('setCartItems', { items: savedCartItems })
+        //   }
+        // )
     },
+    // getOneProduct({commit}, {id}) {
+    //     // console.log('get product id: ', id)
+    //     axios
+    //         .get(`/products/${id}`)
+    //         .then(response => {
+    //             commit('setOneCartItem', response.data)
+    //         })
+    //         .catch(error => console.log(error))
+    //
+    // },
 
     addProductToCart({state, commit}, product) {
         // commit('setCheckoutStatus', null)
@@ -110,11 +141,21 @@ const actions = {
 
     },
 // TODO сделать геттер для отправка заказа на сервер
-    async createOrder({state, commit}) {
+    async createOrder(savedCartItems, user_id) {
         console.log('Push order')
-        const basketItems = {"orderitems":[{"product":1,"quantity":1}],"user":25}
-
+        // const basketItems = {
+        //     "orderitems": [
+        //         {"product": 1, "quantity": 1}
+        //     ],
+        //     "user": 28
+        // }
+        const basketItems = {
+            "orderitems": savedCartItems,
+            "user": user_id
+        }
         const dataToSend = JSON.stringify(basketItems)
+        console.log(dataToSend)
+
         axios
             .post('/orders/create/', dataToSend)
             .then(response => {
@@ -125,7 +166,6 @@ const actions = {
                 console.log(error)
             })
 
-        console.log(typeof (dataToSend))
 
     }
 }

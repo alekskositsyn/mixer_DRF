@@ -54,6 +54,7 @@ export default {
     ...mapState({
       isAuthenticated: state => state.auth.isAuthenticated,
       username: state => state.auth.shopUserName,
+      // user_id: state => state.auth.shopUserId,
       // basketLength: state => state.basket.countItems,
     }),
     ...mapGetters({

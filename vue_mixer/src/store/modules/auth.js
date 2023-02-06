@@ -20,6 +20,7 @@ const mutations = {
         if (localStorage.getItem('access')) {
             state.access = localStorage.getItem('access')
             state.refresh = localStorage.getItem('refresh')
+            state.shopUserId = localStorage.getItem('user_id')
             state.isAuthenticated = true
         } else {
             state.access = ''
@@ -38,6 +39,7 @@ const mutations = {
     ,
     setShopUserId_mutation(state, user_id) {
         state.shopUserId = user_id
+        localStorage.user_id = user_id
     }
     ,
     setShopUserName_mutation(state, username) {

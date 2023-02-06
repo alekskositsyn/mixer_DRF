@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # "debug_toolbar",
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
@@ -64,8 +65,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "debug_toolbar_force.middleware.ForceDebugToolbarMiddleware",
 ]
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 ROOT_URLCONF = 'mixer.urls'
 
 TEMPLATES = [
@@ -171,10 +177,10 @@ REST_FRAMEWORK = {
 }
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = os.environ.get("EMAIL_HOST")
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-EMAIL_PORT = os.environ.get("EMAIL_PORT")
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = env("EMAIL_PORT")
 
 DOMAIN_FRONT = "127.0.0.1:8080"
 
