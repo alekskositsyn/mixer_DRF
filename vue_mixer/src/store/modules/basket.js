@@ -3,6 +3,8 @@ import store from '@/store/index.js';
 import axios from "axios";
 import id from "element-ui/src/locale/lang/id";
 
+const headers = {'Content-Type': 'application/json'}
+
 const state = () => ({
     items: [],
     countItems: 0,
@@ -46,7 +48,6 @@ const getters = {
         // })
     }
 }
-
 // actions
 const actions = {
     async checkout({commit, state}, user_id) {
@@ -68,7 +69,9 @@ const actions = {
             console.log(dataToSend)
 
             axios
-                .post('/orders/create/', dataToSend)
+                .post('/orders/create/', dataToSend, {
+                    headers: headers
+                })
                 .then(response => {
                     // response = JSON.parse(response)
                     console.log(response)
@@ -93,7 +96,8 @@ const actions = {
         //     commit('setCartItems', { items: savedCartItems })
         //   }
         // )
-    },
+    }
+    ,
     // getOneProduct({commit}, {id}) {
     //     // console.log('get product id: ', id)
     //     axios
@@ -121,7 +125,8 @@ const actions = {
             commit('savedCartItems')
 
         }
-    },
+    }
+    ,
 
     decreaseProductFromCart({state, commit}, product) {
         commit('setCheckoutStatus', null)
@@ -131,15 +136,20 @@ const actions = {
             commit('decrementItemQuantity', cartItem)
         }
         // commit('products/incrementProductInventory', {id: product.id, quantity: 0}, {root: true})
-    },
+    }
+    ,
 
     delProductFromCart({state, commit}, product) {
         commit('setCheckoutStatus', null)
         const cartItem = state.items.find(item => item.id === product.id)
         commit('deleteItem', cartItem)
-        commit('products/incrementProductInventory', {id: product.id, quantity: product.quantityBasket}, {root: true})
+        commit('products/incrementProductInventory', {
+            id: product.id,
+            quantity: product.quantityBasket
+        }, {root: true})
 
-    },
+    }
+    ,
 // TODO сделать геттер для отправка заказа на сервер
     async createOrder(savedCartItems, user_id) {
         console.log('Push order')
