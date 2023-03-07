@@ -4,10 +4,32 @@ from django.db.models.signals import pre_save
 
 # from .service import pre_save_receiver
 
+class ProductCatalog(models.Model):
+    """Модель каталога категорий продуктов"""
+    name = models.CharField('имя категории', max_length=64, db_index=True)
+    image = models.ImageField(upload_to='products_images', blank=True)
+    description = models.TextField('описание категории', blank=True)
+    is_active = models.BooleanField(
+        verbose_name='активна', default=True, db_index=True)
+    slug = models.SlugField(
+        verbose_name='URL', max_length=130, unique=True, db_index=True)
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        verbose_name = "Каталог категорий"
+        verbose_name_plural = "Каталоги категорий"
+
 
 class ProductCategory(models.Model):
     """Модель категорий продуктов"""
+    catalog = models.ForeignKey(ProductCatalog,
+                                on_delete=models.CASCADE,
+                                verbose_name='каталог категорий',
+                                null=True)
     name = models.CharField('имя категории', max_length=64)
+    image = models.ImageField(upload_to='products_images', blank=True)
     description = models.TextField('описание категории', blank=True)
     is_active = models.BooleanField(
         verbose_name='активна', default=True, db_index=True)
