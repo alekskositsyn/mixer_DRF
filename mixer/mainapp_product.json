@@ -1,0 +1,122 @@
+[
+  {
+    "model": "mainapp.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Оранжевый",
+      "image": "products_images/krasitel_2.jpg",
+      "short_desc": "Краситель пищевой гелевый",
+      "description": "Краситель пищевой гелевый Оранжевый подходит для окрашивания:\r\n\r\n- сахарной мастики, марципана;\r\n\r\n- желе, мармелада, зефира, безе;\r\n\r\n- бисквита, а также некоторых других видов теста;\r\n\r\n- белковых и других видов нежирных глазурей и кремов;\r\n\r\n- айсинга, сахарной помадки;\r\n\r\n- кондитерских нежирных сливок (Шантипак, Пармалат и др.).",
+      "price": "40",
+      "inventory": 985,
+      "is_active": true,
+      "slug": "oranzhevyj"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Жёлтый",
+      "image": "products_images/krasitel_1.jpg",
+      "short_desc": "Краситель пищевой гелевый",
+      "description": "Краситель пищевой гелевый жёлтый подходит для окрашивания:\r\n\r\n- сахарной мастики, марципана;\r\n\r\n- желе, мармелада, зефира, безе;\r\n\r\n- бисквита, а также некоторых других видов теста;\r\n\r\n- белковых и других видов нежирных глазурей и кремов;\r\n\r\n- айсинга, сахарной помадки;\r\n\r\n- кондитерских нежирных сливок (Шантипак, Пармалат и др.).",
+      "price": "40",
+      "inventory": 598,
+      "is_active": true,
+      "slug": "zhioltyi"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 3,
+    "fields": {
+      "category": 2,
+      "name": "Миндальная мука",
+      "image": "products_images/mindalnay_muka.png",
+      "short_desc": "Миндальная мука",
+      "description": "Миндальная пудра используется в кондитерской промышленности для приготовления макарон (французского миндального печенья) марципанов, тортов, печенья, безе, а также особых сортов шоколада.",
+      "price": "815",
+      "inventory": 0,
+      "is_active": true,
+      "slug": "mindalnaia-muka"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Кокосовая мука",
+      "image": "products_images/kokos_muka.png",
+      "short_desc": "Кокосовая мука",
+      "description": "Кокосовая мука используется в кондитерском производстве для приготовления печенья, кексов, бисквитов, блинчиков, панкейков, конфет и других сладостей.\r\n\r\n\r\nХА",
+      "price": "189",
+      "inventory": 999,
+      "is_active": true,
+      "slug": "kokosovaia-muka"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 5,
+    "fields": {
+      "category": 3,
+      "name": "Рисовые шарики",
+      "image": "products_images/rice_shariki2.jpg",
+      "short_desc": "Размер шариков 2-4 мм.Цвет: натуральный кремовый.",
+      "description": "Рисовые шарики (воздушный рис) используются как наполнитель для конфет и пирожных, а также могут использоваться как кондитерская посыпка.",
+      "price": "87",
+      "inventory": 700,
+      "is_active": true,
+      "slug": "risovye-shariki"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 6,
+    "fields": {
+      "category": 3,
+      "name": "Рисовые шарики с какао",
+      "image": "products_images/rice_shariki.jpg",
+      "short_desc": "Цвет: коричневый.Размер шариков 2-4 мм.",
+      "description": "Рисовые шарики (воздушный рис) с какао используются как наполнитель для конфет и пирожных, а также могут использоваться как кондитерская посыпка.",
+      "price": "80",
+      "inventory": 1000,
+      "is_active": true,
+      "slug": "risovye-shariki-s-kakao"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 7,
+    "fields": {
+      "category": 3,
+      "name": "Посыпка микс \"Шарики цветные\"",
+      "image": "products_images/posipka.jpg",
+      "short_desc": "Размер шариков 4 мм.",
+      "description": "В наборе 6 разных цветов шариков.\r\n\r\nКаждая посыпка в отделении с индивидуальной крышкой.",
+      "price": "100",
+      "inventory": 886,
+      "is_active": true,
+      "slug": "posypka-miks-shariki-tsvetnye"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 8,
+    "fields": {
+      "category": 2,
+      "name": "Сливки животные Чудское озеро",
+      "image": "products_images/slivki351l.jpg",
+      "short_desc": "Сливки для взбивания животные Чудское озеро 33%.",
+      "description": "Подходят для изготовления взбитых кремов и использования их в любых десертах. Упаковка 1 литр. Из упаковки 1 литра получается 2-2,5 литра взбитых сливок.",
+      "price": "414",
+      "inventory": 700,
+      "is_active": true,
+      "slug": "slivki-zhivotnye-chudskoe-ozero"
+    }
+  }
+]

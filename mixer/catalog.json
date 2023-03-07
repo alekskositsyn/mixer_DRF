@@ -1,0 +1,211 @@
+[
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 1,
+        "fields": {
+            "name": "Украшения для тортов и пирожных",
+            "image": "products_images/0363eee987894829ff92eb11d04a6c4c.png",
+            "description": "",
+            "is_active": true,
+            "slug": "ukrasheniya_dlya_tortov_i_pirozhnykh"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 2,
+        "fields": {
+            "name": "Пищевые ингредиенты",
+            "image": "products_images/284d65e27fc08cce75e40aa3941a47ce.png",
+            "description": "",
+            "is_active": true,
+            "slug": "pishchevye_ingredienty"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 3,
+        "fields": {
+            "name": "Шоколад и какао продукты",
+            "image": "products_images/4f23ea17102b1853607b2bfd6904156a.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_i_kakao_produkty"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 4,
+        "fields": {
+            "name": "Инструменты для кондитера",
+            "image": "products_images/ade51778dd462a23174cd4824d3e6a15.png",
+            "description": "",
+            "is_active": true,
+            "slug": "instrumenty_dlya_konditera"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 5,
+        "fields": {
+            "name": "Кондитерские мешки и насадки",
+            "image": "products_images/687322fe38383ad842a780e619612f11.png",
+            "description": "",
+            "is_active": true,
+            "slug": "konditerskie_meshki_i_nasadki"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 6,
+        "fields": {
+            "name": "Формы для выпекания и коврики",
+            "image": "products_images/bd2379ddceedfbc73997355302a77189.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_vypekaniya"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 7,
+        "fields": {
+            "name": "Капсулы и формы бумажные",
+            "image": "products_images/c74ce683e18c7ff5e6891305fc0f91c6.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kapsuly_i_formy_bumazhnye"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 8,
+        "fields": {
+            "name": "Коробки и упаковка для тортов и десертов",
+            "image": "products_images/d7e0263290fc204b942a65a36b0ea957.png",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_i_podlozhki_dlya_tortov_i_desertov"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 9,
+        "fields": {
+            "name": "Пищевая печать",
+            "image": "products_images/225b98bee11b535808d11186cfe17f24.png",
+            "description": "",
+            "is_active": true,
+            "slug": "pishchevaya_pechat_1"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 10,
+        "fields": {
+            "name": "Для Муссовых тортов и пирожных",
+            "image": "products_images/c4270d17cab4f9f8462456e7d666f311.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_mussovykh_tortov_i_pirozhnykh"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 11,
+        "fields": {
+            "name": "Для Зефирных цветов",
+            "image": "products_images/05qhv3k4j69v9i3p6eefml1p6l8z7ldd.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_zefirnykh_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 12,
+        "fields": {
+            "name": "Для Шоколада",
+            "image": "products_images/5b461d1b595be8c266c95ba346587c9f.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 13,
+        "fields": {
+            "name": "Для Капкейков и маффинов",
+            "image": "products_images/ea25dba0dedb3c7087f7f3a53ce8cfc1.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vse_dlya_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 14,
+        "fields": {
+            "name": "Для Печенья и пряников",
+            "image": "products_images/6e55bc8739cd5f2923dd58438ba3bb65.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_pechenya_i_pryanikov"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 15,
+        "fields": {
+            "name": "Для конфет",
+            "image": "products_images/287a97110df8ec0040784815a588a155.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_konfet"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 16,
+        "fields": {
+            "name": "Для леденцов, кейк-попсов и т.п.",
+            "image": "products_images/6de013f608246086a58f8fcac2c2bbe7.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_ledentsov_keyk_popsov_i_t_p"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 17,
+        "fields": {
+            "name": "Для Айсинга и гибкого кружева",
+            "image": "products_images/f9bc6e65e3e3828bceb933e7f0700229.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vse_dlya_aysinga"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 18,
+        "fields": {
+            "name": "Для изготовления цветов",
+            "image": "products_images/ab6263902f55fdedc47c7ba15b1f0994.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_izgotovleniya_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcatalog",
+        "pk": 19,
+        "fields": {
+            "name": "Для изготовления Мороженого",
+            "image": "products_images/a1f3c731f7bab6daaea5d203018f31b9.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_izgotovleniya_morozhenogo"
+        }
+    }
+]
