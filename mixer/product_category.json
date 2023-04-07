@@ -1,0 +1,34 @@
+[
+  {
+    "model": "mainapp.product_category",
+    "pk": 1,
+    "fields": {
+      "product": 70,
+      "productcategory": 51
+    }
+  },
+  {
+    "model": "mainapp.product_category",
+    "pk": 2,
+    "fields": {
+      "product": 70,
+      "productcategory": 6
+    }
+  },
+  {
+    "model": "mainapp.product_category",
+    "pk": 3,
+    "fields": {
+      "product": 71,
+      "productcategory": 2
+    }
+  },
+  {
+    "model": "mainapp.product_category",
+    "pk": 4,
+    "fields": {
+      "product": 71,
+      "productcategory": 7
+    }
+  }
+]
