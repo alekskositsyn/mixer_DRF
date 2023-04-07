@@ -46,13 +46,12 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     """Модель продуктов"""
-    category = models.ForeignKey(ProductCategory,
-                                 on_delete=models.CASCADE,
-                                 verbose_name='категория продукта')
+    category = models.ManyToManyField(ProductCategory,
+                                     related_name='products_category',
+                                      verbose_name='категория продукта')
     name = models.CharField('имя продукта', max_length=128)
-    image = models.ImageField(upload_to='products_images', blank=True)
-    short_desc = models.CharField(
-        verbose_name='краткое описание продукта', max_length=64, blank=True)
+    short_desc = models.TextField(
+        verbose_name='краткое описание продукта', blank=True)
     description = models.TextField(
         verbose_name='описание продукта', blank=True)
     price = models.DecimalField(
@@ -74,6 +73,13 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
+
+
+class ProductImages(models.Model):
+    product = models.ForeignKey(Product,
+                                on_delete=models.CASCADE,
+                                verbose_name='продукт')
+    image = models.ImageField(upload_to='products_images', blank=True)
 
 
 class RatingStar(models.Model):
