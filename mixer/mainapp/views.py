@@ -1,6 +1,6 @@
 from django.db import models
 from .models import ProductCategory, Product, Review
-from .service import get_client_ip
+from .service import get_client_ip, PaginationProducts
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, \
@@ -18,6 +18,7 @@ class ProductListView(ListAPIView):
     """Вывод списка продуктов"""
     serializer_class = ProductListSerializer
     permission_classes = [AllowAny]
+    pagination_class = PaginationProducts
 
     def get_queryset(self):
         products = Product.objects.filter(is_active=True).annotate(

@@ -4,7 +4,10 @@ import axios from "axios";
 const state = () => ({
     listCategory: [],
     listProducts: [],
-    product: {}
+    product: {},
+    // page: 1,
+    totalPages: 0,
+    total: 0
 })
 
 // getters
@@ -12,11 +15,13 @@ const getters = {}
 
 // actions
 const actions = {
-    getAllProducts({commit}) {
+    getAllProducts({state, commit}, page=1) {
         axios
-            .get('/products/')
+            .get(`/products?page=${page}`)
             .then(response => {
                 commit('setProducts', response.data)
+                commit('setTotalCountProducts', response.data)
+                commit('setTotalPagesCountProducts', response.data)
             })
             .catch(error => console.log(error))
     },
@@ -34,7 +39,17 @@ const actions = {
 // mutations
 const mutations = {
     setProducts(state, products) {
-        state.listProducts = products
+        state.listProducts = products.results
+    },
+
+    setTotalCountProducts(state, products) {
+        state.total = products.count
+    },
+
+    setTotalPagesCountProducts(state, products) {
+        const item = state.listProducts.length
+        console.log(item)
+        state.totalPages = Math.ceil(state.total / item)
     },
 
     setOneProduct(state, product) {
@@ -42,7 +57,7 @@ const mutations = {
     },
 
     setCategory(state, category) {
-        state.listCategory = category
+        state.listCategory = category.results
     },
 
     incrementProductInventory(state, {id, quantity}) {

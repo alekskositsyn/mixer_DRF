@@ -45,6 +45,11 @@
                 </div>
               </div>
             </div>
+            <Pagination
+                :totalPages="totalPages"
+                :perPage="10"
+                :currentPage="currentPage"
+                @pagechanged="onPageChange"/>
           </div>
         </div>
       </div>
@@ -53,6 +58,7 @@
 </template>
 
 <script>
+import Pagination from "@/components/Pagination";
 import {mapState, mapActions} from 'vuex'
 
 
@@ -62,14 +68,17 @@ export default {
   data() {
     return {
       popUP: false,
-      listStar: [1, 2, 3, 4, 5]
+      listStar: [1, 2, 3, 4, 5],
+      currentPage: 1,
+
     }
   },
   computed: mapState({
     products: state => state.products.listProducts,
-    categories: state => state.products.listCategory
+    categories: state => state.products.listCategory,
+    totalPages: state => state.products.totalPages,
   }),
-  components: {},
+  components: {Pagination},
   created() {
     this.$store.dispatch('products/getAllProducts')
     this.$store.dispatch('products/getAllCategory')
@@ -77,10 +86,16 @@ export default {
   methods: {
     ...mapActions({
       addProduct: 'basket/addProductToCart',
+      getAllProducts: 'products/getAllProducts'
     }),
 
     goTo(id) {
       this.$router.push({path: `/products/${id}`})
+    },
+    onPageChange(page) {
+      console.log(page)
+      this.getAllProducts(page)
+      this.currentPage = page;
     }
   }
 }
