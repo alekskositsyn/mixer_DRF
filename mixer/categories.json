@@ -1,0 +1,2606 @@
+[
+    {
+        "model": "mainapp.productcategory",
+        "pk": 1,
+        "fields": {
+            "catalog": 1,
+            "name": "Посыпки Миксы",
+            "image": "products_images/49077f5324c58585544ffc17d982ace8.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "posypka_miksy"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 2,
+        "fields": {
+            "catalog": 1,
+            "name": "Посыпки шарики 1-3 мм",
+            "image": "products_images/980fa454b3fc26fdce609d6675029a88.png",
+            "description": "",
+            "is_active": true,
+            "slug": "sakharnye_shariki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 3,
+        "fields": {
+            "catalog": 1,
+            "name": "Посыпки шарики 4-6 мм",
+            "image": "products_images/6c08a866147b335b4ad6e5722243009c.png",
+            "description": "",
+            "is_active": true,
+            "slug": "risovye_shariki_kokosovaya_struzhka"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 4,
+        "fields": {
+            "catalog": 1,
+            "name": "Посыпки шарики 7 мм и более",
+            "image": "products_images/e8ae39b0e910f2b01c94fc9a75f1eb18.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shariki_7_mm_i_bolee"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 5,
+        "fields": {
+            "catalog": 1,
+            "name": "Украшения металлизированные",
+            "image": "products_images/a801499156d466b215e1cd22e30ac83c.png",
+            "description": "",
+            "is_active": true,
+            "slug": "ukrasheniya_sakharnye_metallizirovannye"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 6,
+        "fields": {
+            "catalog": 1,
+            "name": "Фигурные посыпки",
+            "image": "products_images/ec2346461a75a366e31294579ef0c480.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "posypki_i_shariki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 7,
+        "fields": {
+            "catalog": 1,
+            "name": "Вермишель и соломка",
+            "image": "products_images/53c61d235b4c0b1ae33553c2f86fe0a6.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vermishel_i_solomka"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 8,
+        "fields": {
+            "catalog": 1,
+            "name": "Крупные съедобные украшения",
+            "image": "products_images/1d703b4681ca69326845758a44fcef61.png",
+            "description": "",
+            "is_active": true,
+            "slug": "krupnye_sedobnye_ukrasheniya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 9,
+        "fields": {
+            "catalog": 1,
+            "name": "Шоколадные украшения",
+            "image": "products_images/cc2cab1614a4c6043f697a9d558ab138.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shokoladnye_ukrasheniya_1"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 10,
+        "fields": {
+            "catalog": 1,
+            "name": "Переводные листы для шоколада",
+            "image": "products_images/957faf22c8c5dcbe6f47aeefcf843b8f.png",
+            "description": "",
+            "is_active": true,
+            "slug": "perevodnye_listy_dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 11,
+        "fields": {
+            "catalog": 1,
+            "name": "Вафельные цветы и украшения",
+            "image": "products_images/75434f090a7ba9c7c73f104acc2bf9b5.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "vafelnye_ukrasheniya_1"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 12,
+        "fields": {
+            "catalog": 1,
+            "name": "Вафельные рожки и стаканчики",
+            "image": "products_images/3a91a587bf6065141bc45c0e82147fbc.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vafelnye_rozhki_i_stakanchiki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 13,
+        "fields": {
+            "catalog": 1,
+            "name": "Сахарные украшения",
+            "image": "products_images/2d670cc3d7dc6d2816708000fdbc8237.png",
+            "description": "",
+            "is_active": true,
+            "slug": "sakharnye_ukrasheniya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 14,
+        "fields": {
+            "catalog": 1,
+            "name": "Фигурки из глазури",
+            "image": "products_images/01wz0y0zn4p16y3xuvmhsg8aqcc2wy1e.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "figurki_iz_glazuri"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 15,
+        "fields": {
+            "catalog": 1,
+            "name": "Маршмеллоу и суфле",
+            "image": "products_images/1c831c63c92d2c995a480ee8a6fd86d9.png",
+            "description": "",
+            "is_active": true,
+            "slug": "marshmellou_i_sufle"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 16,
+        "fields": {
+            "catalog": 1,
+            "name": "Кокосовая стружка, мак и ореховые лепестки",
+            "image": "products_images/dca81b78ea9ea889cc31a07a03ad37b9.png",
+            "description": "",
+            "is_active": true,
+            "slug": "koksovaya_struzhka_mak_i_mindalnye_lepestki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 17,
+        "fields": {
+            "catalog": 1,
+            "name": "Пищевые блестки и глиттеры",
+            "image": "products_images/78eae10115a381e1c22e0151ec3b054b.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "pishchevye_blestki_i_glittery"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 18,
+        "fields": {
+            "catalog": 1,
+            "name": "Топперы",
+            "image": "products_images/3c6b05ae9b85bd668d2c24f839d6e17d.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "toppery"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 19,
+        "fields": {
+            "catalog": 1,
+            "name": "Свечи для тортов",
+            "image": "products_images/be4e837421bde22a04f4c1ec6ecbf9f4.png",
+            "description": "",
+            "is_active": true,
+            "slug": "svechi_dlya_tortov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 20,
+        "fields": {
+            "catalog": 1,
+            "name": "Пищевое сусальное золото и серебро",
+            "image": "products_images/99573dcd2962d863af830eb55a6a3ff4.png",
+            "description": "",
+            "is_active": true,
+            "slug": "pishchevoe_susalnoe_zoloto_i_serebro"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 21,
+        "fields": {
+            "catalog": 1,
+            "name": "Сахарные кристаллы",
+            "image": "products_images/d976a9a7d95e9b749eaf51abd55ee221.png",
+            "description": "",
+            "is_active": true,
+            "slug": "sakharnye_kristally"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 22,
+        "fields": {
+            "catalog": 1,
+            "name": "Сублимированные продукты",
+            "image": "products_images/d8c6f79c078c4f615007adf18c2d394b.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "sublimirovannye_produkty"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 23,
+        "fields": {
+            "catalog": 1,
+            "name": "Фигурный мармелад",
+            "image": "products_images/2dc44684b6be6608673ff26acced0051.png",
+            "description": "",
+            "is_active": true,
+            "slug": "figurnyy_marmelad"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 24,
+        "fields": {
+            "catalog": 1,
+            "name": "Воздушные шарики",
+            "image": "products_images/6fab9d3a65537ab1db71f65ed6bd270f.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vozdushnye_shariki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 25,
+        "fields": {
+            "catalog": 1,
+            "name": "Сухие цветы",
+            "image": "products_images/9a8324db784574a0a9b4d92e323abfb0.png",
+            "description": "",
+            "is_active": true,
+            "slug": "sukhie_tsvety"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 26,
+        "fields": {
+            "catalog": 1,
+            "name": "Светодиоды LED лампочки для тортов и шаров",
+            "image": "products_images/36aa4856b2bb7295ece910843749db60.png",
+            "description": "",
+            "is_active": true,
+            "slug": "svetodiody_led_lampochki_dlya_tortov_i_sharov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 27,
+        "fields": {
+            "catalog": 1,
+            "name": "Карамель леденцовая",
+            "image": "products_images/38547b155fb38156b01a94bf3250766f.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "karamel_ledentsovaya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 28,
+        "fields": {
+            "catalog": 1,
+            "name": "Посыпки мелким оптом",
+            "image": "products_images/1091dca22a48d39247b20d90883eb94c.png",
+            "description": "",
+            "is_active": true,
+            "slug": "posypki_melkim_optom"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 29,
+        "fields": {
+            "catalog": 2,
+            "name": "Сливки для взбивания",
+            "image": "products_images/e7f933b694b3edf64cabcd835d040ea9.png",
+            "description": "",
+            "is_active": true,
+            "slug": "slivki_dlya_vzbivaniya_1"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 30,
+        "fields": {
+            "catalog": 2,
+            "name": "Сыр творожный и сливочный",
+            "image": "products_images/18ef1b717c41716f5c477c8333f3000b.png",
+            "description": "",
+            "is_active": true,
+            "slug": "maskarpone_i_kremetta"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 31,
+        "fields": {
+            "catalog": 2,
+            "name": "Масло сливочное, кокосовое",
+            "image": "products_images/2fb529aee364bb7b159c94603d1ed521.png",
+            "description": "",
+            "is_active": true,
+            "slug": "maslo_slivochnoe"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 32,
+        "fields": {
+            "catalog": 2,
+            "name": "Айсинг, гели, глазури",
+            "image": "products_images/94fd6ed682d89864117bc563a9e7aa7c.png",
+            "description": "",
+            "is_active": true,
+            "slug": "glyassazhi_pomadki_i_geli"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 33,
+        "fields": {
+            "catalog": 2,
+            "name": "Глюкозный и инвертный сироп, патока",
+            "image": "products_images/3de1cab453b98ac03b286694529997bc.png",
+            "description": "",
+            "is_active": true,
+            "slug": "glyukoznyy_i_invertnyy_sirop"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 34,
+        "fields": {
+            "catalog": 2,
+            "name": "Изомальт и заменители сахара",
+            "image": "products_images/5aac34262d4280282735e2dfbc19565e.png",
+            "description": "",
+            "is_active": true,
+            "slug": "izomalt_i_zameniteli_sakhara"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 35,
+        "fields": {
+            "catalog": 2,
+            "name": "Сахарная пудра, Лимонная Кислота",
+            "image": "products_images/c930f2dd41f927b28a071e0781ab0a2c.png",
+            "description": "",
+            "is_active": true,
+            "slug": "sakharnaya_pudra_podslastiteli"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 36,
+        "fields": {
+            "catalog": 2,
+            "name": "Агар-агар, пектин, желатин",
+            "image": "products_images/c31f01a61158963f67eea7a1a02da810.png",
+            "description": "",
+            "is_active": true,
+            "slug": "agar_agar_pektin_zhelatin"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 37,
+        "fields": {
+            "catalog": 2,
+            "name": "Мастика и марципан",
+            "image": "products_images/133bbce9d9baef2a2abae41ede7a52ea.png",
+            "description": "",
+            "is_active": true,
+            "slug": "mastika_i_martsipan"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 38,
+        "fields": {
+            "catalog": 2,
+            "name": "Стабилизаторы, загустители",
+            "image": "products_images/78cb3920b3c866de9bd68226b0f185f2.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "stabilizatory_zagustiteli"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 39,
+        "fields": {
+            "catalog": 2,
+            "name": "Ваниль, Ванилин, Ванильная эссенция",
+            "image": "products_images/156695e327f649c0c24b0131abc24342.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vanil_vanilin_vanilnaya_essentsiya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 40,
+        "fields": {
+            "catalog": 2,
+            "name": "Пасты кондитерские ореховые",
+            "image": "products_images/6bf5c256d8a9165b3eb134cd91c30b77.png",
+            "description": "",
+            "is_active": true,
+            "slug": "pasty_konditerskie"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 41,
+        "fields": {
+            "catalog": 2,
+            "name": "Фруктовые пюре",
+            "image": "products_images/1f3cd10d6e5c1865d2f2631030a1ffc9.png",
+            "description": "",
+            "is_active": true,
+            "slug": "fruktovye_pyure"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 42,
+        "fields": {
+            "catalog": 2,
+            "name": "Смеси для выпечки и мука",
+            "image": "products_images/b73205673a6a5051fb99f77f150fdae6.png",
+            "description": "",
+            "is_active": true,
+            "slug": "smesi_dlya_vypechki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 43,
+        "fields": {
+            "catalog": 2,
+            "name": "Мука миндальная и ореховая",
+            "image": "products_images/73f91f9f69a8b5615e1775e582f699b4.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "muka_orekhovaya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 44,
+        "fields": {
+            "catalog": 2,
+            "name": "Разрыхлители для теста, Дрожжи",
+            "image": "products_images/6cc2fe5c033f3d45884bcc2a8681f21e.png",
+            "description": "",
+            "is_active": true,
+            "slug": "razrykhliteli_dlya_testa"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 45,
+        "fields": {
+            "catalog": 2,
+            "name": "Ароматизаторы пищевые",
+            "image": "products_images/29a7c2b3e6632002f7d9b6ff0289cdd2.png",
+            "description": "",
+            "is_active": true,
+            "slug": "aromatizatory_pishchevye"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 46,
+        "fields": {
+            "catalog": 2,
+            "name": "Сиропы и Топпинги",
+            "image": "products_images/fef874a759f449489ddd1acf9b441b43.png",
+            "description": "",
+            "is_active": true,
+            "slug": "siropy_i_toppingi"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 47,
+        "fields": {
+            "catalog": 2,
+            "name": "Конфитюры, джемы, термостабильные начинки",
+            "image": "products_images/0903b2de7b97215445479e11762e41d3.png",
+            "description": "",
+            "is_active": true,
+            "slug": "konfityury_i_dzhemy"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 48,
+        "fields": {
+            "catalog": 2,
+            "name": "Замороженные продукты",
+            "image": "products_images/ee2ed1b9a5dc1149a20a8571c0fdc0d2.png",
+            "description": "",
+            "is_active": true,
+            "slug": "zamorozhennye_produkty"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 49,
+        "fields": {
+            "catalog": 2,
+            "name": "Смеси для мороженого",
+            "image": "products_images/c767f57b2241966abcc0e75ead9755d9.png",
+            "description": "",
+            "is_active": true,
+            "slug": "smesi_dlya_morozhenogo"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 50,
+        "fields": {
+            "catalog": 2,
+            "name": "Печенье Савоярди, Коржи для тортов",
+            "image": "products_images/032f98a8b236ac8e3d7a361a439217e4.png",
+            "description": "",
+            "is_active": true,
+            "slug": "pechene_savoyardi_polufabrikaty"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 51,
+        "fields": {
+            "catalog": 2,
+            "name": "Специи",
+            "image": "products_images/1cac97b9cb4cc847b6724bc7e7b673cc.png",
+            "description": "",
+            "is_active": true,
+            "slug": "spetsii"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 52,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад Barry Callebaut (Бельгия)",
+            "image": "products_images/089c43967ba0e245d63d96e6921d1ed3.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_barry_callebaut_belgiya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 53,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад без сахара (Россия)",
+            "image": "products_images/0159e331f3f6edeaf4a27ecb09a9665a.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_bez_sakhara"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 54,
+        "fields": {
+            "catalog": 3,
+            "name": "Глазурь шоколадная",
+            "image": "products_images/0e15188c84837fa14d7b81bb8fb9488f.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "glazur_shokoladnaya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 55,
+        "fields": {
+            "catalog": 3,
+            "name": "Какао тертое, какао масло",
+            "image": "products_images/d83e2ee3b2d30a2c3597506144c47ffe.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kakao_tertoe_kakao_maslo"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 56,
+        "fields": {
+            "catalog": 3,
+            "name": "Какао порошки",
+            "image": "products_images/12ec2fa30e66b46bcf2e06cb8fdbceda.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kakao_poroshki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 57,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколадные напитки",
+            "image": "products_images/8zlt903wu37n5mayjz1g7ioy2e3peo15.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "shokoladnye_napitki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 58,
+        "fields": {
+            "catalog": 3,
+            "name": "Термостабильные капли",
+            "image": "products_images/c5a12459cc8b9ba53c74cdf2b0995080.png",
+            "description": "",
+            "is_active": true,
+            "slug": "termostabilnye_kapli"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 59,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад SICAO (Россия)",
+            "image": "products_images/8fe777e3047676805a63b2ec3c283470.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_sicao_ros"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 60,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад LUKER (Колумбия)",
+            "image": "products_images/95ab863254cad0b88ef3bef5a459a94a.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_luker_kolumbiya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 61,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад Carma (Швейцария)",
+            "image": "products_images/lcwq9zu6tdi9wol4g738yaim82gj6sts.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_carma_shveytsariya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 62,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад Chocovic (Россия)",
+            "image": "products_images/9843f22a30361decc7c5a455ebba4c43.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_chocovic_rossiya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 63,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад Ariba (Италия)",
+            "image": "products_images/miyd753vcyxk0hbk0ab6sif10ryeb418.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_master_mattini_italiya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 64,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад Purocao (Италия)",
+            "image": "products_images/qk0k3twx3ob7o5253q1in2w3sm6usfrj.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_purocao"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 65,
+        "fields": {
+            "catalog": 3,
+            "name": "Шоколад в больших мешках",
+            "image": "products_images/39f6655e839f04bc3b4edde3ebd1cc85.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_v_bolshikh_meshkakh"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 66,
+        "fields": {
+            "catalog": 3,
+            "name": "Формы для шоколада",
+            "image": "products_images/g0fbfy54jvwfy9tg9u109vbwsveo25xf.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 67,
+        "fields": {
+            "catalog": 4,
+            "name": "Наборы кондитерские",
+            "image": "products_images/2ffam3fgiky338nv3he1yg9p8mqu80y6.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "nabory_instrumentov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 68,
+        "fields": {
+            "catalog": 4,
+            "name": "Вырубки для печенья",
+            "image": "products_images/e3da09184dcad15a67dd5b7c9cb12073.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vyrubki_dlya_pechenya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 69,
+        "fields": {
+            "catalog": 4,
+            "name": "Шпатели кондитерские",
+            "image": "products_images/28b1f0242103c56ae4c60dbc2ccf379c.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shpateli_konditerskie"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 70,
+        "fields": {
+            "catalog": 4,
+            "name": "Лопатки кондитерские (палетки)",
+            "image": "products_images/81d0198f72f255417e2348f78d6f6888.png",
+            "description": "",
+            "is_active": true,
+            "slug": "lopatki_konditerskie_paletki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 71,
+        "fields": {
+            "catalog": 4,
+            "name": "Подставки, поворотные столы",
+            "image": "products_images/d6c1c331f003922404dec420cb5fb264.png",
+            "description": "",
+            "is_active": true,
+            "slug": "podstavki_povorotnye_stoly"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 72,
+        "fields": {
+            "catalog": 4,
+            "name": "Резаки, ножи, делители",
+            "image": "products_images/2b51896dd22e3e1239c3e58692bcb5d4.png",
+            "description": "",
+            "is_active": true,
+            "slug": "rezaki_nozhi_deliteli"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 73,
+        "fields": {
+            "catalog": 4,
+            "name": "Скалки, валики и текстурные коврики",
+            "image": "products_images/e952365c0f5cd28e5591bf69764a86a9.png",
+            "description": "",
+            "is_active": true,
+            "slug": "skalki_valiki_i_teksturnye_kovriki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 74,
+        "fields": {
+            "catalog": 4,
+            "name": "Аэрографы и компрессоры",
+            "image": "products_images/dfb0ae837293706c227979914e518830.png",
+            "description": "",
+            "is_active": true,
+            "slug": "aerografy_i_kompressory"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 75,
+        "fields": {
+            "catalog": 4,
+            "name": "Факелы для карамелизации",
+            "image": "products_images/e88b4edc4e5f599ce5b292866de1a308.png",
+            "description": "",
+            "is_active": true,
+            "slug": "fakely_dlya_karamelizatsii"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 76,
+        "fields": {
+            "catalog": 4,
+            "name": "Трафареты для тортов и аэрографии",
+            "image": "products_images/ced91364740f65f199ab29b043e3092e.png",
+            "description": "",
+            "is_active": true,
+            "slug": "trafarety_dlya_tortov_i_aerografii"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 77,
+        "fields": {
+            "catalog": 4,
+            "name": "Палочки для леденцов, кейк-попсов, и т.п.",
+            "image": "products_images/0e4a3d586cb862e9fc8e0b6f104b0371.png",
+            "description": "",
+            "is_active": true,
+            "slug": "palochki_dlya_ukrepleniya_yarusov_"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 78,
+        "fields": {
+            "catalog": 4,
+            "name": "Фальш ярусы и муляжи",
+            "image": "products_images/16c3643527fb4709ac2739d09503c9d3.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "falsh_yarusy_i_mulyazhi"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 79,
+        "fields": {
+            "catalog": 4,
+            "name": "Ацетатная и бордюрная лента",
+            "image": "products_images/60ea42278b88791fc91b9ec3a1741fef.png",
+            "description": "",
+            "is_active": true,
+            "slug": "bordyurnaya_i_atsetatnaya_lenta"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 80,
+        "fields": {
+            "catalog": 4,
+            "name": "Варежки, перчатки, прихватки",
+            "image": "products_images/46647cadb90db29c63f0c0b516ac1c2e.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "varezhki_perchatki_prikhvatki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 81,
+        "fields": {
+            "catalog": 4,
+            "name": "Решетки для глазирования",
+            "image": "products_images/201a72ff5959784e81978346d07dd4e6.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "reshetki_dlya_glazirovaniya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 82,
+        "fields": {
+            "catalog": 4,
+            "name": "Пергамент, фольга",
+            "image": "products_images/2a94f650f525a10760f03ea8b97da90f.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "pergament_folga"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 83,
+        "fields": {
+            "catalog": 4,
+            "name": "Инструменты для мастики",
+            "image": "products_images/e36e5c88cab872b447ab058b7d7923af.png",
+            "description": "",
+            "is_active": true,
+            "slug": "instrumenty_dlya_mastiki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 84,
+        "fields": {
+            "catalog": 4,
+            "name": "Миски и сита",
+            "image": "products_images/8f405aa1086862eb3d180f55d6221d95.png",
+            "description": "",
+            "is_active": true,
+            "slug": "miski_i_sita"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 85,
+        "fields": {
+            "catalog": 4,
+            "name": "Плунжеры и вырубки для мастики",
+            "image": "products_images/c317bbdd60fe59afa4d81be2015d8c06.png",
+            "description": "",
+            "is_active": true,
+            "slug": "plunzhery_i_vyrubki_dlya_mastiki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 86,
+        "fields": {
+            "catalog": 4,
+            "name": "Силиконовые молды",
+            "image": "products_images/3ee9b8f20d47e46f1395672000ef2957.png",
+            "description": "",
+            "is_active": true,
+            "slug": "silikonovye_moldy_dlya_mastiki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 87,
+        "fields": {
+            "catalog": 4,
+            "name": "Мерные кружки и ложки",
+            "image": "products_images/d167f0d3cf95cbc81c12c3b4e5c1a4f2.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "mernye_kruzhki_i_lozhki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 88,
+        "fields": {
+            "catalog": 4,
+            "name": "Венчики, кисточки и лопатки",
+            "image": "products_images/e65a0d7803953f7062fcca868e0d4d8e.png",
+            "description": "",
+            "is_active": true,
+            "slug": "venchiki_kistochki_i_lopatki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 89,
+        "fields": {
+            "catalog": 4,
+            "name": "Весы, термометры и таймеры",
+            "image": "products_images/ec10463d444d9d033fc6e3ab7c18517d.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vesy_i_termometry"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 90,
+        "fields": {
+            "catalog": 5,
+            "name": "Насадки кондитерские Маленькие",
+            "image": "products_images/59503831a1ba6a58084f1341ffc59829.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "nasadki_konditerskie_malenkie"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 91,
+        "fields": {
+            "catalog": 5,
+            "name": "Насадки кондитерские Стандартные и большие",
+            "image": "products_images/5f09d5b9b25dbf5c98775a25bcd8c5cd.png",
+            "description": "",
+            "is_active": true,
+            "slug": "nasadki_konditerskie_krupnye"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 92,
+        "fields": {
+            "catalog": 5,
+            "name": "Насадки тюльпаны, розы, травка",
+            "image": "products_images/2381787f1cc159684e43df4ea59d09cf.png",
+            "description": "",
+            "is_active": true,
+            "slug": "nasadki_tyulpany_rozy_travka"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 93,
+        "fields": {
+            "catalog": 5,
+            "name": "Насадки кондитерские Султан",
+            "image": "products_images/ee96f6ff1f06b96992333e4cfba89fcf.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "nasadki_konditerskie_sultan"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 94,
+        "fields": {
+            "catalog": 5,
+            "name": "Насадки для зефирных цветов",
+            "image": "products_images/6ueaa3e6chyjz3mei9ozopwf7al2ictl.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "nasadki_dlya_zefirnykh_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 95,
+        "fields": {
+            "catalog": 5,
+            "name": "Наборы кондитерских насадок",
+            "image": "products_images/9d0b3cdf6638b88f9a75ccd685e8dd71.png",
+            "description": "",
+            "is_active": true,
+            "slug": "nabory_konditerskikh_nasadok"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 96,
+        "fields": {
+            "catalog": 5,
+            "name": "Переходники и гвоздики для насадок",
+            "image": "products_images/81e2cd4e4a7e8ae5f8c3f029206e4d8f.png",
+            "description": "",
+            "is_active": true,
+            "slug": "perekhodniki_ershiki_dlya_nasadok"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 97,
+        "fields": {
+            "catalog": 5,
+            "name": "Мешки для работы с кремом",
+            "image": "products_images/d4225941ecf493d38c92a55d6836dfb4.png",
+            "description": "",
+            "is_active": true,
+            "slug": "meshki_dlya_raboty_s_kremom"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 98,
+        "fields": {
+            "catalog": 6,
+            "name": "Коврики для выпекания",
+            "image": "products_images/e3417c925e08fcdbcf4c9438c9cd12a3.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kovriki_dlya_vypechki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 99,
+        "fields": {
+            "catalog": 6,
+            "name": "Кольца для выпекания",
+            "image": "products_images/0c6aea55c927a69db09d34c19fbeca39.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "koltsa_i_formy_bez_dna_"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 100,
+        "fields": {
+            "catalog": 6,
+            "name": "Раздвижные формы",
+            "image": "products_images/64109db3c668064246d82c274f341994.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "razdvizhnye_koltsa_i_nabory"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 101,
+        "fields": {
+            "catalog": 6,
+            "name": "Квадраты и прямоугольные формы",
+            "image": "products_images/c2f6576b86c16b3e43a99eb8d3f5ebcc.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kvadraty_i_figurnye_formy_dlya_vypechki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 102,
+        "fields": {
+            "catalog": 6,
+            "name": "Сердца и фигурные формы",
+            "image": "products_images/dw5bjivgwz100i7zm1v10yws0bfcfycu.png",
+            "description": "",
+            "is_active": true,
+            "slug": "serdtsa_i_figurnye_formy"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 103,
+        "fields": {
+            "catalog": 6,
+            "name": "Формы со съемным дном",
+            "image": "products_images/25a75633949911e74015aa47781f8622.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_so_semnym_dnom_"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 104,
+        "fields": {
+            "catalog": 6,
+            "name": "Перфорированные формы",
+            "image": "products_images/10586bc3e4f4e055b3c269d12b940003.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "koltsa_perforirovannye"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 105,
+        "fields": {
+            "catalog": 6,
+            "name": "Термопластиковые формы",
+            "image": "products_images/jrcsdom91uuhwjnwjhydrekuprw9vamw.png",
+            "description": "",
+            "is_active": true,
+            "slug": "termoplastikovye_formy"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 106,
+        "fields": {
+            "catalog": 6,
+            "name": "Силиконовые формы",
+            "image": "products_images/3c7f5da10894890cd5ee6f24176e8d7c.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_silikonovye_dlya_vypechki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 107,
+        "fields": {
+            "catalog": 6,
+            "name": "Формы для капкейков и пирогов",
+            "image": "products_images/6535e4f36d57ddfd22044296d2a8ba22.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_pirogov_i_keksov_"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 108,
+        "fields": {
+            "catalog": 6,
+            "name": "Формы для хлеба",
+            "image": "products_images/fc44082dbfb0680a6cfacd06a515e9bd.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_khleba"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 109,
+        "fields": {
+            "catalog": 6,
+            "name": "Формы для куличей и пасхи",
+            "image": "products_images/13241ef34d4c32b940dd91f77a4979e2.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_kulichey_i_paskhi"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 110,
+        "fields": {
+            "catalog": 6,
+            "name": "Конусы для выпечки рожков",
+            "image": "products_images/6931f296105246a55581ce79e6965b26.png",
+            "description": "",
+            "is_active": true,
+            "slug": "konusy_dlya_vypechki_rozhkov_"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 111,
+        "fields": {
+            "catalog": 6,
+            "name": "Алюминиевые формы",
+            "image": "products_images/8c2b0f6ac6ecb443b2dffbc37332e86a.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "alyuminievye_formy"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 112,
+        "fields": {
+            "catalog": 7,
+            "name": "Капсулы бумажные без бортика",
+            "image": "products_images/3be15e39723a3b41c7ad5c265d2f97e3.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "odnorazovye_formy_dlya_vypechki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 113,
+        "fields": {
+            "catalog": 7,
+            "name": "Капсулы бумажные с бортиком",
+            "image": "products_images/59cdc99bb090dc37d893dc77562b278b.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kapsuly_bumazhnye_s_bortikom"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 114,
+        "fields": {
+            "catalog": 7,
+            "name": "Капсулы для эклеров",
+            "image": "products_images/4591206f1d6324b15d0d3b5500b96199.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kapsuly_dlya_eklerov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 115,
+        "fields": {
+            "catalog": 7,
+            "name": "Капсулы - тюльпан для выпечки",
+            "image": "products_images/9d77c7851841fcc6bc2a6218228ddbe6.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_tyulpan_dlya_vypechki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 116,
+        "fields": {
+            "catalog": 7,
+            "name": "Капсулы для конфет и пирожных",
+            "image": "products_images/3b82480ec498c7f2bb52ee0503fc4b29.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kapsuly_dlya_konfet_i_pirozhnykh"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 117,
+        "fields": {
+            "catalog": 7,
+            "name": "Бумажные стаканчики для десертов",
+            "image": "products_images/448c65ab1482cd72d0a0108daa17d637.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "bumazhnye_stakanchiki_dlya_desertov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 118,
+        "fields": {
+            "catalog": 7,
+            "name": "Формы для пая",
+            "image": "products_images/0c2d59a466cb95bef9f6d3c2d6220752.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_paya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 119,
+        "fields": {
+            "catalog": 7,
+            "name": "Капсулы мелким оптом",
+            "image": "products_images/22173ede5c2f19ce2b31a2f9c9b6729e.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kapsuly_melkiy_opt"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 120,
+        "fields": {
+            "catalog": 8,
+            "name": "Картонные коробки для тортов",
+            "image": "products_images/db4b15b630cfbabd4028bb0324c5aba5.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kartonnye_korobki_dlya_tortov_i_pirozhnykh"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 121,
+        "fields": {
+            "catalog": 8,
+            "name": "Картонные коробки для капкейков",
+            "image": "products_images/543be78d5aac5ffb76257f373a25ecd5.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kartonnye_korobki_dlya_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 122,
+        "fields": {
+            "catalog": 8,
+            "name": "Коробки для печенья, пряников и других сладостей",
+            "image": "products_images/8a34fdd63364f39af96fe37ba912e181.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_dlya_pechenya_i_pryanikov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 123,
+        "fields": {
+            "catalog": 8,
+            "name": "Коробки для Макарун",
+            "image": "products_images/e2ba5d2de8ef696262b53893f3f276e1.png",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_dlya_makarun"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 124,
+        "fields": {
+            "catalog": 8,
+            "name": "Упаковка для шоколада и конфет",
+            "image": "products_images/3793188c3ab10cf43d241db8bdf6eac6.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "upakovka_dlya_shokolada_i_konfet"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 125,
+        "fields": {
+            "catalog": 8,
+            "name": "Коробки для куличей",
+            "image": "products_images/swwvc5hmg9vrhmjwod5czz1piqbo1l87.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_dlya_kulichey"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 126,
+        "fields": {
+            "catalog": 8,
+            "name": "Пластиковые контейнеры",
+            "image": "products_images/c0f11e7ae2de493959a866a3a99d8db7.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "plastikovye_konteynery"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 127,
+        "fields": {
+            "catalog": 8,
+            "name": "Подложки, подносы для тортов и пирожных",
+            "image": "products_images/c3048c475a8a1bbec9cf24a1c95813e4.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "podlozhki_dlya_tortov_i_pirozhnykh"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 128,
+        "fields": {
+            "catalog": 8,
+            "name": "Пакеты для пряников и других сладостей",
+            "image": "products_images/7644b71ef88659b0a408627759a888c7.png",
+            "description": "",
+            "is_active": true,
+            "slug": "pakety_dlya_pryanikov_i_drugih_sladostei"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 129,
+        "fields": {
+            "catalog": 8,
+            "name": "Креманки для десертов",
+            "image": "products_images/28bfee8dfc8d35855dbe4bcc5d5f8541.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kremanki_dlya_desertov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 130,
+        "fields": {
+            "catalog": 8,
+            "name": "Коробки для пирогов и пиццы",
+            "image": "products_images/94abde53b433acae3aa14477a14b2d96.png",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_dlya_pirogov_i_pitstsy"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 132,
+        "fields": {
+            "catalog": 8,
+            "name": "Ленты атласные и декор",
+            "image": "products_images/d57780fd816dcd5c75246a2e19570050.png",
+            "description": "",
+            "is_active": true,
+            "slug": "lenty_atlasnye_i_dekor"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 133,
+        "fields": {
+            "catalog": 8,
+            "name": "Ленты декоративные ",
+            "image": "products_images/df1042fa7f0698a33fe3579c37c9bbf5.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "lenty_dekorativnye_"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 134,
+        "fields": {
+            "catalog": 8,
+            "name": "Декоративный наполнитель",
+            "image": "products_images/7362aab46cabd2822491403a9886f4ba.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dekorativnyy_napolnitel"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 135,
+        "fields": {
+            "catalog": 8,
+            "name": "Фотофоны",
+            "image": "products_images/965adc4452c162dae219b25d51de8c5d.png",
+            "description": "",
+            "is_active": true,
+            "slug": "fotofony"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 136,
+        "fields": {
+            "catalog": 8,
+            "name": "Новый год",
+            "image": "products_images/e02f18edfc57b08e3784768d4ea59082.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_i_pakety_novogodnie"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 137,
+        "fields": {
+            "catalog": 8,
+            "name": "Пленки, коробки, бумага для упаковки цветов",
+            "image": "products_images/4erm1u4a93f6hor6rgoxh2d51eyymaqs.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "plenki_i_bumaga_dlya_upakovki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 138,
+        "fields": {
+            "catalog": 8,
+            "name": "Столовые приборы одноразовые",
+            "image": "products_images/cd188351e208e7005f9fab9a3dd5e5f1.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "stolovye_pribory_odnorazovye"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 139,
+        "fields": {
+            "catalog": 8,
+            "name": "Шильдики",
+            "image": "products_images/gt57mnqrwo8tcxqig5z47e4xg0790a54.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "shildiki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 140,
+        "fields": {
+            "catalog": 9,
+            "name": "Вафельные картинки",
+            "image": "products_images/b1eba665bcf97ae9eae47d53fd992b3e.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "vafelnye_kartinki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 141,
+        "fields": {
+            "catalog": 9,
+            "name": "Сахарные картинки",
+            "image": "products_images/64015ac2de927a0b7e0b35444f0b558f.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "sakharnye_kartinki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 142,
+        "fields": {
+            "catalog": 9,
+            "name": "Картинки для леденцов",
+            "image": "products_images/7bca4b68b1ad961960d977feef9df8db.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kartinki_dlya_ledentsov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 143,
+        "fields": {
+            "catalog": 9,
+            "name": "Переводные листы для шоколада",
+            "image": "products_images/89629a5292200d6605447dc294203312.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "listy_dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 144,
+        "fields": {
+            "catalog": 9,
+            "name": "Печать по макету клиента",
+            "image": "products_images/c5f2f22adabf54059c15e731df0df63c.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "pechat_po_maketu_klienta"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 145,
+        "fields": {
+            "catalog": 9,
+            "name": "Расходники для пищевого принтера",
+            "image": "products_images/4224cb7c6b38336e70d0d97458cb1bcd.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "raskhodniki_dlya_pishchevogo_printera"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 146,
+        "fields": {
+            "catalog": 9,
+            "name": "Редактор макетов для печати",
+            "image": "products_images/cc6294db39986716f2e413cdb00f39c8.png",
+            "description": "",
+            "is_active": true,
+            "slug": "craftology.ru"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 147,
+        "fields": {
+            "catalog": 9,
+            "name": "Цифровые товары",
+            "image": "products_images/7803f776d1fd5105d460b412ac96489d.png",
+            "description": "",
+            "is_active": true,
+            "slug": "tsifrovye_tovary"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 148,
+        "fields": {
+            "catalog": 10,
+            "name": "Формы для муссовых тортов Silikomart",
+            "image": "products_images/c6aa6148ab902838d948b35a8a51c448.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_mussovykh_tortov_i_pirozhnykh_silikomart"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 149,
+        "fields": {
+            "catalog": 10,
+            "name": "Формы для муссовых пирожных Silikomart",
+            "image": "products_images/d30bd8ae4fc173287be6b2a3b482c401.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_mussovykh_pirozhnykh_silikomart"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 150,
+        "fields": {
+            "catalog": 10,
+            "name": "Формы для муссовых тортов Китай",
+            "image": "products_images/468960c59e70d44e1c424732c526ad8c.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_mussovykh_tortov_i_pirozhnykh_kitay"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 151,
+        "fields": {
+            "catalog": 10,
+            "name": " Формы для муссовых пирожных Китай",
+            "image": "products_images/2aa9897129494c4ab6077b634acef514.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_mussovykh_pirozhnykh_kitay"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 152,
+        "fields": {
+            "catalog": 10,
+            "name": "Формы для мороженого",
+            "image": "products_images/efab8149aa4848401690c9742f3f2ce8.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_morozhenogo"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 153,
+        "fields": {
+            "catalog": 10,
+            "name": "Шоколадный велюр",
+            "image": "products_images/678f6351ccca51760476bd0cf0edb095.png",
+            "description": "",
+            "is_active": true,
+            "slug": "velyury_i_zerkalnaya_glazur"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 154,
+        "fields": {
+            "catalog": 10,
+            "name": "Квадраты и прямоугольники для сборки",
+            "image": "products_images/ab1cfc619387a0015151e49d39e48794.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kvadraty_dlya_sborki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 155,
+        "fields": {
+            "catalog": 10,
+            "name": "Кольца для сборки",
+            "image": "products_images/fa55fa09a401859dc257043022ad6bbf.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "koltsa_dlya_sborki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 156,
+        "fields": {
+            "catalog": 10,
+            "name": "Ленты ацетатные",
+            "image": "products_images/c61cced32b0b2486faa4b47a985aa376.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "lenty_atsetatnye"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 157,
+        "fields": {
+            "catalog": 11,
+            "name": "Насадки и инструменты для зефирных цветов",
+            "image": "products_images/sgv8cf0fxfm29xrs84n3l0zz81kiqdpx.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "nasadki_i_instrumenty_dlya_zefirnykh_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 158,
+        "fields": {
+            "catalog": 11,
+            "name": "Красители для зефирных цветов",
+            "image": "products_images/588e9w4pby4vazk70h1ke9yjc4squsge.png",
+            "description": "",
+            "is_active": true,
+            "slug": "krasiteli_dlya_zefirnykh_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 159,
+        "fields": {
+            "catalog": 11,
+            "name": "Упаковка для зефирных цветов",
+            "image": "products_images/z2nir2bz6d5x9rkcarowaop82x5et66o.png",
+            "description": "",
+            "is_active": true,
+            "slug": "upakovka_dlya_zefirnykh_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 160,
+        "fields": {
+            "catalog": 11,
+            "name": "Ингредиенты для зефирных цветов",
+            "image": "products_images/p4p1uo3oa68j481lottg9q27vt9i7ly2.png",
+            "description": "",
+            "is_active": true,
+            "slug": "ingredienty_dlya_zefirnykh_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 161,
+        "fields": {
+            "catalog": 11,
+            "name": "Молды для зефирных цветов",
+            "image": "products_images/yht4mhjl86chtd2yksznbke06y8qly12.png",
+            "description": "",
+            "is_active": true,
+            "slug": "moldy_dlya_zefirnykh_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 162,
+        "fields": {
+            "catalog": 12,
+            "name": "Шоколад",
+            "image": "products_images/e564ee04762adbe5ceaf8eedf75aeaa3.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shokolad_naturalnyy"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 163,
+        "fields": {
+            "catalog": 12,
+            "name": "Какао масло, какао тертое",
+            "image": "products_images/673e122e5e4fae5f4cc1ced16b1d5955.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kakao_maslo_kakao_tertoe"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 164,
+        "fields": {
+            "catalog": 12,
+            "name": "Какао порошки",
+            "image": "products_images/84b7bba7c063d5c72751f5b92a40d086.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kakao_poroshki_1"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 165,
+        "fields": {
+            "catalog": 12,
+            "name": "Глазурь шоколадная",
+            "image": "products_images/9ab09d3fe83912bd78d6658e4e7285d5.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "glazur_shokoladnaya_1"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 166,
+        "fields": {
+            "catalog": 12,
+            "name": "Красители для шоколада",
+            "image": "products_images/0286d066d19a607158e4c9645d5d80ec.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "krasiteli_dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 167,
+        "fields": {
+            "catalog": 12,
+            "name": "Поликарбонат формы",
+            "image": "products_images/476259575af96d3648badd79c07df601.png",
+            "description": "",
+            "is_active": true,
+            "slug": "polikarbonat_formy_12"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 168,
+        "fields": {
+            "catalog": 12,
+            "name": "Переводные листы для шоколада",
+            "image": "products_images/3c6e2bb60b555444e911adff02354db5.png",
+            "description": "",
+            "is_active": true,
+            "slug": "shokotransfer"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 169,
+        "fields": {
+            "catalog": 12,
+            "name": "Формы пластиковые для шоколадных плиток",
+            "image": "products_images/afd594470481ce181acdecd0aaaea628.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_shokolada_1"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 170,
+        "fields": {
+            "catalog": 12,
+            "name": "Формы пластиковые для шоколадных конфет и украшений",
+            "image": "products_images/f888949dd7cf639d00028f0d721397a6.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_plastikovye_dlya_shokoladnykh_konfet"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 171,
+        "fields": {
+            "catalog": 12,
+            "name": "Формы пластиковые универсальные",
+            "image": "products_images/434fc18757d0e069b1ed3839098247f9.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_2_dlya_shokolada_plastik_"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 172,
+        "fields": {
+            "catalog": 12,
+            "name": "Молды для шоколада",
+            "image": "products_images/a5d27513f89577f7a16335232665833b.png",
+            "description": "",
+            "is_active": true,
+            "slug": "moldy_dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 173,
+        "fields": {
+            "catalog": 12,
+            "name": "Силиконовые формы для шоколада и мармелада",
+            "image": "products_images/f72cdcaf91205a9cdbe57500ae0ad6cc.png",
+            "description": "",
+            "is_active": true,
+            "slug": "silikonovye_formy_dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 174,
+        "fields": {
+            "catalog": 12,
+            "name": "Добавки для шоколада",
+            "image": "products_images/b2d2a5b2850c8ffccebd9754cdf473b5.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dobavki_dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 175,
+        "fields": {
+            "catalog": 12,
+            "name": "Инвентарь шоколатье",
+            "image": "products_images/b006efcb09aa196ca1fe1db3b38dad80.png",
+            "description": "",
+            "is_active": true,
+            "slug": "inventar_shokolate"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 176,
+        "fields": {
+            "catalog": 12,
+            "name": "Упаковка для шоколада",
+            "image": "products_images/72e1a61c17a02cc75023ea34313a5d45.png",
+            "description": "",
+            "is_active": true,
+            "slug": "upakovka_dlya_shokolada"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 177,
+        "fields": {
+            "catalog": 13,
+            "name": "Формы для выпечки капкейков",
+            "image": "products_images/e7d15155e717008c73f746b30536517b.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_vypechki_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 178,
+        "fields": {
+            "catalog": 13,
+            "name": "Смеси для капкейков и маффинов",
+            "image": "products_images/f8be7898947f29c093053e7363e655e0.png",
+            "description": "",
+            "is_active": true,
+            "slug": "smesi_dlya_kapkeykov_i_maffinov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 179,
+        "fields": {
+            "catalog": 13,
+            "name": "Начинки для капкейков",
+            "image": "products_images/5b6943583add005bf3ec01974a40d835.png",
+            "description": "",
+            "is_active": true,
+            "slug": "nachinki_dlya_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 180,
+        "fields": {
+            "catalog": 13,
+            "name": "Сливки для капкейков",
+            "image": "products_images/614043ca761121f91a31731206a0d86b.png",
+            "description": "",
+            "is_active": true,
+            "slug": "slivki_dlya_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 181,
+        "fields": {
+            "catalog": 13,
+            "name": "Насадки для капкейков",
+            "image": "products_images/05b734f65197de62af3227c1df91c99a.png",
+            "description": "",
+            "is_active": true,
+            "slug": "nasadki_dlya_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 182,
+        "fields": {
+            "catalog": 13,
+            "name": "Капсулы и тюльпаны для капкейков",
+            "image": "products_images/4e8f61aea4fe473ec80de9447b83ba9b.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kapsuly_i_tyulpany_dlya_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 183,
+        "fields": {
+            "catalog": 13,
+            "name": "Коробки для капкейков",
+            "image": "products_images/ee65b16f420947171eb33b4acbf1e831.png",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_dlya_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 184,
+        "fields": {
+            "catalog": 13,
+            "name": "Стенды и подставки для капкейков",
+            "image": "products_images/7382d7818aa65d0ced75c519b580b87b.png",
+            "description": "",
+            "is_active": true,
+            "slug": "stendy_i_podstavki_dlya_kapkeykov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 185,
+        "fields": {
+            "catalog": 14,
+            "name": "Вырубки Пластик",
+            "image": "products_images/a580e3aeb4a561503d0ff2d1b137ef31.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vyrubki_dlya_pechenya_i_pryanikov_"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 186,
+        "fields": {
+            "catalog": 14,
+            "name": "Вырубки Металл",
+            "image": "products_images/182561e0b9f3cce565bec8303693b4e5.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "vyrubki_metall"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 187,
+        "fields": {
+            "catalog": 14,
+            "name": "Глазури для пряников и печенья",
+            "image": "products_images/140fc112bb8daeefe6b9168466e5b2fc.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "glazuri_dlya_pryanikov_i_pechenya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 188,
+        "fields": {
+            "catalog": 14,
+            "name": "Инструменты для росписи пряников",
+            "image": "products_images/4007e31c46920273fb977186a773fb0b.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dlya_rospisi_pryanikov_i_pechenya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 189,
+        "fields": {
+            "catalog": 14,
+            "name": "Коробки белые и крафт",
+            "image": "products_images/4e1176419b31a2c2d64f30394e56de4b.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_belye_i_kraft"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 190,
+        "fields": {
+            "catalog": 14,
+            "name": "Коробки цветные",
+            "image": "products_images/99e73cea6e860400b55cd83cbf25254d.png",
+            "description": "",
+            "is_active": true,
+            "slug": "korobki_dlya_pechenya_i_pryanikov_14"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 191,
+        "fields": {
+            "catalog": 14,
+            "name": "Пакеты для пряников",
+            "image": "products_images/e0b4db9d291489111d9ab84f565c243d.png",
+            "description": "",
+            "is_active": true,
+            "slug": "pakety_dlya_pryanikov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 193,
+        "fields": {
+            "catalog": 15,
+            "name": "Формы для конфет",
+            "image": "products_images/fb5527e4f4887e042fde6fd862e14af6.png",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_ledentsov_i_konfet"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 194,
+        "fields": {
+            "catalog": 15,
+            "name": "Поликарбонат формы",
+            "image": "products_images/d944e08f4e5c9cf380dc90739c0915ef.png",
+            "description": "",
+            "is_active": true,
+            "slug": "polikarbonat_formy_15"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 195,
+        "fields": {
+            "catalog": 15,
+            "name": "Декор для конфет",
+            "image": "products_images/62a80346374557d24a94a366aabae460.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dekor_dlya_konfet"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 196,
+        "fields": {
+            "catalog": 15,
+            "name": "Капсулы для конфет",
+            "image": "products_images/5457954f4da3dea86e2db3ddaaf43fcb.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kapsuly_dlya_konfet"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 197,
+        "fields": {
+            "catalog": 15,
+            "name": "Упаковка для конфет",
+            "image": "products_images/5e7ce4d49324d7a66d3f76fdba03ab37.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "upakovka_dlya_konfet"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 198,
+        "fields": {
+            "catalog": 16,
+            "name": "Формы для леденцов на палочке и кейк-попсов",
+            "image": "products_images/4a834caf16144791be060de34c20d721.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_ledentsov_na_palochke"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 199,
+        "fields": {
+            "catalog": 16,
+            "name": "Палочки для леденцов, кейк-попсов и т.п.",
+            "image": "products_images/9820659df6e9e839596e3a86d6b12d5f.png",
+            "description": "",
+            "is_active": true,
+            "slug": "palochki_dlya_ledentsov_keyk_popsov_morozhenogo_i_t_p"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 200,
+        "fields": {
+            "catalog": 16,
+            "name": "Декор для кейк-попсов",
+            "image": "products_images/01619cc801a9477333d8c79308c22566.png",
+            "description": "",
+            "is_active": true,
+            "slug": "dekor_dlya_keyk_popsov_i_konfet"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 201,
+        "fields": {
+            "catalog": 16,
+            "name": "Упаковка для кейк попсов и т.п.",
+            "image": "products_images/6f4a3c545098e6c0f8f3dcf158f4588b.png",
+            "description": "",
+            "is_active": true,
+            "slug": "palochki_i_podstavki_dlya_keyk_popsov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 202,
+        "fields": {
+            "catalog": 17,
+            "name": "Мешки и насадки",
+            "image": "products_images/8a62464f5304dc27a6c9e0645293e4cf.png",
+            "description": "",
+            "is_active": true,
+            "slug": "meshki_i_nasadki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 203,
+        "fields": {
+            "catalog": 17,
+            "name": "Ингредиенты для приготовления айсинга",
+            "image": "products_images/24b44175bf022980bb9fbb0c28ebc1e8.png",
+            "description": "",
+            "is_active": true,
+            "slug": "ingredienty_dlya_prigotovleniya_aysinga"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 204,
+        "fields": {
+            "catalog": 17,
+            "name": "Коврики и молды для айсинга",
+            "image": "products_images/063453a5e348dc17fbda56c872e17f0a.png",
+            "description": "",
+            "is_active": true,
+            "slug": "kovriki_i_moldy_dlya_aysinga"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 205,
+        "fields": {
+            "catalog": 18,
+            "name": "Насадки для цветов из крема",
+            "image": "products_images/7a3815433a3403aff266e67028b5ad36.png",
+            "description": "",
+            "is_active": true,
+            "slug": "nasadki_dlya_tsvetov_iz_krema"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 206,
+        "fields": {
+            "catalog": 18,
+            "name": "Красители для цветов из мастики",
+            "image": "products_images/90f2d37d7f857a6ff52b8afe185b7b18.png",
+            "description": "",
+            "is_active": true,
+            "slug": "krasiteli_dlya_tsvetov_iz_mastiki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 207,
+        "fields": {
+            "catalog": 18,
+            "name": "Инструменты для лепки цветов",
+            "image": "products_images/01acc16b025965015ef5c44d4a0bbc42.png",
+            "description": "",
+            "is_active": true,
+            "slug": "instrumenty_dlya_lepki_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 208,
+        "fields": {
+            "catalog": 18,
+            "name": "Мастика и бумага для цветов",
+            "image": "products_images/22a877969a6e07aa74bc03a9a4c76418.png",
+            "description": "",
+            "is_active": true,
+            "slug": "mastika_dlya_lepki_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 209,
+        "fields": {
+            "catalog": 18,
+            "name": "Молды и вайнеры для цветов",
+            "image": "products_images/d7adce8075fba9c3f731e7b3a6dc9bd8.png",
+            "description": "",
+            "is_active": true,
+            "slug": "moldy_i_vaynery_dlya_tsvetov"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 210,
+        "fields": {
+            "catalog": 18,
+            "name": "Тычинки, проволока и тейп лента",
+            "image": "products_images/0f0071fb281fe3b940db9620f86510ce.png",
+            "description": "",
+            "is_active": true,
+            "slug": "tychinki_provoloka_i_teyp_lenta"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 211,
+        "fields": {
+            "catalog": 19,
+            "name": "Формы для мороженого",
+            "image": "products_images/0f07b70a0cfee3ac08cbb65543a18126.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "formy_dlya_morozhenogo_19"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 212,
+        "fields": {
+            "catalog": 19,
+            "name": "Вафельные рожки и стаканчики",
+            "image": "products_images/7f5ffaa672f4f18305569244af8721cb.png",
+            "description": "",
+            "is_active": true,
+            "slug": "vafelnye_rozhki_i_stakanchiki_19"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 213,
+        "fields": {
+            "catalog": 19,
+            "name": "Палочки и ложки",
+            "image": "products_images/4fd7ef358085da9ab2c6e0db08ddf6cd.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "palochki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 214,
+        "fields": {
+            "catalog": 19,
+            "name": "Украшения",
+            "image": "products_images/70a93ae9414bdce44feb880d0c981460.png",
+            "description": "",
+            "is_active": true,
+            "slug": "posypki_dlya_ukrasheniya"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 215,
+        "fields": {
+            "catalog": 19,
+            "name": "Кондитерские наполнители",
+            "image": "products_images/8e08555e3b8c02afe846479f0b33f7d0.png",
+            "description": "",
+            "is_active": true,
+            "slug": "konditerskie_napolniteli"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 216,
+        "fields": {
+            "catalog": 19,
+            "name": "Топпинги и сиропы",
+            "image": "products_images/ac955bf81c101d5ce43411b2cd64a6e9.png",
+            "description": "",
+            "is_active": true,
+            "slug": "toppingi_i_siropy"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 217,
+        "fields": {
+            "catalog": 19,
+            "name": "Креманки",
+            "image": "products_images/cdbea7041082a7cb548ae72261c7dfb1.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "kremanki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 218,
+        "fields": {
+            "catalog": 19,
+            "name": "Мелкий опт Вафельные рожки",
+            "image": "products_images/774db4471b1c6ec8de19f289b9016174.jpg",
+            "description": "",
+            "is_active": true,
+            "slug": "melkiy_opt_vafelnye_rozhki"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 219,
+        "fields": {
+            "catalog": 19,
+            "name": "Смеси для мороженого",
+            "image": "products_images/ad06900d7230570597f3276d579ef31a.png",
+            "description": "",
+            "is_active": true,
+            "slug": "smesi_dlya_morozhenogo_19"
+        }
+    }
+]

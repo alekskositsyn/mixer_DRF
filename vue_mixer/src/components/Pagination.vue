@@ -8,7 +8,7 @@
             type="button"
             @click="onClickFirstPage"
         >
-          First
+          Первая
         </button>
       </li>
       <li class="page-item">
@@ -18,7 +18,8 @@
             @click="onClickPreviousPage"
             :disabled="isInFirstPage"
 
-        >Previous</button>
+        >Предыдущая
+        </button>
       </li>
       <!-- Visible Buttons Start -->
       <li class="page-item"
@@ -26,35 +27,21 @@
           :key="page.name"
       >
         <button class="page-link link-danger"
-           :class="{active: currentPage === page.name}" href="#"
-           type="button"
-           @click="onClickPage(page.name)"
-           :disabled="page.isDisabled"
+                :class="{active: currentPage === page.name}" href="#"
+                type="button"
+                @click="onClickPage(page.name)"
+                :disabled="page.isDisabled"
         >
           {{ page.name }}
         </button>
       </li>
-      <!--      <li v-for="p in totalPages" :key="p"-->
-      <!--          class="page-item">-->
-      <!--        <a :class="{active: currentPage === p}" href="#">{{ p }}</a>-->
-      <!--      </li>-->
-
-
-      <!-- Visible Buttons End -->
-
-      <!--      <li class="page-item" aria-current="page">-->
-      <!--      <span class="page-link text-bg-danger">-->
-      <!--        2-->
-      <!--        <span class="sr-only">(current)</span>-->
-      <!--      </span>-->
-      <!--      </li>-->
-      <!--      <li class="page-item"><a class="page-link link-danger" href="#">3</a></li>-->
       <li class="page-item">
         <button class="page-link link-danger" href="#"
-           type="button"
-           @click="onClickNextPage"
-           :disabled="isInLastPage"
-        >Next</button>
+                type="button"
+                @click="onClickNextPage"
+                :disabled="isInLastPage"
+        >Следующая
+        </button>
       </li>
     </ul>
   </nav>
@@ -149,5 +136,11 @@ export default {
 <style scoped>
 .pagination {
   margin-top: 12px;
+}
+
+.page-link.active {
+  color: whitesmoke;
+  background-color: indianred;
+  border-color: indianred;
 }
 </style>
