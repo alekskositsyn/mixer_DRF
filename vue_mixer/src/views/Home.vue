@@ -20,7 +20,7 @@
                 <div class="productCard">
                   <div class=" product product-men rounded-3 border shadow">
                     <a href="#" @click="goTo(product.id)" class="linkBuyProduct">
-                      <img :src="product.image" class="img-fluid" alt="">
+                      <img :src="product.images[0].image" class="img-fluid" alt="">
                       <div class="nameOfProduct"> {{ product.name }}</div>
                     </a>
                     <div class="numprice">{{ product.price }}
