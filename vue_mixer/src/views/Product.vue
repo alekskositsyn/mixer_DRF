@@ -2,7 +2,7 @@
   <div class="container">
     <div class="product-deal">
       <div class="row justify-content-center">
-        <div class="col-lg-4 leftside"><img :src="product.image" alt=""></div>
+        <div class="col-lg-4 leftside"><img :src="product.images[0].image" alt=""></div>
         <div class="col-lg-4 rightside">
           <div class="nameProduct">
             <h2>{{ product.name }}</h2>

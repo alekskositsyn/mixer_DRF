@@ -49,7 +49,7 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProductImages
-        fields = '__all__'
+        fields = ('image',)
 
 
 class ProductsReviewsSerializer(serializers.ModelSerializer):
@@ -66,6 +66,7 @@ class ProductSerializer(serializers.ModelSerializer):
     """Вывод продукта"""
     category = serializers.SlugRelatedField(slug_field='name', read_only=True)
     reviews = ReviewSerializer(many=True)
+    images = ProductImageSerializer(many=True)
 
     class Meta:
         model = Product
