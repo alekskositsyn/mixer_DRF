@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, ProductCategory, Rating, Review
+from .models import Product, ProductCategory, Rating, Review, ProductImages
 
 
 class ProductCategoryListSerializer(serializers.ModelSerializer):
@@ -44,6 +44,14 @@ class ReviewSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'product', 'text', 'children')
 
 
+class ProductImageSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField()
+
+    class Meta:
+        model = ProductImages
+        fields = '__all__'
+
+
 class ProductsReviewsSerializer(serializers.ModelSerializer):
     """Вывод отзывов"""
     children = RecursiveSerializer(many=True)
@@ -68,6 +76,7 @@ class ProductListSerializer(serializers.ModelSerializer):
     """Список продуктов"""
     rating_user = serializers.BooleanField()
     middle_rating = serializers.IntegerField()
+    images = ProductImageSerializer(many=True)
 
     class Meta:
         model = Product

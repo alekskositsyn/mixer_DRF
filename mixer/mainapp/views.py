@@ -1,10 +1,10 @@
 from django.db import models
-from .models import ProductCategory, Product, Review
+from .models import ProductCategory, Product, Review, ProductImages
 from .service import get_client_ip, PaginationProducts
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, \
-    ProductsReviewsSerializer, ReviewCreateSerializer, CreateRatingSerializer, ReviewSerializer
+    ProductsReviewsSerializer, ReviewCreateSerializer, CreateRatingSerializer, ReviewSerializer, ProductImageSerialazer
 
 
 # Product
