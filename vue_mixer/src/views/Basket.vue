@@ -18,7 +18,7 @@
             </thead>
             <tbody>
             <tr v-show="product.quantityBasket !== null" v-for="product in products" :key="product.id">
-              <td><img :src="product.image" class="img-basket" alt="">
+              <td><img :src="product.images[0].image" class="img-basket" alt="">
               </td>
               <td>{{ product.name }}</td>
               <td>

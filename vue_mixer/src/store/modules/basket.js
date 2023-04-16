@@ -16,6 +16,7 @@ const getters = {
     cartProducts: (state, getters) => {
         return state.items.map(({id, quantityBasket}) => {
             const product = state.items.find(product => product.id === id)
+            console.log(product)
             if (!product) {
                 console.log(product)
                 // dispatch('getOneProduct', {id: product.id}, {root: true})
@@ -112,10 +113,11 @@ const actions = {
     addProductToCart({state, commit}, product) {
         // commit('setCheckoutStatus', null)
         if (product.inventory > 0) {
-            console.log(product.inventory)
+            // console.log(product.inventory)
             const cartItem = state.items.find(item => item.id === product.id)
             if (!cartItem) {
                 console.log('Not in items')
+                console.log(product)
                 commit('pushProductToCart', {product})
             } else {
                 console.log('In items')
@@ -189,7 +191,7 @@ const mutations = {
             price: product.price,
             inventory: product.inventory,
             quantityBasket: 1,
-            image: product.image
+            images: product.images
         })
         state.countItems++
     },

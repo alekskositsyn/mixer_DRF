@@ -46,9 +46,8 @@ const mutations = {
         state.total = products.count
     },
 
-    setTotalPagesCountProducts(state, products) {
+    setTotalPagesCountProducts(state) {
         const item = state.listProducts.length
-        console.log(item)
         state.totalPages = Math.ceil(state.total / item)
     },
 
