@@ -66,9 +66,13 @@ export default {
     ...mapActions('basket', {
       addProduct: 'addProductToCart',
       decreaseProduct: 'decreaseProductFromCart',
-      deleteProduct: 'delProductFromCart',
+      // deleteProduct: 'delProductFromCart',
       checkout: 'checkout'
     }),
+    ...mapMutations('basket', {
+      deleteProduct: 'deleteItem'
+    })
+
   }
 }
 </script>

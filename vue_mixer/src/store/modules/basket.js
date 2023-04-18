@@ -13,25 +13,25 @@ const state = () => ({
 
 // getters
 const getters = {
-    cartProducts: (state, getters) => {
-        return state.items.map(({id, quantityBasket}) => {
-            const product = state.items.find(product => product.id === id)
-            console.log(product)
-            if (!product) {
-                console.log(product)
-                // dispatch('getOneProduct', {id: product.id}, {root: true})
-                // console.log('Look in data_base')
-            }
-            return {
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                inventory: product.inventory,
-                quantityBasket: quantityBasket,
-                image: product.image
-            }
-        })
-    },
+    // cartProducts: (state, getters) => {
+    //     return state.items.map(({id, quantityBasket}) => {
+    //         const product = state.items.find(product => product.id === id)
+    //         // console.log(product)
+    //         if (!product) {
+    //             // console.log(product)
+    //             // dispatch('getOneProduct', {id: product.id}, {root: true})
+    //             console.log('Look in data_base')
+    //         }
+    //         return {
+    //             id: product.id,
+    //             name: product.name,
+    //             price: product.price,
+    //             inventory: product.inventory,
+    //             quantityBasket: quantityBasket,
+    //             image: product.image
+    //         }
+    //     })
+    // },
 
     getCountBasketItems: (state, getters) => {
         return state.items.reduce((count, item) => {
@@ -40,13 +40,12 @@ const getters = {
     },
 
     cartTotalPrice: (state, getters) => {
-        return getters.cartProducts.reduce((total, product) => {
+        // return getters.cartProducts.reduce((total, product) => {
+        //     return total + product.price * product.quantityBasket
+        // }, 0)
+        return state.items.reduce((total, product) => {
             return total + product.price * product.quantityBasket
         }, 0)
-        // return state.items.reduce((total, product) => {
-        //     console.log(total,product)
-        //     return total + product.price * product.quantityBasket
-        // })
     }
 }
 // actions
@@ -144,11 +143,14 @@ const actions = {
     delProductFromCart({state, commit}, product) {
         commit('setCheckoutStatus', null)
         const cartItem = state.items.find(item => item.id === product.id)
-        commit('deleteItem', cartItem)
-        commit('products/incrementProductInventory', {
-            id: product.id,
-            quantity: product.quantityBasket
-        }, {root: true})
+        console.log(`deleting ${cartItem.id}`)
+        commit('deleteItem', product)
+
+
+        // commit('products/incrementProductInventory', {
+        //     id: product.id,
+        //     quantity: product.quantityBasket
+        // }, {root: true})
 
     }
     ,
@@ -200,7 +202,7 @@ const mutations = {
         const cartItem = state.items.find(item => item.id === id)
         cartItem.quantityBasket++
         state.countItems++
-        console.log('Increment done!!!')
+        // console.log('Increment done!!!')
 
     },
 
@@ -210,10 +212,10 @@ const mutations = {
         state.countItems--
     },
 
-    deleteItem(state, {id}) {
-        const cartItem = state.items.find(item => item.id === id)
-        state.countItems = state.countItems - cartItem.quantityBasket
-        cartItem.quantityBasket = null
+    deleteItem(state, product) {
+        const cartItem = state.items.findIndex(item => item.id === product.id)
+        state.items.splice(cartItem, 1)
+        store.commit('basket/savedCartItems')
     },
 
     setCartItems(state, {items}) {
@@ -229,6 +231,7 @@ const mutations = {
     },
 
     savedCartItems(state) {
+        console.log('saving')
         const parsed = JSON.stringify(state.items)
         localStorage.setItem('basket', parsed)
     },
