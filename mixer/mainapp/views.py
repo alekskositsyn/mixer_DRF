@@ -1,10 +1,11 @@
 from django.db import models
-from .models import ProductCategory, Product, Review, ProductImages
+from .models import ProductCategory, Product, Review, ProductCatalog
 from .service import get_client_ip, PaginationProducts
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, \
-    ProductsReviewsSerializer, ReviewCreateSerializer, CreateRatingSerializer, ReviewSerializer
+    ProductsReviewsSerializer, ReviewCreateSerializer, CreateRatingSerializer, ReviewSerializer, \
+    ProductCatalogListSerializer
 
 
 # Product
@@ -12,6 +13,12 @@ class CategoryListView(ListAPIView):
     """Вывод списка категорий"""
     serializer_class = ProductCategoryListSerializer
     queryset = ProductCategory.objects.filter(is_active=True)
+
+
+class CatalogListView(ListAPIView):
+    """Вывод списка каталогов"""
+    serializer_class = ProductCatalogListSerializer
+    queryset = ProductCatalog.objects.filter(is_active=True)
 
 
 class ProductListView(ListAPIView):

@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from .models import Product, ProductCategory, Rating, Review, ProductImages
+from .models import Product, ProductCategory, Rating, Review, ProductImages, ProductCatalog
+
+
+class ProductCatalogListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductCatalog
+        fields = ('id', 'name')
 
 
 class ProductCategoryListSerializer(serializers.ModelSerializer):
