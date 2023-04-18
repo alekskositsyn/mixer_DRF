@@ -39,10 +39,7 @@ const getters = {
         }, 0)
     },
 
-    cartTotalPrice: (state, getters) => {
-        // return getters.cartProducts.reduce((total, product) => {
-        //     return total + product.price * product.quantityBasket
-        // }, 0)
+    cartTotalPrice: (state) => {
         return state.items.reduce((total, product) => {
             return total + product.price * product.quantityBasket
         }, 0)

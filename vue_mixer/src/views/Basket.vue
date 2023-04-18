@@ -58,7 +58,6 @@ export default {
       products: state => state.basket.items
     }),
     ...mapGetters('basket', {
-      // products: 'cartProducts',
       total: 'cartTotalPrice',
     })
   },
@@ -66,7 +65,6 @@ export default {
     ...mapActions('basket', {
       addProduct: 'addProductToCart',
       decreaseProduct: 'decreaseProductFromCart',
-      // deleteProduct: 'delProductFromCart',
       checkout: 'checkout'
     }),
     ...mapMutations('basket', {
