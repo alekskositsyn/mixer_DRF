@@ -4,8 +4,10 @@ import axios from "axios";
 const state = () => ({
     listCategory: [],
     listProducts: [],
+    listCatalogs: [],
     product: {},
-    // page: 1,
+    catalogActive: 0,
+    page: 0,
     totalPages: 0,
     total: 0
 })
@@ -15,9 +17,9 @@ const getters = {}
 
 // actions
 const actions = {
-    getAllProducts({state, commit}, page=1) {
+    getAllProducts({state, commit}, page = 1) {
         axios
-            .get(`/products?page=${page}`)
+            .get(`catalog/${state.catalogActive}/products/?page=${page}`)
             .then(response => {
                 commit('setProducts', response.data)
                 commit('setTotalCountProducts', response.data)
@@ -25,12 +27,32 @@ const actions = {
             })
             .catch(error => console.log(error))
     },
-
     getAllCategory({commit}) {
         axios
             .get('/category/')
             .then(response => {
                 commit('setCategory', response.data)
+            })
+            .catch(error => console.log(error))
+    },
+    getAllCatalogs({commit}) {
+        axios
+            .get('/catalog/')
+            .then(response => {
+                console.log(response.data)
+                commit('setCatalogs', response.data)
+            })
+            .catch(error => console.log(error))
+    },
+    getProductsCatalog({commit}, id) {
+        axios
+            .get(`/catalog/${id}/products/`)
+            .then(response => {
+                console.log(response.data)
+                commit('setProducts', response.data)
+                commit('setTotalCountProducts', response.data)
+                commit('setTotalPagesCountProducts', response.data)
+                commit('setActiveCatalog', id)
             })
             .catch(error => console.log(error))
     }
@@ -51,12 +73,16 @@ const mutations = {
         state.totalPages = Math.ceil(state.total / item)
     },
 
-    setOneProduct(state, product) {
-        state.listProducts.push(product)
+    setActiveCatalog(state, id) {
+        state.catalogActive = id
     },
 
     setCategory(state, category) {
         state.listCategory = category.results
+    },
+
+    setCatalogs(state, catalogs) {
+        state.listCatalogs = catalogs.results
     },
 
     incrementProductInventory(state, {id, quantity}) {

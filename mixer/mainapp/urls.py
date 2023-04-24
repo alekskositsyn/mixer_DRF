@@ -7,9 +7,10 @@ app_name = 'mainapp'
 
 urlpatterns = [
     path('catalog/', mainapp.CatalogListView.as_view()),
+    # path('catalog/<int:pk>/', mainapp.ProductsCatalogListView.as_view()),
     path('category/', mainapp.CategoryListView.as_view()),
     path('products/<int:pk>/', mainapp.ProductView.as_view()),
-    path('products/', mainapp.ProductListView.as_view()),
+    path('catalog/<int:pk>/products/', mainapp.ProductListView.as_view()),
     path('review/', mainapp.ReviewCreateView.as_view()),
     path('product/reviews/<int:pk>/', mainapp.ProductsReviewsView.as_view()),
     path('rating/', mainapp.AddStarRatingView.as_view()),

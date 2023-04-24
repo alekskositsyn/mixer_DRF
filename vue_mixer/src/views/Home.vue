@@ -77,6 +77,7 @@ export default {
     products: state => state.products.listProducts,
     categories: state => state.products.listCategory,
     totalPages: state => state.products.totalPages,
+    catalog: state => state.products.catalogActive
   }),
   components: {Pagination},
   created() {

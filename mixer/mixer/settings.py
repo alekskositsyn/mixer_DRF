@@ -173,7 +173,7 @@ REST_FRAMEWORK = {
     #     'django_filters.rest_framework.DjangoFilterBackend',
     # ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 8
+    'PAGE_SIZE': 12
 }
 
 EMAIL_USE_TLS = True

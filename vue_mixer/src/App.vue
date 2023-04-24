@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Nav/>
+    <Catalogs/>
     <router-view/>
     <Footer/>
   </div>
@@ -8,11 +9,12 @@
 <script>
 import Nav from "./components/Nav.vue";
 import Footer from "./components/Footer.vue";
+import Catalogs from "@/components/Catalogs";
 
 
 export default {
   name: 'App',
-  components: {Nav, Footer},
+  components: {Catalogs, Nav, Footer},
 
   beforeCreate() {
     this.$store.commit('auth/initializeStore')

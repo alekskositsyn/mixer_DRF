@@ -90,6 +90,18 @@ class ProductListSerializer(serializers.ModelSerializer):
         exclude = ('is_active',)
 
 
+class ProductListByCategorySerializer(serializers.ModelSerializer):
+    """Список продуктов по каталогу"""
+    # catalog = serializers.CharField(many=True)
+    # category = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    # reviews = ReviewSerializer(many=True)
+    images = ProductImageSerializer(many=True)
+
+    class Meta:
+        model = Product
+        exclude = ('is_active',)
+
+
 class CreateRatingSerializer(serializers.ModelSerializer):
     """Добавление рейтинга пользователем"""
 
