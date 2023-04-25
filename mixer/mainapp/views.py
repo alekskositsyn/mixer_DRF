@@ -5,7 +5,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView,
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, \
     ProductsReviewsSerializer, ReviewCreateSerializer, CreateRatingSerializer, ReviewSerializer, \
-    ProductCatalogListSerializer, ProductListByCategorySerializer
+    ProductCatalogListSerializer
 
 
 # Product
@@ -29,45 +29,20 @@ class ProductListView(ListAPIView):
 
     def get_queryset(self):
         catalog_id = self.kwargs.get('pk')
-        if catalog_id == 0:
-            products = Product.objects.filter(is_active=True).annotate(
-                rating_user=models.Count('ratings', filter=models.Q(
-                    ratings__ip=get_client_ip(self.request)))
-            ).annotate(
-                middle_rating=models.Sum(
-                    models.F('ratings__star')) / models.Count(models.F('ratings'))
-            )
-            return products
-        else:
+        products = Product.objects.filter(is_active=True).annotate(
+            rating_user=models.Count('ratings', filter=models.Q(
+                ratings__ip=get_client_ip(self.request)))
+        ).annotate(
+            middle_rating=models.Sum(
+                models.F('ratings__star')) / models.Count(models.F('ratings'))
+        )
+
+        if catalog_id != 0:
             catalog = get_object_or_404(ProductCatalog, id=catalog_id)
             categories = ProductCategory.objects.filter(catalog=catalog)
-            products = Product.objects.filter(category__in=categories).annotate(
-                rating_user=models.Count('ratings', filter=models.Q(
-                    ratings__ip=get_client_ip(self.request)))
-            ).annotate(
-                middle_rating=models.Sum(
-                    models.F('ratings__star')) / models.Count(models.F('ratings'))
-            )
-            return products
+            products = products.filter(category__in=categories)
 
-
-# class ProductsCatalogListView(ListAPIView):
-#     serializer_class = ProductListByCategorySerializer
-#     pagination_class = PaginationProducts
-#
-#     def get_queryset(self):
-#         catalog_id = self.kwargs.get('pk')
-#         print(catalog_id)
-#         catalog = get_object_or_404(ProductCatalog, id=catalog_id)
-#         categories = ProductCategory.objects.filter(catalog=catalog)
-#         products = Product.objects.filter(category__in=categories).annotate(
-#             rating_user=models.Count('ratings', filter=models.Q(
-#                 ratings__ip=get_client_ip(self.request)))
-#         ).annotate(
-#             middle_rating=models.Sum(
-#                 models.F('ratings__star')) / models.Count(models.F('ratings'))
-#         )
-#         return products
+        return products
 
 
 class ProductView(RetrieveAPIView):
