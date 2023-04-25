@@ -12,7 +12,13 @@ from .serializers import ProductCategoryListSerializer, ProductListSerializer, P
 class CategoryListView(ListAPIView):
     """Вывод списка категорий"""
     serializer_class = ProductCategoryListSerializer
-    queryset = ProductCategory.objects.filter(is_active=True)
+
+    # queryset = ProductCategory.objects.filter(is_active=True)
+
+    def get_queryset(self):
+        catalog_id = self.kwargs.get('pk')
+        categories = ProductCategory.objects.filter(catalog=catalog_id)
+        return categories
 
 
 class CatalogListView(ListAPIView):
