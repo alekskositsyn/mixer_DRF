@@ -82,7 +82,6 @@ export default {
   components: {Pagination},
   created() {
     this.$store.dispatch('products/getAllProducts')
-    this.$store.dispatch('products/getAllCategory')
   },
   methods: {
     ...mapActions({

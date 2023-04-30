@@ -6,8 +6,7 @@ const state = () => ({
     listProducts: [],
     listCatalogs: [],
     product: {},
-    catalogActive: 0,
-    page: 0,
+    catalogActive: 1,
     totalPages: 0,
     total: 0
 })
@@ -27,9 +26,9 @@ const actions = {
             })
             .catch(error => console.log(error))
     },
-    getAllCategory({commit}) {
+    getAllCategory({commit}, id = 1) {
         axios
-            .get('/category/')
+            .get(`/category/${id}/`)
             .then(response => {
                 commit('setCategory', response.data)
             })
@@ -39,7 +38,6 @@ const actions = {
         axios
             .get('/catalog/')
             .then(response => {
-                console.log(response.data)
                 commit('setCatalogs', response.data)
             })
             .catch(error => console.log(error))
@@ -48,7 +46,6 @@ const actions = {
         axios
             .get(`/catalog/${id}/products/`)
             .then(response => {
-                console.log(response.data)
                 commit('setProducts', response.data)
                 commit('setTotalCountProducts', response.data)
                 commit('setTotalPagesCountProducts', response.data)

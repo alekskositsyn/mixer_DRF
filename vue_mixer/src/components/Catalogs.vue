@@ -7,7 +7,8 @@
           <a href="#"
              class="nav-link"
              :class="{active: catalogActive === catalog.id}"
-             @click="getProducts(catalog.id)" aria-current="page"
+             @click="getData(catalog.id)"
+             aria-current="page"
           >{{ catalog.name }}</a>
         </li>
       </ul>
@@ -25,13 +26,21 @@ export default {
     categories: state => state.products.listCategory,
     catalogActive: state => state.products.catalogActive
   }),
+
   created() {
     this.$store.dispatch('products/getAllCatalogs')
+    this.$store.dispatch('products/getAllCategory')
+
   },
   methods: {
     ...mapActions('products', {
       getProducts: 'getProductsCatalog',
-    })
+      getCategory: 'getAllCategory',
+    }),
+    getData: function (id) {
+      this.getProducts(id)
+      this.getCategory(id)
+    }
   }
 }
 </script>
