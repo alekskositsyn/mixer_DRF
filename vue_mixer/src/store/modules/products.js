@@ -16,13 +16,15 @@ const getters = {}
 
 // actions
 const actions = {
-    getAllProducts({state, commit}, page = 1) {
+    getAllProducts({state, commit}, catalog_id = 1, page = 1) {
         axios
-            .get(`catalog/${state.catalogActive}/products/?page=${page}`)
+            .get(`catalog/${catalog_id}/products/?page=${page}`)
             .then(response => {
                 commit('setProducts', response.data)
                 commit('setTotalCountProducts', response.data)
                 commit('setTotalPagesCountProducts', response.data)
+                commit('setActiveCatalog', catalog_id)
+
             })
             .catch(error => console.log(error))
     },
@@ -39,17 +41,6 @@ const actions = {
             .get('/catalog/')
             .then(response => {
                 commit('setCatalogs', response.data)
-            })
-            .catch(error => console.log(error))
-    },
-    getProductsCatalog({commit}, id) {
-        axios
-            .get(`/catalog/${id}/products/`)
-            .then(response => {
-                commit('setProducts', response.data)
-                commit('setTotalCountProducts', response.data)
-                commit('setTotalPagesCountProducts', response.data)
-                commit('setActiveCatalog', id)
             })
             .catch(error => console.log(error))
     }
@@ -84,7 +75,7 @@ const mutations = {
 
     incrementProductInventory(state, {id, quantity}) {
         const product = state.listProducts.find(product => product.id === id)
-        console.log(quantity)
+        // console.log(quantity)
         if (quantity === 0) {
             product.inventory++
         } else {

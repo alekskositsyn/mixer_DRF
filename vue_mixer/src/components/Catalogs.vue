@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     ...mapActions('products', {
-      getProducts: 'getProductsCatalog',
+      getProducts: 'getAllProducts',
       getCategory: 'getAllCategory',
     }),
     getData: function (id) {
