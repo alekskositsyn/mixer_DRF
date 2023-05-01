@@ -93,8 +93,8 @@ export default {
       this.$router.push({path: `/products/${id}`})
     },
     onPageChange(page) {
-      console.log(page)
       this.getAllProducts(page)
+      console.log(page)
       this.currentPage = page;
     }
   }

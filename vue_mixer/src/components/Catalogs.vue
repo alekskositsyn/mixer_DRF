@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex'
+import {mapState, mapActions, mapMutations} from 'vuex'
 
 export default {
   name: "Catalogs",
@@ -37,8 +37,12 @@ export default {
       getProducts: 'getAllProducts',
       getCategory: 'getAllCategory',
     }),
-    getData: function (id) {
-      this.getProducts(id)
+    ...mapMutations('products', {
+      setCatalogId: 'setActiveCatalog'
+    }),
+    getData(id) {
+      this.setCatalogId(id)
+      this.getProducts()
       this.getCategory(id)
     }
   }

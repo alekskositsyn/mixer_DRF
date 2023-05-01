@@ -43,6 +43,14 @@
         >Следующая
         </button>
       </li>
+            <li class="page-item">
+        <button class="page-link link-danger" href="#"
+                type="button"
+                @click="onClickLastPage"
+                :disabled="isInLastPage"
+        >Последняя
+        </button>
+      </li>
     </ul>
   </nav>
 </template>
@@ -105,10 +113,11 @@ export default {
       return range;
     },
     isInFirstPage() {
-      console.log(this.currentPage === 1)
+      // console.log(this.currentPage === 1)
       return this.currentPage === 1;
     },
     isInLastPage() {
+      // console.log(this.currentPage === this.totalPages)
       return this.currentPage === this.totalPages;
     },
   },

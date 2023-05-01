@@ -8,7 +8,7 @@ const state = () => ({
     product: {},
     catalogActive: 1,
     totalPages: 0,
-    total: 0
+    total: 0,
 })
 
 // getters
@@ -16,21 +16,22 @@ const getters = {}
 
 // actions
 const actions = {
-    getAllProducts({state, commit}, catalog_id = 1, page = 1) {
+    getAllProducts({state, commit}, page = 1) {
+        // console.log(catalog_id, page)
         axios
-            .get(`catalog/${catalog_id}/products/?page=${page}`)
+            .get(`catalog/${state.catalogActive}/products/?page=${page}`)
             .then(response => {
                 commit('setProducts', response.data)
                 commit('setTotalCountProducts', response.data)
                 commit('setTotalPagesCountProducts', response.data)
-                commit('setActiveCatalog', catalog_id)
+                // commit('setActiveCatalog', catalog_id)
 
             })
             .catch(error => console.log(error))
     },
-    getAllCategory({commit}, id = 1) {
+    getAllCategory({state, commit}, id = 1) {
         axios
-            .get(`/category/${id}/`)
+            .get(`/category/${state.catalogActive}/`)
             .then(response => {
                 commit('setCategory', response.data)
             })
