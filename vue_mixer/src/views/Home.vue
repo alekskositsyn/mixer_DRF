@@ -46,9 +46,6 @@
               </div>
             </div>
             <Pagination
-                :totalPages="totalPages"
-                :perPage="10"
-                :currentPage="currentPage"
                 @pagechanged="onPageChange"/>
           </div>
         </div>
@@ -76,7 +73,6 @@ export default {
   computed: mapState({
     products: state => state.products.listProducts,
     categories: state => state.products.listCategory,
-    totalPages: state => state.products.totalPages,
     catalog: state => state.products.catalogActive
   }),
   components: {Pagination},
@@ -94,8 +90,6 @@ export default {
     },
     onPageChange(page) {
       this.getAllProducts(page)
-      console.log(page)
-      this.currentPage = page;
     }
   }
 }

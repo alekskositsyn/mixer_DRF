@@ -130,7 +130,7 @@ const actions = {
         commit('setCheckoutStatus', null)
         const cartItem = state.items.find(item => item.id === product.id)
         if (cartItem.quantityBasket > 0) {
-            console.log(cartItem.quantityBasket)
+            // console.log(cartItem.quantityBasket)
             commit('decrementItemQuantity', cartItem)
         }
         // commit('products/incrementProductInventory', {id: product.id, quantity: 0}, {root: true})
@@ -140,7 +140,7 @@ const actions = {
     delProductFromCart({state, commit}, product) {
         commit('setCheckoutStatus', null)
         const cartItem = state.items.find(item => item.id === product.id)
-        console.log(`deleting ${cartItem.id}`)
+        // console.log(`deleting ${cartItem.id}`)
         commit('deleteItem', product)
 
 
@@ -165,7 +165,7 @@ const actions = {
             "user": user_id
         }
         const dataToSend = JSON.stringify(basketItems)
-        console.log(dataToSend)
+        // console.log(dataToSend)
 
         axios
             .post('/orders/create/', dataToSend)

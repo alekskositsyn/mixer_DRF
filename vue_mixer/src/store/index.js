@@ -4,6 +4,7 @@ import showPopUpMessage from './showPopUpMessage'
 import products from "@/store/modules/products";
 import auth from "@/store/modules/auth"
 import basket from "@/store/modules/basket"
+import pagination from "@/store/modules/pagination";
 
 
 Vue.use(Vuex)
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
         showPopUpMessage,
         products,
         auth,
-        basket
+        basket,
+        pagination
     }
 })
 

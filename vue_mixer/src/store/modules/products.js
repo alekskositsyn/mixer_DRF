@@ -1,5 +1,7 @@
 // initial state
 import axios from "axios";
+import store from '@/store/index.js';
+
 
 const state = () => ({
     listCategory: [],
@@ -7,7 +9,7 @@ const state = () => ({
     listCatalogs: [],
     product: {},
     catalogActive: 1,
-    totalPages: 0,
+    // totalPages: 0,
     total: 0,
 })
 
@@ -17,19 +19,18 @@ const getters = {}
 // actions
 const actions = {
     getAllProducts({state, commit}, page = 1) {
-        // console.log(catalog_id, page)
         axios
             .get(`catalog/${state.catalogActive}/products/?page=${page}`)
             .then(response => {
                 commit('setProducts', response.data)
-                commit('setTotalCountProducts', response.data)
-                commit('setTotalPagesCountProducts', response.data)
-                // commit('setActiveCatalog', catalog_id)
-
+                store.commit('pagination/setTotalCountProducts', response.data)
+                store.commit('pagination/setTotalPagesCountProducts', response.data)
+                store.commit('pagination/setCurrentPage', page)
+                store.commit('pagination/setStartPage', page)
             })
             .catch(error => console.log(error))
     },
-    getAllCategory({state, commit}, id = 1) {
+    getAllCategory({state, commit}) {
         axios
             .get(`/category/${state.catalogActive}/`)
             .then(response => {
@@ -53,14 +54,14 @@ const mutations = {
         state.listProducts = products.results
     },
 
-    setTotalCountProducts(state, products) {
-        state.total = products.count
-    },
-
-    setTotalPagesCountProducts(state) {
-        const item = state.listProducts.length
-        state.totalPages = Math.ceil(state.total / item)
-    },
+    // setTotalCountProducts(state, products) {
+    //     state.total = products.count
+    // },
+    //
+    // setTotalPagesCountProducts(state) {
+    //     const item = state.listProducts.length
+    //     state.totalPages = Math.ceil(state.total / item)
+    // },
 
     setActiveCatalog(state, id) {
         state.catalogActive = id
