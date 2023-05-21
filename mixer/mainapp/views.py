@@ -1,6 +1,7 @@
 from django.db import models
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import ProductCategory, Product, Review, ProductCatalog
-from .service import get_client_ip, PaginationProducts
+from .service import get_client_ip, PaginationProducts, CategoriesFilter
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, get_object_or_404
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, \
@@ -32,6 +33,8 @@ class ProductListView(ListAPIView):
     serializer_class = ProductListSerializer
     permission_classes = [AllowAny]
     pagination_class = PaginationProducts
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = CategoriesFilter
 
     def get_queryset(self):
         catalog_id = self.kwargs.get('pk')

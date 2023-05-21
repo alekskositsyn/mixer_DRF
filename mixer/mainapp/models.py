@@ -47,7 +47,7 @@ class ProductCategory(models.Model):
 class Product(models.Model):
     """Модель продуктов"""
     category = models.ManyToManyField(ProductCategory,
-                                     related_name='products_category',
+                                      related_name='products_category',
                                       verbose_name='категория продукта')
     name = models.CharField('имя продукта', max_length=128)
     short_desc = models.TextField(

@@ -1,5 +1,8 @@
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
+from django_filters import rest_framework as filters
+
+from mainapp.models import Product
 
 
 class PaginationProducts(PageNumberPagination):
@@ -15,6 +18,19 @@ class PaginationProducts(PageNumberPagination):
             'count': self.page.paginator.count,
             'results': data
         })
+
+
+class CharFilterInFilter(filters.BaseInFilter, filters.CharFilter):
+    pass
+
+
+class CategoriesFilter(filters.FilterSet):
+    categories = CharFilterInFilter(field_name='category__name', lookup_expr='in')
+
+    class Meta:
+        model = Product
+        fields = ['categories']
+
 
 def get_client_ip(request):
     """Получение IP пользователя"""
