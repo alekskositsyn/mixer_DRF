@@ -8,12 +8,19 @@
               <h3 class="sear-head editContent">Категории</h3>
               <ul class="w3layouts-box-list">
                 <li v-for="category in categories" :key="category.id" class="editContent">
-                  <input type="checkbox" class="checked">
-                  <span class="span editContent">{{ category.name }}</span>
+                  <label>
+                    <input type="checkbox"
+                           :value="category.id"
+                           v-model="selectedCategories"
+                           class="checked"
+                    >
+                    {{ category.name }}
+                  </label>
                 </li>
               </ul>
             </div>
           </div>
+
           <div class="left-ads-display col-lg-10">
             <div class="row">
               <div v-for="product in products" :key="product.id" class="col-md-2">
@@ -56,7 +63,7 @@
 
 <script>
 import Pagination from "@/components/Pagination";
-import {mapState, mapActions} from 'vuex'
+import {mapState, mapActions, mapMutations} from 'vuex'
 
 
 export default {
@@ -67,14 +74,16 @@ export default {
       popUP: false,
       listStar: [1, 2, 3, 4, 5],
       currentPage: 1,
-
+      selectedCategories: []
     }
   },
-  computed: mapState({
-    products: state => state.products.listProducts,
-    categories: state => state.products.listCategory,
-    catalog: state => state.products.catalogActive
-  }),
+  computed: {
+    ...mapState({
+      products: state => state.products.listProducts,
+      categories: state => state.products.listCategory,
+      catalog: state => state.products.catalogActive
+    })
+  },
   components: {Pagination},
   created() {
     this.$store.dispatch('products/getAllProducts')
@@ -82,7 +91,11 @@ export default {
   methods: {
     ...mapActions({
       addProduct: 'basket/addProductToCart',
-      getAllProducts: 'products/getAllProducts'
+      getAllProducts: 'products/getAllProducts',
+      getProductsByCategory: 'products/getProductsByCategory'
+    }),
+    ...mapMutations({
+      setCategoriesId: 'products/setCategoriesId'
     }),
 
     goTo(id) {
@@ -90,6 +103,16 @@ export default {
     },
     onPageChange(page) {
       this.getAllProducts(page)
+    }
+  },
+  watch: {
+    selectedCategories: {
+      handler: function () {
+        const formData = this.selectedCategories
+        this.setCategoriesId(formData)
+        this.getAllProducts()
+      },
+      deep: true,
     }
   }
 }

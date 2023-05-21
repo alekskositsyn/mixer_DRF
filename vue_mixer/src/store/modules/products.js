@@ -9,8 +9,9 @@ const state = () => ({
     listCatalogs: [],
     product: {},
     catalogActive: 1,
-    // totalPages: 0,
     total: 0,
+    page: 1,
+    categoriesId: ''
 })
 
 // getters
@@ -20,7 +21,7 @@ const getters = {}
 const actions = {
     getAllProducts({state, commit}, page = 1) {
         axios
-            .get(`catalog/${state.catalogActive}/products/?page=${page}`)
+            .get(`catalog/${state.catalogActive}/products/?categories=${state.categoriesId}&page=${page}`)
             .then(response => {
                 commit('setProducts', response.data)
                 store.commit('pagination/setTotalCountProducts', response.data)
@@ -53,15 +54,9 @@ const mutations = {
     setProducts(state, products) {
         state.listProducts = products.results
     },
-
-    // setTotalCountProducts(state, products) {
-    //     state.total = products.count
-    // },
-    //
-    // setTotalPagesCountProducts(state) {
-    //     const item = state.listProducts.length
-    //     state.totalPages = Math.ceil(state.total / item)
-    // },
+    setCategoriesId(state, id) {
+        state.categoriesId = id.join()
+    },
 
     setActiveCatalog(state, id) {
         state.catalogActive = id

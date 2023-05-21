@@ -25,7 +25,7 @@ class CharFilterInFilter(filters.BaseInFilter, filters.CharFilter):
 
 
 class CategoriesFilter(filters.FilterSet):
-    categories = CharFilterInFilter(field_name='category__name', lookup_expr='in')
+    categories = CharFilterInFilter(field_name='category__id', lookup_expr='in')
 
     class Meta:
         model = Product
