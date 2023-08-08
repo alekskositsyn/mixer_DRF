@@ -1,12 +1,30 @@
 from django.db import models
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import ProductCategory, Product, Review, ProductCatalog
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from .service import get_client_ip, PaginationProducts, CategoriesFilter
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, get_object_or_404
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import ProductCategoryListSerializer, ProductListSerializer, ProductSerializer, \
     ProductsReviewsSerializer, ReviewCreateSerializer, CreateRatingSerializer, ReviewSerializer, \
     ProductCatalogListSerializer
+
+
+class SearchProductByName(ListAPIView):
+    """Реализация поиска статей на сайте"""
+    model = Product
+    serializer_class = ProductListSerializer
+    permission_classes = [AllowAny]
+    pagination_class = PaginationProducts
+
+    # TODO Fix search for products
+    def get_queryset(self):
+        query = self.request.GET.get('do')
+        search_vector = SearchVector('name', weight='B')
+        search_query = SearchQuery(query)
+        return (
+            self.model.objects.annotate(rank=SearchRank(search_vector, search_query)).filter(rank__gte=0.3).order_by(
+                '-rank'))
 
 
 # Product
